@@ -68,6 +68,9 @@
             this.rOMInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.scriptsDumpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.getObjectListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.triangleCount = new System.Windows.Forms.Label();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
@@ -131,10 +134,11 @@
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
             this.levelToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.testToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(174, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(334, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -437,6 +441,28 @@
             this.scriptsDumpToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.scriptsDumpToolStripMenuItem.Text = "Script Dumps";
             this.scriptsDumpToolStripMenuItem.Click += new System.EventHandler(this.scriptsDumpToolStripMenuItem_Click);
+            // 
+            // testToolStripMenuItem
+            // 
+            this.testToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.getObjectListToolStripMenuItem,
+            this.toolStripMenuItem3});
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.testToolStripMenuItem.Text = "Test";
+            // 
+            // getObjectListToolStripMenuItem
+            // 
+            this.getObjectListToolStripMenuItem.Name = "getObjectListToolStripMenuItem";
+            this.getObjectListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.getObjectListToolStripMenuItem.Text = "1";
+            this.getObjectListToolStripMenuItem.Click += new System.EventHandler(this.getObjectListToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Text = "2";
             // 
             // panel1
             // 
@@ -752,7 +778,7 @@
             this.moveCameraLabel.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.moveCameraLabel.Location = new System.Drawing.Point(8, 99);
             this.moveCameraLabel.Name = "moveCameraLabel";
-            this.moveCameraLabel.Size = new System.Drawing.Size(96, 16);
+            this.moveCameraLabel.Size = new System.Drawing.Size(95, 16);
             this.moveCameraLabel.TabIndex = 4;
             this.moveCameraLabel.Text = "Move Camera";
             // 
@@ -803,7 +829,7 @@
             this.rotateObjectLabel.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rotateObjectLabel.Location = new System.Drawing.Point(8, 99);
             this.rotateObjectLabel.Name = "rotateObjectLabel";
-            this.rotateObjectLabel.Size = new System.Drawing.Size(112, 16);
+            this.rotateObjectLabel.Size = new System.Drawing.Size(111, 16);
             this.rotateObjectLabel.TabIndex = 4;
             this.rotateObjectLabel.Text = "Rotate Object";
             // 
@@ -852,7 +878,7 @@
             this.moveObjectLabel.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.moveObjectLabel.Location = new System.Drawing.Point(8, 99);
             this.moveObjectLabel.Name = "moveObjectLabel";
-            this.moveObjectLabel.Size = new System.Drawing.Size(96, 16);
+            this.moveObjectLabel.Size = new System.Drawing.Size(95, 16);
             this.moveObjectLabel.TabIndex = 4;
             this.moveObjectLabel.Text = "Move Object";
             // 
@@ -922,7 +948,7 @@
             this.MinimumSize = new System.Drawing.Size(820, 522);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quad64 v0.2 (Beta build 5)";
+            this.Text = "Quad64 - Dackage edit";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.menuStrip1.ResumeLayout(false);
@@ -1028,6 +1054,9 @@
         private System.Windows.Forms.NumericUpDown gridSize;
         private System.Windows.Forms.ToolStripMenuItem themesToolStripMenuItem;
         private System.Windows.Forms.Label triangleCount;
+        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem getObjectListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
     }
 }
 

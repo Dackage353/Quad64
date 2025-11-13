@@ -387,9 +387,13 @@ namespace Quad64.src.Scripts
             desc = "Load " + numColorsToLoadInPalette + " colors into texture memory cache";
             byte[] segmentData = ROM.Instance.getSegment((byte)(temp.segOff >> 24), areaID);
             uint offset = temp.segOff & 0x00FFFFFF;
-            for (int i = 0; i < numColorsToLoadInPalette; i++)
+
+            if (segmentData != null)
             {
-                temp.palette[i] = (ushort)((segmentData[offset + (i * 2)] << 8) | segmentData[offset + (i * 2) + 1]);
+                for (int i = 0; i < numColorsToLoadInPalette; i++)
+                {
+                    temp.palette[i] = (ushort)((segmentData[offset + (i * 2)] << 8) | segmentData[offset + (i * 2) + 1]);
+                }
             }
         }
 
