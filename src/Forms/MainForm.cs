@@ -1,4 +1,5 @@
 ﻿using Collada141;
+using NaturalSort.Extension;
 using Newtonsoft.Json;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
@@ -13,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
@@ -257,8 +259,11 @@ namespace Quad64
             Globals.multi_selected_nodes[2].Clear();
             Globals.multi_selected_nodes[3].Clear();
             propertyGrid1.SelectedObject = null;
+
             TreeNode objects = treeView1.Nodes[0];
             objects.Nodes.Clear();
+            level.getCurrentArea().Objects = level.getCurrentArea().Objects.OrderBy(c => c.getObjectComboName(), StringComparison.OrdinalIgnoreCase.WithNaturalSort()).ToList();
+
             foreach (Object3D obj in level.getCurrentArea().Objects)
             {
                 obj.Title = obj.getObjectComboName();
@@ -268,6 +273,8 @@ namespace Quad64
 
             TreeNode macro_objects = treeView1.Nodes[1];
             macro_objects.Nodes.Clear();
+            level.getCurrentArea().MacroObjects = level.getCurrentArea().MacroObjects.OrderBy(c => c.getObjectComboName(), StringComparison.OrdinalIgnoreCase.WithNaturalSort()).ToList();
+
             foreach (Object3D obj in level.getCurrentArea().MacroObjects)
             {
                 obj.Title = obj.getObjectComboName();
@@ -277,6 +284,8 @@ namespace Quad64
 
             TreeNode special_objects = treeView1.Nodes[2];
             special_objects.Nodes.Clear();
+            level.getCurrentArea().SpecialObjects = level.getCurrentArea().SpecialObjects.OrderBy(c => c.getObjectComboName(), StringComparison.OrdinalIgnoreCase.WithNaturalSort()).ToList();
+
             foreach (Object3D obj in level.getCurrentArea().SpecialObjects)
             {
                 obj.Title = obj.getObjectComboName();
@@ -2434,9 +2443,10 @@ namespace Quad64
 
         private void MoveSelection(bool up)
         {
-            if (Globals.list_selected == 0)
-            {
+            var focusedControl = GetFocusedControl(this);
 
+            if (focusedControl == null || focusedControl.Name == "treeView1")
+            {
                 var objects = level.getCurrentArea().Objects;
 
                 int newIndex;
@@ -2451,9 +2461,7 @@ namespace Quad64
                     if (newIndex >= objects.Count) newIndex = 0;
                 }
                 myIndex = newIndex;
-                
-                behaviorToolStripMenuItem.Enabled = true;
-                warpToolStripMenuItem.Enabled = false;
+
                 Globals.item_selected = newIndex;
                 propertyGrid1.SelectedObject = objects[newIndex];
                 treeView1.SelectedNode = treeView1.Nodes[0].Nodes[myIndex];
@@ -2474,6 +2482,15 @@ namespace Quad64
                 case Keys.Up: MoveSelection(true); break;
                 case Keys.Down: MoveSelection(false); break;
             }
+        }
+
+        public Control GetFocusedControl(Control control)
+        {
+            if (control is ContainerControl container)
+            {
+                return GetFocusedControl(container.ActiveControl);
+            }
+            return control;
         }
     }
 }

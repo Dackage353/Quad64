@@ -88,6 +88,9 @@
     <Compile Include="custom\CustomLevelInfo.cs" />
     <Compile Include="custom\CustomObjectInfo.cs" />
     <Compile Include="custom\Helper.cs" />
+    <Compile Include="custom\MyGlControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="src\COLLADA\collada_schema_1_4.cs" />
     <Compile Include="src\COLLADA\DumpModel.cs" />
     <Compile Include="custom\AreaReport.cs" />

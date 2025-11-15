@@ -680,7 +680,7 @@
       "Behavior": "0x13000D30"
     },
     {
-      "Name": "Empty Object",
+      "Name": "ZZ Empty Object",
       "ModelID": "0x00",
       "ModelAddress": "0x00000000",
       "Behavior": "0x13000000"
