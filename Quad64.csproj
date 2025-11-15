@@ -59,6 +59,9 @@
     <ApplicationIcon>icon_KtQ_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NaturalSort.Extension, Version=4.0.0.0, Culture=neutral, PublicKeyToken=bf10d7a29536a6dd, processorArchitecture=MSIL">
+      <HintPath>packages\NaturalSort.Extension.4.4.1\lib\netstandard2.0\NaturalSort.Extension.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -80,8 +83,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="custom\CustomAreaInfo.cs" />
+    <Compile Include="custom\CustomGameInfo.cs" />
+    <Compile Include="custom\CustomLevelInfo.cs" />
+    <Compile Include="custom\CustomObjectInfo.cs" />
+    <Compile Include="custom\Helper.cs" />
     <Compile Include="src\COLLADA\collada_schema_1_4.cs" />
     <Compile Include="src\COLLADA\DumpModel.cs" />
+    <Compile Include="custom\AreaReport.cs" />
+    <Compile Include="custom\ObjectCoinInfo.cs" />
     <Compile Include="src\Forms\EditWarp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +203,7 @@
     <Compile Include="src\LevelInfo\Level.cs" />
     <Compile Include="src\LevelInfo\WarpInstant.cs" />
     <Compile Include="src\LevelInfo\Warp.cs" />
+    <Compile Include="custom\GameInfoBuilder.cs" />
     <Compile Include="src\MIO0\libmio0.cs" />
     <Compile Include="src\Prompts.cs" />
     <Compile Include="src\Scripts\CollisionMap.cs" />
@@ -266,6 +277,9 @@
     <EmbeddedResource Include="src\Forms\ThemeSelector.resx">
       <DependentUpon>ThemeSelector.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="custom\ObjectCoinCounts.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="data\BehaviorNames.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

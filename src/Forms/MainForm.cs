@@ -30,7 +30,10 @@ namespace Quad64
         bool isMouseDown = false, isShiftDown = false, isControlDown = false, moveState = false;
         bool gridEnabled = false;
         static Level level;
-        
+        private CustomGameInfo gameInfo = null;
+
+        public static GameInfoBuilder Builder;
+
         public Level getLevelData { get { return level; } }
 
         public object SettingsForms { get; private set; }
@@ -2302,7 +2305,7 @@ namespace Quad64
             SendMessage(c.Handle, WM_SETREDRAW, (IntPtr)1, IntPtr.Zero);
             SendMessage(c.Handle, EM_SETEVENTMASK, IntPtr.Zero, OldEventMask);
         }
-        
+
         [DllImport("kernel32.dll", EntryPoint = "SetProcessWorkingSetSize", ExactSpelling = true, CharSet = CharSet.Ansi, SetLastError = true)]
         private static extern int SetProcessWorkingSetSize(IntPtr process, int minimumWorkingSetSize, int maximumWorkingSetSize);
         public static void forceGC()
@@ -2395,185 +2398,22 @@ namespace Quad64
 
         private void getObjectListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var sb = new StringBuilder();
-
-            sb.AppendLine(GetHeaderLine());
-
-            var levels = GetLevels();
-
-
-            foreach (var level in levels)
+            if (gameInfo is null)
             {
-                sb.AppendLine("##########");
-                sb.AppendLine("NEW LEVEL, id is " + level.LevelID);
-                sb.AppendLine("##########");
-
-                for (ushort i = 1; i <= 8; i++)
-                {
-                    if (level.hasArea(i))
-                    {
-                        var area = level.Areas[i - 1];
-
-                        sb.AppendLine("----------");
-                        sb.AppendLine("NEW AREA, id is " + area.AreaID.ToString());
-                        sb.AppendLine("----------");
-                        sb.AppendLine(GetAreaObjectsInfo(area));
-                    }
-                }
+                gameInfo = GameInfoBuilder.GetGameInfo();
             }
 
-            Clipboard.SetText(sb.ToString());
+            Clipboard.SetText(gameInfo.GetObjectReport());
         }
 
-        private List<Level> GetLevels()
+        private void getCoinCountsReport_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            List<Level> levels = new List<Level>();
-            List<Area> areas = new List<Area>();
-
-            var rom = ROM.Instance;
-
-            foreach (var pair in rom.levelIDs)
+            if (gameInfo is null)
             {
-                var id = pair.Value;
-                var level = new Level(id, 1);
-
-                level.sortAndAddNoModelEntries();
-                LevelScripts.parse(ref level, 0x15, 0);
-
-                if (level.Areas.Count > 0)
-                {
-                    level.CurrentAreaID = level.Areas[0].AreaID;
-                    levels.Add(level);
-                }
+                gameInfo = GameInfoBuilder.GetGameInfo();
             }
 
-            return levels;
-        }
-
-        private string GetAreaObjectsInfo(Area area)
-        {
-            var sb = new StringBuilder();
-
-            for (int i = 0; i < area.Objects.Count; i++)
-            {
-                var obj = area.Objects[i];
-
-                sb.AppendLine(GetObjectInfo(obj));
-            }
-
-            for (int i = 0; i < area.MacroObjects.Count; i++)
-            {
-                var obj = area.MacroObjects[i];
-
-                sb.AppendLine(GetObjectInfo(obj));
-            }
-
-            for (int i = 0; i < area.SpecialObjects.Count; i++)
-            {
-                var obj = area.SpecialObjects[i];
-
-                sb.AppendLine(GetObjectInfo(obj));
-            }
-
-            return sb.ToString();
-        }
-
-        private string GetObjectInfo(Object3D obj)
-        {
-            var sb = new StringBuilder();
-
-            string[] items =
-            {
-                obj.getObjectComboName(),
-                obj.Address,
-                obj.ModelID.ToString(),
-                obj.xPos.ToString(),
-                obj.yPos.ToString(),
-                obj.zPos.ToString(),
-                obj.xRot.ToString(),
-                obj.yRot.ToString(),
-                obj.zRot.ToString(),
-                obj.getBehaviorAddress().ToString(),
-                obj.Behavior_Name,
-                obj.BehaviorParameter1.ToString(),
-                obj.BehaviorParameter2.ToString(),
-                obj.BehaviorParameter3.ToString(),
-                obj.BehaviorParameter4.ToString(),
-                obj.AllActs.ToString(),
-                obj.Act1.ToString(),
-                obj.Act2.ToString(),
-                obj.Act3.ToString(),
-                obj.Act4.ToString(),
-                obj.Act5.ToString(),
-                obj.Act6.ToString(),
-            };
-
-            for (int i = 0; i < items.Length; i++)
-            {
-                sb.Append(WithQuotesIfNeeded(items[i]));
-
-                if (i < items.Length - 1)
-                {
-                    sb.Append(",");
-                }
-            }
-
-            return sb.ToString();
-        }
-
-        private string GetHeaderLine()
-        {
-            var sb = new StringBuilder();
-
-            string[] items =
-            {
-                "combo name",
-                "address",
-                "model id",
-                "x",
-                "y",
-                "z",
-                "rotation x",
-                "rotation y",
-                "rotation z",
-                "behavior address",
-                "behavior name",
-                "behavior param 1",
-                "behavior param 2",
-                "behavior param 3",
-                "behavior param 4",
-                "all acts",
-                "act 1",
-                "act 2",
-                "act 3",
-                "act 4",
-                "act 5",
-                "act 6",
-            };
-
-            for (int i = 0; i < items.Length; i++)
-            {
-                sb.Append(WithQuotesIfNeeded(items[i]));
-
-                if (i < items.Length - 1)
-                {
-                    sb.Append(",");
-                }
-            }
-
-            return sb.ToString();
-        }
-
-        private string WithQuotesIfNeeded(string line)
-        {
-            if (line.Contains(","))
-            {
-                return "\"" + line + "\"";
-            }
-            else
-            {
-                return line;
-            }
+            Clipboard.SetText(gameInfo.GetCoinReport());
         }
     }
 }

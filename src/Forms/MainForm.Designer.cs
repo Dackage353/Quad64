@@ -71,6 +71,7 @@
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.getObjectListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.getDetailedCoinReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.triangleCount = new System.Windows.Forms.Label();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
@@ -446,7 +447,8 @@
             // 
             this.testToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.getObjectListToolStripMenuItem,
-            this.toolStripMenuItem3});
+            this.toolStripMenuItem3,
+            this.getDetailedCoinReportToolStripMenuItem});
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
             this.testToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.testToolStripMenuItem.Text = "Test";
@@ -454,15 +456,22 @@
             // getObjectListToolStripMenuItem
             // 
             this.getObjectListToolStripMenuItem.Name = "getObjectListToolStripMenuItem";
-            this.getObjectListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.getObjectListToolStripMenuItem.Text = "1";
+            this.getObjectListToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.getObjectListToolStripMenuItem.Text = "Get object list";
             this.getObjectListToolStripMenuItem.Click += new System.EventHandler(this.getObjectListToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem3.Text = "2";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(191, 22);
+            this.toolStripMenuItem3.Text = "Get simple coin report";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.getCoinCountsReport_ToolStripMenuItem_Click);
+            // 
+            // getDetailedCoinReportToolStripMenuItem
+            // 
+            this.getDetailedCoinReportToolStripMenuItem.Name = "getDetailedCoinReportToolStripMenuItem";
+            this.getDetailedCoinReportToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.getDetailedCoinReportToolStripMenuItem.Text = "Get detailed coin list";
             // 
             // panel1
             // 
@@ -1057,6 +1066,7 @@
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem getObjectListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem getDetailedCoinReportToolStripMenuItem;
     }
 }
 

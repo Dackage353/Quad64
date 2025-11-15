@@ -1,0 +1,321 @@
+[
+  // basic coins
+  {
+    "Name": "blue coin (moving)",
+    "BehaviorAddress": "0x130030A4",
+    "CoinValue": 5
+  },
+  {
+    "Name": "blue coin (still)",
+    "BehaviorAddress": "0x13002588",
+    "CoinValue": 5
+  },
+  {
+    "Name": "red coin",
+    "BehaviorAddress": "0x13003EAC",
+    "CoinValue": 2
+  },
+  {
+    "Name": "yellow coin (type 1)",
+    "BehaviorAddress": "0x1300090C",
+    "CoinValue": 1
+  },
+  {
+    "Name": "yellow coin (type 2)",
+    "BehaviorAddress": "0x1300091C",
+    "CoinValue": 1
+  },
+
+  // coin formation
+  {
+    "Name": "5 coin line (grounded, horizontal)",
+    "BehaviorAddress": "0x130008EC",
+    "Param2": 0,
+    "CoinValue": 5
+  },
+  {
+    "Name": "coin ring (grounded, flat)",
+    "BehaviorAddress": "0x130008EC",
+    "Param2": 2,
+    "CoinValue": 8
+  },
+  {
+    "Name": "coin arrow (grounded, flat)",
+    "BehaviorAddress": "0x130008EC",
+    "Param2": 4,
+    "CoinValue": 8
+  },
+  {
+    "Name": "5 coin line (flying, horizontal)",
+    "BehaviorAddress": "0x130008EC",
+    "Param2": 16,
+    "CoinValue": 5
+  },
+  {
+    "Name": "5 coin line (flying, vertical)",
+    "BehaviorAddress": "0x130008EC",
+    "Param2": 17,
+    "CoinValue": 5
+  },
+  {
+    "Name": "coin ring (flying, flat)",
+    "BehaviorAddress": "0x130008EC",
+    "Param2": 18,
+    "CoinValue": 8
+  },
+  {
+    "Name": "coin ring (flying, vertical)",
+    "BehaviorAddress": "0x130008EC",
+    "Param2": 19,
+    "CoinValue": 8
+  },
+
+
+  // containers
+  {
+    "Name": "1 coin [!] box",
+    "BehaviorAddress": "0x13002250",
+    "Param2": 4,
+    "CoinValue": 1
+  },
+  {
+    "Name": "3 coin [!] box",
+    "BehaviorAddress": "0x13002250",
+    "Param2": 5,
+    "CoinValue": 3
+  },
+  {
+    "Name": "10 coin [!] box",
+    "BehaviorAddress": "0x13002250",
+    "Param2": 6,
+    "CoinValue": 10
+  },
+  {
+    "Name": "bowser puzzle (lethal lava land)",
+    "BehaviorAddress": "0x13002068",
+    "CoinValue": 5
+  },
+  {
+    "Name": "breakable box (medium, 3 coins)",
+    "BehaviorAddress": "0x130014E0",
+    "Param2": 1,
+    "CoinValue": 3
+  },
+  {
+    "Name": "breakable box (medium, 5 coins)",
+    "BehaviorAddress": "0x130014E0",
+    "Param2": 2,
+    "CoinValue": 5
+  },
+  {
+    "Name": "breakable box (small/throwable)",
+    "BehaviorAddress": "0x13004218",
+    "CoinValue": 3
+  },
+  {
+    "Name": "crazy box",
+    "BehaviorAddress": "0x13001650",
+    "CoinValue": 5
+  },
+  {
+    "Name": "wooden post",
+    "BehaviorAddress": "0x1300481C",
+    "CoinValue": 5
+  },
+
+  // enemies
+  {
+    "Name": "bat / swoop",
+    "BehaviorAddress": "0x13004698",
+    "CoinValue": 1
+  },
+  {
+    "Name": "big haunted book",
+    "BehaviorAddress": "0x1300506C",
+    "CoinValue": 5
+  },
+  {
+    "Name": "bomb / bob-omb",
+    "BehaviorAddress": "0x13003174",
+    "CoinValue": 1
+  },
+  {
+    "Name": "boo (regular, no message)",
+    "BehaviorAddress": "0x130027E4",
+    "CoinValue": 5
+  },
+  {
+    "Name": "boo (regular, with message)",
+    "BehaviorAddress": "0x13002804",
+    "CoinValue": 5
+  },
+  {
+    "Name": "boo spawner (courtyard)",
+    "BehaviorAddress": "0x130027D0",
+    "CoinValue": 3
+  },
+  {
+    "Name": "boo spawner (merry-go-round)",
+    "BehaviorAddress": "0x13002684",
+    "CoinValue": 25
+  },
+  {
+    "Name": "bully (regular)",
+    "BehaviorAddress": "0x1300362C",
+    "CoinValue": 1
+  },
+  {
+    "Name": "bully spawner",
+    "BehaviorAddress": "0x13003694",
+    "CoinValue": 3
+  },
+  {
+    "Name": "chain chomp",
+    "BehaviorAddress": "0x1300478C",
+    "CoinValue": 5
+  },
+  {
+    "Name": "chuckya",
+    "BehaviorAddress": "0x13000528",
+    "CoinValue": 5
+  },
+  {
+    "Name": "eyeball / mr. i",
+    "BehaviorAddress": "0x13000054",
+    "Param2": 0,
+    "CoinValue": 5
+  },
+  {
+    "Name": "fly guy",
+    "BehaviorAddress": "0x130046DC",
+    "CoinValue": 2
+  },
+  {
+    "Name": "goomba (huge)",
+    "BehaviorAddress": "0x1300472C",
+    "Param2": 1,
+    "CoinValue": 5
+  },
+  {
+    "Name": "goomba (regular)",
+    "BehaviorAddress": "0x1300472C",
+    "Param2": 0,
+    "CoinValue": 1
+  },
+  {
+    "Name": "goomba (tiny)",
+    "BehaviorAddress": "0x1300472C",
+    "Param2": 2,
+    "CoinValue": 1
+  },
+  {
+    "Name": "goomba spawner (3 regular)",
+    "BehaviorAddress": "0x13004770",
+    "Param2": 0,
+    "CoinValue": 3
+  },
+  {
+    "Name": "goomba spawner (3 huge)",
+    "BehaviorAddress": "0x13004770",
+    "Param2": 1,
+    "CoinValue": 15
+  },
+  {
+    "Name": "goomba spawner (3 tiny)",
+    "BehaviorAddress": "0x13004770",
+    "Param2": 2,
+    "CoinValue": 3
+  },
+  {
+    "Name": "koopa (regular, has shell)",
+    "BehaviorAddress": "0x13004580",
+    "Param2": 1,
+    "CoinValue": 5
+  },
+  {
+    "Name": "koopa (regular, no shell)",
+    "BehaviorAddress": "0x13004580",
+    "Param2": 0,
+    "CoinValue": 5
+  },
+  {
+    "Name": "koopa (tiny)",
+    "BehaviorAddress": "0x13004580",
+    "Param2": 4,
+    "CoinValue": 5
+  },
+  {
+    "Name": "lakitu",
+    "BehaviorAddress": "0x13004918",
+    "CoinValue": 5
+  },
+  {
+    "Name": "moneybag",
+    "BehaviorAddress": "0x130039D4",
+    "CoinValue": 5
+  },
+  {
+    "Name": "piranha plant (huge)",
+    "BehaviorAddress": "0x13005120",
+    "Param2": 1,
+    "CoinValue": 2
+  },
+  {
+    "Name": "piranha plant (regular)",
+    "BehaviorAddress": "0x13001FBC",
+    "CoinValue": 5
+  },
+  {
+    "Name": "piranha plant (tiny)",
+    "BehaviorAddress": "0x13005120",
+    "Param2": 0,
+    "CoinValue": 1
+  },
+  {
+    "Name": "pokey",
+    "BehaviorAddress": "0x13004634",
+    "CoinValue": 5
+  },
+  {
+    "Name": "scuttlebug",
+    "BehaviorAddress": "0x13002B5C",
+    "CoinValue": 3
+  },
+  {
+    "Name": "scuttlebug spawner",
+    "BehaviorAddress": "0x13002BA0",
+    "CoinValue": 3
+  },
+  {
+    "Name": "skeeter",
+    "BehaviorAddress": "0x13005468",
+    "CoinValue": 3
+  },
+  {
+    "Name": "snowman / mr. blizzard (hidden, no cap)",
+    "BehaviorAddress": "0x13004DBC",
+    "Param2": 0,
+    "CoinValue": 3
+  },
+  {
+    "Name": "snowman / mr. blizzard (hidden, can have cap)",
+    "BehaviorAddress": "0x13004DBC",
+    "Param2": 2,
+    "CoinValue": 3
+  },
+  {
+    "Name": "snufit",
+    "BehaviorAddress": "0x130051E0",
+    "CoinValue": 2
+  },
+  {
+    "Name": "spindrift",
+    "BehaviorAddress": "0x130012B4",
+    "CoinValue": 3
+  },
+  {
+    "Name": "whomp",
+    "BehaviorAddress": "0x13002BCC",
+    "CoinValue": 10
+  }
+]
