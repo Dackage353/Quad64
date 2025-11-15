@@ -52,6 +52,23 @@ namespace Quad64.src
             return sb.ToString();
         }
 
+        public string GetCoinObjectList()
+        {
+            var sb = new StringBuilder();
+
+            sb.AppendLine(Name);
+
+            for (int i = 0; i < Objects.Count; i++)
+            {
+                var obj = Objects[i];
+
+                if (obj.CoinValue > 0) sb.AppendLine(obj.ToString());
+            }
+
+            sb.AppendLine();
+            return sb.ToString();
+        }
+
         public bool AllActsHaveSameCoinCount()
         {
             for (int i = 1; i < CoinCountByAct.Length; i++)

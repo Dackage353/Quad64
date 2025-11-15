@@ -1,4 +1,6 @@
-﻿namespace Quad64
+﻿using System.Windows.Forms;
+
+namespace Quad64
 {
     partial class MainForm
     {
@@ -69,9 +71,9 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.scriptsDumpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.getObjectListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.getDetailedCoinReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.getObjectList_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.getCoinObjectList_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.getSimpleCoinReport_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.triangleCount = new System.Windows.Forms.Label();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
@@ -139,7 +141,7 @@
             this.testToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(334, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(235, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -446,32 +448,33 @@
             // testToolStripMenuItem
             // 
             this.testToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.getObjectListToolStripMenuItem,
-            this.toolStripMenuItem3,
-            this.getDetailedCoinReportToolStripMenuItem});
+            this.getObjectList_ToolStripMenuItem,
+            this.getCoinObjectList_ToolStripMenuItem,
+            this.getSimpleCoinReport_ToolStripMenuItem});
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
-            this.testToolStripMenuItem.Text = "Test";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.testToolStripMenuItem.Text = "Custom";
             // 
-            // getObjectListToolStripMenuItem
+            // getObjectList_ToolStripMenuItem
             // 
-            this.getObjectListToolStripMenuItem.Name = "getObjectListToolStripMenuItem";
-            this.getObjectListToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.getObjectListToolStripMenuItem.Text = "Get object list";
-            this.getObjectListToolStripMenuItem.Click += new System.EventHandler(this.getObjectListToolStripMenuItem_Click);
+            this.getObjectList_ToolStripMenuItem.Name = "getObjectList_ToolStripMenuItem";
+            this.getObjectList_ToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.getObjectList_ToolStripMenuItem.Text = "Get object list";
+            this.getObjectList_ToolStripMenuItem.Click += new System.EventHandler(this.getObjectList_ToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem3
+            // getCoinObjectList_ToolStripMenuItem
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(191, 22);
-            this.toolStripMenuItem3.Text = "Get simple coin report";
-            this.toolStripMenuItem3.Click += new System.EventHandler(this.getCoinCountsReport_ToolStripMenuItem_Click);
+            this.getCoinObjectList_ToolStripMenuItem.Name = "getCoinObjectList_ToolStripMenuItem";
+            this.getCoinObjectList_ToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.getCoinObjectList_ToolStripMenuItem.Text = "Get coin object list";
+            this.getCoinObjectList_ToolStripMenuItem.Click += new System.EventHandler(this.getCoinObjectList_ToolStripMenuItem_Click);
             // 
-            // getDetailedCoinReportToolStripMenuItem
+            // getSimpleCoinReport_ToolStripMenuItem
             // 
-            this.getDetailedCoinReportToolStripMenuItem.Name = "getDetailedCoinReportToolStripMenuItem";
-            this.getDetailedCoinReportToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.getDetailedCoinReportToolStripMenuItem.Text = "Get detailed coin list";
+            this.getSimpleCoinReport_ToolStripMenuItem.Name = "getSimpleCoinReport_ToolStripMenuItem";
+            this.getSimpleCoinReport_ToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.getSimpleCoinReport_ToolStripMenuItem.Text = "Get simple coin report";
+            this.getSimpleCoinReport_ToolStripMenuItem.Click += new System.EventHandler(this.getSimpleCoinReport_ToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -959,6 +962,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quad64 - Dackage edit";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.KeyDown += new KeyEventHandler(this.MainForm_KeyDown);
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -1064,9 +1068,9 @@
         private System.Windows.Forms.ToolStripMenuItem themesToolStripMenuItem;
         private System.Windows.Forms.Label triangleCount;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem getObjectListToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem getDetailedCoinReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem getObjectList_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem getSimpleCoinReport_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem getCoinObjectList_ToolStripMenuItem;
     }
 }
 

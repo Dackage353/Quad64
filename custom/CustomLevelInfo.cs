@@ -96,6 +96,27 @@ namespace Quad64.src
             return sb.ToString();
         }
 
+        public string GetCoinObjectList()
+        {
+            var sb = new StringBuilder();
+
+            sb.AppendLine(Helper.Divider);
+            sb.AppendLine(Name);
+            sb.AppendLine(Helper.Divider);
+
+            for (int areaIndex = 0; areaIndex < 8; areaIndex++)
+            {
+                var area = Areas[areaIndex];
+
+                if (area != null)
+                {
+                    sb.Append(area.GetCoinObjectList());
+                }
+            }
+
+            return sb.ToString();
+        }
+
         public void CalculateCoinCountByAct()
         {
             CoinCountByAct = new int[6];

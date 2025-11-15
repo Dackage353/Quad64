@@ -1,20 +1,21 @@
-﻿using OpenTK;
-using OpenTK.Graphics.OpenGL;
-using System;
-using System.Drawing;
-using System.Windows.Forms;
-using Quad64.src.LevelInfo;
-using Quad64.Scripts;
-using Quad64.src.JSON;
-using Quad64.src;
-using Quad64.src.TestROM;
-using Quad64.src.Forms;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using Quad64.src.Forms.ToolStripRenderer;
-using System.IO;
+﻿using Collada141;
 using Newtonsoft.Json;
+using OpenTK;
+using OpenTK.Graphics.OpenGL;
+using Quad64.Scripts;
+using Quad64.src;
+using Quad64.src.Forms;
+using Quad64.src.Forms.ToolStripRenderer;
+using Quad64.src.JSON;
+using Quad64.src.LevelInfo;
+using Quad64.src.TestROM;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Runtime.InteropServices;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Quad64
 {
@@ -31,6 +32,7 @@ namespace Quad64
         bool gridEnabled = false;
         static Level level;
         private CustomGameInfo gameInfo = null;
+        private int myIndex = 0;
 
         public static GameInfoBuilder Builder;
 
@@ -1049,8 +1051,11 @@ namespace Quad64
             return a ? (b || c) : (b && c);
         }
 
+
         private void updateAfterSelect(TreeNode node)
         {
+            myIndex = node.Index;
+
             if (node.Parent == null)
             {
 
@@ -2396,7 +2401,7 @@ namespace Quad64
             Globals.needToSave = true;
         }
 
-        private void getObjectListToolStripMenuItem_Click(object sender, EventArgs e)
+        private void getObjectList_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (gameInfo is null)
             {
@@ -2406,7 +2411,17 @@ namespace Quad64
             Clipboard.SetText(gameInfo.GetObjectReport());
         }
 
-        private void getCoinCountsReport_ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void getCoinObjectList_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (gameInfo is null)
+            {
+                gameInfo = GameInfoBuilder.GetGameInfo();
+            }
+
+            Clipboard.SetText(gameInfo.GetCoinObjectReport());
+        }
+
+        private void getSimpleCoinReport_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (gameInfo is null)
             {
@@ -2414,6 +2429,51 @@ namespace Quad64
             }
 
             Clipboard.SetText(gameInfo.GetCoinReport());
+        }
+
+
+        private void MoveSelection(bool up)
+        {
+            if (Globals.list_selected == 0)
+            {
+
+                var objects = level.getCurrentArea().Objects;
+
+                int newIndex;
+                if (up)
+                {
+                    newIndex = myIndex - 1;
+                    if (newIndex < 1) newIndex = objects.Count - 1;
+                }
+                else
+                {
+                    newIndex = myIndex + 1;
+                    if (newIndex >= objects.Count) newIndex = 0;
+                }
+                myIndex = newIndex;
+                
+                behaviorToolStripMenuItem.Enabled = true;
+                warpToolStripMenuItem.Enabled = false;
+                Globals.item_selected = newIndex;
+                propertyGrid1.SelectedObject = objects[newIndex];
+                treeView1.SelectedNode = treeView1.Nodes[0].Nodes[myIndex];
+                treeView1.SelectedNode.EnsureVisible();
+
+                if (camera.isOrbitCamera())
+                {
+                    camera.updateOrbitCamera(ref camMtx);
+                    glControl1.Invalidate();
+                }
+            }
+        }
+
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up: MoveSelection(true); break;
+                case Keys.Down: MoveSelection(false); break;
+            }
         }
     }
 }

@@ -45,6 +45,24 @@ namespace Quad64.src
             return sb.ToString();
         }
 
+        public string GetCoinObjectReport()
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine(GetHeaderLine());
+
+            for (int levelIndex = 0; levelIndex < Levels.Count; levelIndex++)
+            {
+                var level = Levels[levelIndex];
+
+                if (level.GetAreaCount() > 0)
+                {
+                    sb.Append(level.GetCoinObjectList());
+                }
+            }
+
+            return sb.ToString();
+        }
+
         private string GetHeaderLine()
         {
             var sb = new StringBuilder();

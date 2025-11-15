@@ -46,7 +46,7 @@ namespace Quad64.src
         {
             LoadLevels();
 
-            var json = File.ReadAllText("./custom/ObjectCoinCounts.json");
+            var json = File.ReadAllText("./custom/StarRoadCoinObjects.json");
             var coinInfo = JsonConvert.DeserializeObject<List<ObjectCoinInfo>>(json);
             
             for (int i = 0; i < coinInfo.Count; i++)
@@ -180,19 +180,19 @@ namespace Quad64.src
             return info;
         }
 
-        private string GetKey(string behaviorAddress, int param2Value)
+        private string GetKey(string behaviorAddress, int param2)
         {
             string value;
-            if (param2Value < 0)
+            if (param2 < 0)
             {
                 value = "x";
             }
             else
             {
-                value = param2Value.ToString();
+                value = param2.ToString();
             }
 
-            return behaviorAddress + "_" + param2Value.ToString();
+            return behaviorAddress + "_" + param2.ToString();
         }
     }
 }
