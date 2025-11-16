@@ -2451,19 +2451,7 @@ namespace Quad64
             if (Globals.list_selected != -1 && (focusedControl == null || focusedControl.Name == "treeView1"))
             {
                 var objects = GetListObjects(Globals.list_selected);
-
-                int newIndex;
-                if (up)
-                {
-                    newIndex = myIndex - 1;
-                    if (newIndex < 0) newIndex = objects.Count - 1;
-                }
-                else
-                {
-                    newIndex = myIndex + 1;
-                    if (newIndex >= objects.Count) newIndex = 0;
-                }
-                myIndex = newIndex;
+                myIndex = IncrementWithLooping(myIndex, up, 0, objects.Count - 1);
 
                 SelectObjectWithMyIndex();
             }
@@ -2481,30 +2469,42 @@ namespace Quad64
         }
 
 
-        private void ChangeList(bool up)
+        private void ChangeList(bool left)
         {
             if (Globals.list_selected >= 0 && Globals.list_selected <= 2)
             {
-                int nextList = 0;
+                int initialList = Globals.list_selected;
+                int nextList = IncrementWithLooping(initialList, left, 0, 2);
 
-                if (up)
+                while (nextList != initialList)
                 {
-                    nextList = Globals.list_selected + 1;
-                    if (nextList > 2) nextList = 0;
-                }
-                else
-                {
-                    nextList = Globals.list_selected - 1;
-                    if (nextList < 0) nextList = 2;
-                }
+                    if (GetListObjects(nextList).Count > 0)
+                    {
+                        Globals.list_selected = nextList;
+                        myIndex = 0;
+                        SelectObjectWithMyIndex();
+                        break;
+                    }
 
-                if (GetListObjects(nextList).Count > 0)
-                {
-                    Globals.list_selected = nextList;
-                    myIndex = 0;
-                    SelectObjectWithMyIndex();
+                    nextList = IncrementWithLooping(nextList, left, 0, 2);
                 }
             }
+        }
+
+        private int IncrementWithLooping(int num, bool left, int min, int max)
+        {
+            if (left)
+            {
+                num--;
+                if (num < min) num = max;
+            }
+            else
+            {
+                num++;
+                if (num > max) num = min; 
+            }
+
+            return num;
         }
 
         private void SelectObjectWithMyIndex()
