@@ -221,6 +221,9 @@ namespace Quad64
             //Stopwatch stopWatch = new Stopwatch();
             //stopWatch.Start();
 
+            gameInfo = null;
+            GameInfoBuilder.ClearGameInfo();
+
             Globals.objectComboEntries.Clear();
             Globals.behaviorNameEntries.Clear();
             BehaviorNameFile.parseBehaviorNames(Globals.getDefaultBehaviorNamesPath());

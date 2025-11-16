@@ -9,11 +9,11 @@ namespace Quad64.src
     class CustomObjectInfo
     {
         public string Name { get; set; }
-        public int CoinValue { get; set; }
+        public int CoinValue { get; set; } = 0;
         public string Address { get; set; }
         public string BehaviorName { get; set; }
         public string BehaviorAddress { get; set; }
-        public string ModelID { get; set; }
+        public int ModelID { get; set; }
         public int Param1 { get; set; }
         public int Param2 { get; set; }
         public int Param3 { get; set; }
@@ -41,7 +41,7 @@ namespace Quad64.src
                 Name,
                 CoinValue.ToString(),
                 Address,
-                ModelID,
+                ModelID.ToString(),
                 XPosition.ToString(),
                 YPosition.ToString(),
                 ZPosition.ToString(),

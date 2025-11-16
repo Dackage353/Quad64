@@ -42,11 +42,16 @@ namespace Quad64.src
             return builder.gameInfo;
         }
 
+        public static void ClearGameInfo()
+        {
+            builder = null; 
+        }
+
         private GameInfoBuilder()
         {
             LoadLevels();
 
-            var json = File.ReadAllText("./custom/StarRoadCoinObjects.json");
+            var json = File.ReadAllText("./custom/ObjectCoinCounts.json");
             var coinInfo = JsonConvert.DeserializeObject<List<ObjectCoinInfo>>(json);
             
             for (int i = 0; i < coinInfo.Count; i++)
@@ -137,6 +142,14 @@ namespace Quad64.src
                 objectInfo.Name = coinInfo.Name;
                 objectInfo.CoinValue = coinInfo.CoinValue;
             }
+            else
+            {
+                objectInfo.Name = obj.getObjectComboName();
+            }
+
+            objectInfo.Address = obj.Address;
+            objectInfo.ModelID = obj.ModelID;
+            objectInfo.BehaviorName = obj.Behavior_Name;
 
             objectInfo.BehaviorAddress = obj.Behavior;
             objectInfo.Param1 = obj.BehaviorParameter1;
