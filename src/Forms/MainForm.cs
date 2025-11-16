@@ -2448,15 +2448,9 @@ namespace Quad64
         {
             var focusedControl = GetFocusedControl(this);
 
-            if (focusedControl == null || focusedControl.Name == "treeView1")
+            if (Globals.list_selected != -1 && (focusedControl == null || focusedControl.Name == "treeView1"))
             {
-                var objects = level.getCurrentArea().Objects;
-                switch (Globals.list_selected)
-                {
-                    case 0: objects = level.getCurrentArea().Objects; break;
-                    case 1: objects = level.getCurrentArea().MacroObjects; break;
-                    case 2: objects = level.getCurrentArea().SpecialObjects; break;
-                }
+                var objects = GetListObjects(Globals.list_selected);
 
                 int newIndex;
                 if (up)
@@ -2491,19 +2485,25 @@ namespace Quad64
         {
             if (Globals.list_selected >= 0 && Globals.list_selected <= 2)
             {
+                int nextList = 0;
+
                 if (up)
                 {
-                    Globals.list_selected++;
-                    if (Globals.list_selected > 2) Globals.list_selected = 0;
+                    nextList = Globals.list_selected + 1;
+                    if (nextList > 2) nextList = 0;
                 }
                 else
                 {
-                    Globals.list_selected--;
-                    if (Globals.list_selected < 0) Globals.list_selected = 2;
+                    nextList = Globals.list_selected - 1;
+                    if (nextList < 0) nextList = 2;
                 }
 
-                myIndex = 0;
-                SelectObjectWithMyIndex();
+                if (GetListObjects(nextList).Count > 0)
+                {
+                    Globals.list_selected = nextList;
+                    myIndex = 0;
+                    SelectObjectWithMyIndex();
+                }
             }
         }
 
@@ -2511,13 +2511,7 @@ namespace Quad64
         {
             if (Globals.list_selected >= 0 && Globals.list_selected <= 2)
             {
-                var objects = level.getCurrentArea().Objects;
-                switch (Globals.list_selected)
-                {
-                    case 0: objects = level.getCurrentArea().Objects; break;
-                    case 1: objects = level.getCurrentArea().MacroObjects; break;
-                    case 2: objects = level.getCurrentArea().SpecialObjects; break;
-                }
+                var objects = GetListObjects(Globals.list_selected);
 
                 Globals.item_selected = myIndex;
                 propertyGrid1.SelectedObject = objects[myIndex];
@@ -2530,6 +2524,18 @@ namespace Quad64
                     glControl1.Invalidate();
                 }
             }
+        }
+
+        private List<Object3D> GetListObjects(int index)
+        {
+            switch (index)
+            {
+                case 0: return level.getCurrentArea().Objects;
+                case 1: return level.getCurrentArea().MacroObjects;
+                case 2: return level.getCurrentArea().SpecialObjects;
+            }
+
+            return null;
         }
 
         public Control GetFocusedControl(Control control)
