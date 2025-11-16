@@ -91,6 +91,7 @@
     <Compile Include="custom\MyGlControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="custom\ObjectSorter.cs" />
     <Compile Include="src\COLLADA\collada_schema_1_4.cs" />
     <Compile Include="src\COLLADA\DumpModel.cs" />
     <Compile Include="custom\AreaReport.cs" />

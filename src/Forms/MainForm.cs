@@ -262,7 +262,7 @@ namespace Quad64
 
             TreeNode objects = treeView1.Nodes[0];
             objects.Nodes.Clear();
-            level.getCurrentArea().Objects = level.getCurrentArea().Objects.OrderBy(c => c.getObjectComboName(), StringComparison.OrdinalIgnoreCase.WithNaturalSort()).ToList();
+            level.getCurrentArea().Objects = new ObjectSorter().SortByNameAndDistance(level.getCurrentArea().Objects);
 
             foreach (Object3D obj in level.getCurrentArea().Objects)
             {
@@ -273,7 +273,7 @@ namespace Quad64
 
             TreeNode macro_objects = treeView1.Nodes[1];
             macro_objects.Nodes.Clear();
-            level.getCurrentArea().MacroObjects = level.getCurrentArea().MacroObjects.OrderBy(c => c.getObjectComboName(), StringComparison.OrdinalIgnoreCase.WithNaturalSort()).ToList();
+            level.getCurrentArea().MacroObjects = new ObjectSorter().SortByNameAndDistance(level.getCurrentArea().MacroObjects);
 
             foreach (Object3D obj in level.getCurrentArea().MacroObjects)
             {
@@ -284,7 +284,7 @@ namespace Quad64
 
             TreeNode special_objects = treeView1.Nodes[2];
             special_objects.Nodes.Clear();
-            level.getCurrentArea().SpecialObjects = level.getCurrentArea().SpecialObjects.OrderBy(c => c.getObjectComboName(), StringComparison.OrdinalIgnoreCase.WithNaturalSort()).ToList();
+            level.getCurrentArea().SpecialObjects = new ObjectSorter().SortByNameAndDistance(level.getCurrentArea().SpecialObjects);
 
             foreach (Object3D obj in level.getCurrentArea().SpecialObjects)
             {
@@ -2448,12 +2448,18 @@ namespace Quad64
             if (focusedControl == null || focusedControl.Name == "treeView1")
             {
                 var objects = level.getCurrentArea().Objects;
+                switch (Globals.list_selected)
+                {
+                    case 0: objects = level.getCurrentArea().Objects; break;
+                    case 1: objects = level.getCurrentArea().MacroObjects; break;
+                    case 2: objects = level.getCurrentArea().SpecialObjects; break;
+                }
 
                 int newIndex;
                 if (up)
                 {
                     newIndex = myIndex - 1;
-                    if (newIndex < 1) newIndex = objects.Count - 1;
+                    if (newIndex < 0) newIndex = objects.Count - 1;
                 }
                 else
                 {
@@ -2462,16 +2468,7 @@ namespace Quad64
                 }
                 myIndex = newIndex;
 
-                Globals.item_selected = newIndex;
-                propertyGrid1.SelectedObject = objects[newIndex];
-                treeView1.SelectedNode = treeView1.Nodes[0].Nodes[myIndex];
-                treeView1.SelectedNode.EnsureVisible();
-
-                if (camera.isOrbitCamera())
-                {
-                    camera.updateOrbitCamera(ref camMtx);
-                    glControl1.Invalidate();
-                }
+                SelectObjectWithMyIndex();
             }
         }
 
@@ -2481,6 +2478,54 @@ namespace Quad64
             {
                 case Keys.Up: MoveSelection(true); break;
                 case Keys.Down: MoveSelection(false); break;
+                case Keys.Left: ChangeList(true); break;
+                case Keys.Right: ChangeList(false); break;
+            }
+        }
+
+
+        private void ChangeList(bool up)
+        {
+            if (Globals.list_selected >= 0 && Globals.list_selected <= 2)
+            {
+                if (up)
+                {
+                    Globals.list_selected++;
+                    if (Globals.list_selected > 2) Globals.list_selected = 0;
+                }
+                else
+                {
+                    Globals.list_selected--;
+                    if (Globals.list_selected < 0) Globals.list_selected = 2;
+                }
+
+                myIndex = 0;
+                SelectObjectWithMyIndex();
+            }
+        }
+
+        private void SelectObjectWithMyIndex()
+        {
+            if (Globals.list_selected >= 0 && Globals.list_selected <= 2)
+            {
+                var objects = level.getCurrentArea().Objects;
+                switch (Globals.list_selected)
+                {
+                    case 0: objects = level.getCurrentArea().Objects; break;
+                    case 1: objects = level.getCurrentArea().MacroObjects; break;
+                    case 2: objects = level.getCurrentArea().SpecialObjects; break;
+                }
+
+                Globals.item_selected = myIndex;
+                propertyGrid1.SelectedObject = objects[myIndex];
+                treeView1.SelectedNode = treeView1.Nodes[Globals.list_selected].Nodes[myIndex];
+                treeView1.SelectedNode.EnsureVisible();
+
+                if (camera.isOrbitCamera())
+                {
+                    camera.updateOrbitCamera(ref camMtx);
+                    glControl1.Invalidate();
+                }
             }
         }
 
