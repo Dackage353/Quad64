@@ -20,7 +20,7 @@ namespace Quad64.src
     {
         public List<Level> levels { get; } = new List<Level>();
 
-        private Dictionary<string, ObjectCoinInfo> coinObjectInfo = new Dictionary<string, ObjectCoinInfo>();
+        private Dictionary<string, CustomObjectInfo> customObjectInfo = new Dictionary<string, CustomObjectInfo>();
 
         private StringBuilder simpleSB = new StringBuilder();
         private StringBuilder detailedSB = new StringBuilder();
@@ -42,6 +42,17 @@ namespace Quad64.src
             return builder.gameInfo;
         }
 
+        public static GameInfoBuilder GetBuilder()
+        {
+            if (builder == null)
+            {
+                builder = new GameInfoBuilder();
+            }
+
+            return builder;
+        }
+
+
         public static void ClearGameInfo()
         {
             builder = null; 
@@ -51,13 +62,13 @@ namespace Quad64.src
         {
             LoadLevels();
 
-            var json = File.ReadAllText("./custom/ObjectCoinCounts.json");
-            var coinInfo = JsonConvert.DeserializeObject<List<ObjectCoinInfo>>(json);
+            var json = File.ReadAllText("./custom/CustomObjectInfo.json");
+            var objectInfo = JsonConvert.DeserializeObject<List<CustomObjectInfo>>(json);
             
-            for (int i = 0; i < coinInfo.Count; i++)
+            for (int i = 0; i < objectInfo.Count; i++)
             {
-                var info = coinInfo[i];
-                coinObjectInfo.Add(GetKey(info.BehaviorAddress, info.Param2), info);
+                var info = objectInfo[i];
+                customObjectInfo.Add(GetKey(info.BehaviorAddress, info.Param1, info.Param2, info.Param3, info.Param4), info);
             }
 
             MakeGameInfo();
@@ -92,6 +103,7 @@ namespace Quad64.src
                 var level = levels[i];
                 var levelInfo = new CustomLevelInfo();
                 levelInfo.Name = Helper.LevelIDToName(level.LevelID);
+                levelInfo.LevelID = level.LevelID;
 
                 for (int areaIndex = 1; areaIndex <= 8; areaIndex++)
                 {
@@ -110,11 +122,11 @@ namespace Quad64.src
                 }
 
                 levelInfo.CalculateCoinCountByAct();
-                gameInfo.Levels.Add(levelInfo);
+                gameInfo.Levels[levelInfo.LevelID] = levelInfo;
             }
 
 
-            gameInfo.Levels = gameInfo.Levels.OrderBy(c => c.Name, StringComparison.OrdinalIgnoreCase.WithNaturalSort()).ToList();
+            //gameInfo.Levels = gameInfo.Levels.OrderBy(c => c.Value.Name, StringComparison.OrdinalIgnoreCase.WithNaturalSort()).ToList();
 
         }
 
@@ -132,11 +144,11 @@ namespace Quad64.src
             return newList;
         }
 
-        private CustomObjectInfo Object3DToCustom(Object3D obj, bool forceAllActs = false)
+        public CustomObjectInfo Object3DToCustom(Object3D obj, bool forceAllActs = false)
         {
             var objectInfo = new CustomObjectInfo();
 
-            var coinInfo = GetCoinInfo(obj.Behavior, obj.BehaviorParameter2);
+            var coinInfo = GetCustomObjectInfo(obj.Behavior, obj.BehaviorParameter1, obj.BehaviorParameter2, obj.BehaviorParameter3, obj.BehaviorParameter4);
             if (coinInfo != null)
             {
                 objectInfo.Name = coinInfo.Name;
@@ -175,37 +187,35 @@ namespace Quad64.src
             return objectInfo;
         }
 
-        private ObjectCoinInfo GetCoinInfo(string behaviorAddress, int param2)
+        private CustomObjectInfo GetCustomObjectInfo(string behaviorAddress, int param1, int param2, int param3, int param4)
         {
-            string genericKey = GetKey(behaviorAddress, -1);
-            string specificKey = GetKey(behaviorAddress, param2);
-            ObjectCoinInfo info = null;
+            string specificKey = GetKey(behaviorAddress, param1, param2, param3, param4);
+            string genericKey = GetKey(behaviorAddress, -1, -1, -1, -1);
+            CustomObjectInfo info = null;
 
-            if (coinObjectInfo.ContainsKey(genericKey))
+            if (customObjectInfo.ContainsKey(specificKey))
             {
-                info = coinObjectInfo[genericKey];
+                info = customObjectInfo[specificKey];
             }
-            else if (coinObjectInfo.ContainsKey(specificKey))
+            else if (customObjectInfo.ContainsKey(genericKey))
             {
-                info = coinObjectInfo[specificKey];
+                info = customObjectInfo[genericKey];
             }
 
             return info;
         }
 
-        private string GetKey(string behaviorAddress, int param2)
+        private string GetKey(string behaviorAddress, int param1, int param2, int param3, int param4)
         {
-            string value;
-            if (param2 < 0)
-            {
-                value = "x";
-            }
-            else
-            {
-                value = param2.ToString();
-            }
+            string p1 = param1 < 0 ? "x" : param1.ToString();
+            string p2 = param2 < 0 ? "x" : param2.ToString();
+            string p3 = param3 < 0 ? "x" : param3.ToString();
+            string p4 = param4 < 0 ? "x" : param4.ToString();
 
-            return behaviorAddress + "_" + param2.ToString();
+            string s =  behaviorAddress + "_" + "_" + p1 + "_" + p2 + "_" + p3 + "_" + p4;
+
+            //MessageBox.Show(s);
+            return s;
         }
     }
 }
