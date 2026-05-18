@@ -105,6 +105,7 @@ namespace Quad64
             this.moveObj = new System.Windows.Forms.PictureBox();
             this.movObj_UpDown = new System.Windows.Forms.PictureBox();
             this.glControl1 = new MyGLControl();
+            this.getObjectsForCurrentLevelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -141,7 +142,7 @@ namespace Quad64
             this.testToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(235, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(355, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -450,7 +451,8 @@ namespace Quad64
             this.testToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.getObjectList_ToolStripMenuItem,
             this.getCoinObjectList_ToolStripMenuItem,
-            this.getSimpleCoinReport_ToolStripMenuItem});
+            this.getSimpleCoinReport_ToolStripMenuItem,
+            this.getObjectsForCurrentLevelToolStripMenuItem});
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
             this.testToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.testToolStripMenuItem.Text = "Custom";
@@ -458,21 +460,21 @@ namespace Quad64
             // getObjectList_ToolStripMenuItem
             // 
             this.getObjectList_ToolStripMenuItem.Name = "getObjectList_ToolStripMenuItem";
-            this.getObjectList_ToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.getObjectList_ToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.getObjectList_ToolStripMenuItem.Text = "Get object list";
             this.getObjectList_ToolStripMenuItem.Click += new System.EventHandler(this.getObjectList_ToolStripMenuItem_Click);
             // 
             // getCoinObjectList_ToolStripMenuItem
             // 
             this.getCoinObjectList_ToolStripMenuItem.Name = "getCoinObjectList_ToolStripMenuItem";
-            this.getCoinObjectList_ToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.getCoinObjectList_ToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.getCoinObjectList_ToolStripMenuItem.Text = "Get coin object list";
             this.getCoinObjectList_ToolStripMenuItem.Click += new System.EventHandler(this.getCoinObjectList_ToolStripMenuItem_Click);
             // 
             // getSimpleCoinReport_ToolStripMenuItem
             // 
             this.getSimpleCoinReport_ToolStripMenuItem.Name = "getSimpleCoinReport_ToolStripMenuItem";
-            this.getSimpleCoinReport_ToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.getSimpleCoinReport_ToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.getSimpleCoinReport_ToolStripMenuItem.Text = "Get simple coin report";
             this.getSimpleCoinReport_ToolStripMenuItem.Click += new System.EventHandler(this.getSimpleCoinReport_ToolStripMenuItem_Click);
             // 
@@ -645,8 +647,8 @@ namespace Quad64
             this.cameraMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cameraMode.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cameraMode.Items.AddRange(new object[] {
-            "Fly",
             "Orbit",
+            "Fly",
             "Top",
             "Bottom",
             "Left",
@@ -947,6 +949,13 @@ namespace Quad64
             this.glControl1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControl1_MouseUp);
             this.glControl1.Resize += new System.EventHandler(this.glControl1_Resize);
             // 
+            // getObjectsForCurrentLevelToolStripMenuItem
+            // 
+            this.getObjectsForCurrentLevelToolStripMenuItem.Name = "getObjectsForCurrentLevelToolStripMenuItem";
+            this.getObjectsForCurrentLevelToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.getObjectsForCurrentLevelToolStripMenuItem.Text = "Get objects for current area";
+            this.getObjectsForCurrentLevelToolStripMenuItem.Click += new System.EventHandler(this.getObjectsForCurrentAreaToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1015,7 +1024,6 @@ namespace Quad64
         private System.Windows.Forms.Panel controlsPanel;
         private System.Windows.Forms.PictureBox movObj_UpDown;
         private System.Windows.Forms.PictureBox moveObj;
-        private OpenTK.GLControl glControl1;
         private System.Windows.Forms.Panel moveObjectPanel;
         private System.Windows.Forms.Label moveObjectLabel;
         private System.Windows.Forms.Panel moveCamPanel;
@@ -1072,6 +1080,8 @@ namespace Quad64
         private System.Windows.Forms.ToolStripMenuItem getObjectList_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem getSimpleCoinReport_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem getCoinObjectList_ToolStripMenuItem;
+        private MyGLControl glControl1;
+        private ToolStripMenuItem getObjectsForCurrentLevelToolStripMenuItem;
     }
 }
 
