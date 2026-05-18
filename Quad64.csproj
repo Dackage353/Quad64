@@ -87,15 +87,18 @@
     <Compile Include="custom\CustomGameInfo.cs" />
     <Compile Include="custom\CustomLevelInfo.cs" />
     <Compile Include="custom\CustomObjectInfo.cs" />
+    <Compile Include="custom\CustomObjectType.cs" />
+    <Compile Include="custom\DistanceObjectSorter.cs" />
     <Compile Include="custom\Helper.cs" />
+    <Compile Include="custom\HexIntConverter.cs" />
     <Compile Include="custom\MyGlControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="custom\TypeObjectSorter.cs" />
     <Compile Include="custom\ObjectSorter.cs" />
     <Compile Include="src\COLLADA\collada_schema_1_4.cs" />
     <Compile Include="src\COLLADA\DumpModel.cs" />
     <Compile Include="custom\AreaReport.cs" />
-    <Compile Include="custom\ObjectCoinInfo.cs" />
     <Compile Include="src\Forms\EditWarp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,7 +284,7 @@
     <EmbeddedResource Include="src\Forms\ThemeSelector.resx">
       <DependentUpon>ThemeSelector.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="custom\ObjectCoinCounts.json">
+    <None Include="custom\CustomObjectInfo.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="custom\StarRoadCoinObjects.json">
