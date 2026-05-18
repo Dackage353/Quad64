@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using Quad64.Scripts;
 using Quad64.src.LevelInfo;
 using System.Collections.Generic;
@@ -9,15 +10,16 @@ namespace Quad64.src
     class CustomObjectInfo
     {
         public string Name { get; set; }
+        public string[] Types { get; set; }
         public int CoinValue { get; set; } = 0;
         public string Address { get; set; }
         public string BehaviorName { get; set; }
         public string BehaviorAddress { get; set; }
         public int ModelID { get; set; }
-        public int Param1 { get; set; }
-        public int Param2 { get; set; }
-        public int Param3 { get; set; }
-        public int Param4 { get; set; }
+        public int Param1 { get; set; } = -1;
+        public int Param2 { get; set; } = -1;
+        public int Param3 { get; set; } = -1;
+        public int Param4 { get; set; } = -1;
         public int XPosition { get; set; }
         public int YPosition { get; set; }
         public int ZPosition { get; set; }
