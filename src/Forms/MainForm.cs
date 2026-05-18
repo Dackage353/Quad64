@@ -235,7 +235,11 @@ namespace Quad64
             LevelScripts.parse(ref level, 0x15, 0);
             level.sortAndAddNoModelEntries();
             level.CurrentAreaID = level.Areas[0].AreaID;
+
+
             refreshObjectsInList();
+
+
             glControl1.Enabled = true;
             bgColor = Color.CornflowerBlue;
             camera.setLevel(level);
@@ -252,8 +256,17 @@ namespace Quad64
             forceGC(); // Force garbage collection.
         }
 
+        private string GetObjectName(Object3D obj)
+        {
+            var builder = GameInfoBuilder.GetBuilder();
+            var custom = builder.Object3DToCustom(obj);
+            return custom.Name;
+        }
+
         private void refreshObjectsInList()
         {
+            
+
             BeginUpdate(treeView1);
             Globals.list_selected = -1;
             Globals.item_selected = -1;
@@ -263,35 +276,39 @@ namespace Quad64
             Globals.multi_selected_nodes[3].Clear();
             propertyGrid1.SelectedObject = null;
 
+
+            level.getCurrentArea().Objects = new ObjectSorter().SortByNameAndDistance(level.getCurrentArea().Objects);
+            level.getCurrentArea().MacroObjects = new ObjectSorter().SortByNameAndDistance(level.getCurrentArea().MacroObjects);
+            level.getCurrentArea().SpecialObjects = new ObjectSorter().SortByNameAndDistance(level.getCurrentArea().SpecialObjects);
+            
+
+
             TreeNode objects = treeView1.Nodes[0];
             objects.Nodes.Clear();
-            level.getCurrentArea().Objects = new ObjectSorter().SortByNameAndDistance(level.getCurrentArea().Objects);
 
             foreach (Object3D obj in level.getCurrentArea().Objects)
             {
-                obj.Title = obj.getObjectComboName();
+                obj.Title = GetObjectName(obj);
                 objects.Nodes.Add(obj.Title);
                 // objects.Nodes.Add("0x" + obj.Behavior.ToString("X8"));
             }
 
             TreeNode macro_objects = treeView1.Nodes[1];
             macro_objects.Nodes.Clear();
-            level.getCurrentArea().MacroObjects = new ObjectSorter().SortByNameAndDistance(level.getCurrentArea().MacroObjects);
 
             foreach (Object3D obj in level.getCurrentArea().MacroObjects)
             {
-                obj.Title = obj.getObjectComboName();
+                obj.Title = GetObjectName(obj);
                 macro_objects.Nodes.Add(obj.Title);
                 //macro_objects.Nodes.Add("0x" + obj.Behavior.ToString("X8"));
             }
 
             TreeNode special_objects = treeView1.Nodes[2];
             special_objects.Nodes.Clear();
-            level.getCurrentArea().SpecialObjects = new ObjectSorter().SortByNameAndDistance(level.getCurrentArea().SpecialObjects);
 
             foreach (Object3D obj in level.getCurrentArea().SpecialObjects)
             {
-                obj.Title = obj.getObjectComboName();
+                obj.Title = GetObjectName(obj);
                 special_objects.Nodes.Add(obj.Title);
                 //special_objects.Nodes.Add("0x" + obj.Behavior.ToString("X8"));
             }
@@ -1486,11 +1503,11 @@ namespace Quad64
         private void cameraMode_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (cameraMode.SelectedIndex) {
-                case 0: // Fly
-                    camera.setCameraMode(CameraMode.FLY, ref camMtx);
-                    break;
-                case 1: // Orbit
+                case 0: // Orbit
                     camera.setCameraMode(CameraMode.ORBIT, ref camMtx);
+                    break;
+                case 1: // Fly
+                    camera.setCameraMode(CameraMode.FLY, ref camMtx);
                     break;
                 case 2: // Top
                     camera.setCameraMode_LookDirection(LookDirection.TOP, ref camMtx);
@@ -2461,10 +2478,10 @@ namespace Quad64
         {
             switch (e.KeyCode)
             {
-                case Keys.Up: MoveSelection(true); break;
-                case Keys.Down: MoveSelection(false); break;
-                case Keys.Left: ChangeList(true); break;
-                case Keys.Right: ChangeList(false); break;
+                case Keys.Up: ChangeList(true); break;
+                case Keys.Down: ChangeList(false); break;
+                case Keys.Left: MoveSelection(true); break;
+                case Keys.Right: MoveSelection(false); break;
             }
         }
 
@@ -2545,6 +2562,17 @@ namespace Quad64
                 return GetFocusedControl(container.ActiveControl);
             }
             return control;
+        }
+
+        private void getObjectsForCurrentAreaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (gameInfo is null)
+            {
+                gameInfo = GameInfoBuilder.GetGameInfo();
+            }
+
+            string text = gameInfo.GetObjectListForArea(level.LevelID, level.CurrentAreaID);
+            Clipboard.SetText(text);
         }
     }
 }
