@@ -1,4 +1,5 @@
 ﻿using OpenTK;
+using Quad64.src;
 using Quad64.src.LevelInfo;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace Quad64
         private readonly float TAU = (float)(Math.PI * 2);
 
         // Camera mode
-        private CameraMode camMode = CameraMode.FLY;
+        private CameraMode camMode = CameraMode.ORBIT;
         private Level level;
         private Vector3 pos = new Vector3(-5000f, 3000f, 4000f);
         private Vector3 lookat = new Vector3(0f, 0f, 0f);
