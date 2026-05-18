@@ -9,6 +9,7 @@ namespace Quad64.src
     class CustomLevelInfo
     {
         public string Name { get; set; }
+        public int LevelID { get; set; }
         public int[] CoinCountByAct { get; set; } = new int[6];
         public CustomAreaInfo[] Areas { get; set; } = new CustomAreaInfo[8];
 
