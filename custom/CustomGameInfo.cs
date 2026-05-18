@@ -8,15 +8,15 @@ namespace Quad64.src
 {
     class CustomGameInfo
     {
-        public List<CustomLevelInfo> Levels { get; set; } = new List<CustomLevelInfo>();
+        public Dictionary<int, CustomLevelInfo> Levels { get; set; } = new Dictionary<int, CustomLevelInfo>();
 
         public string GetCoinReport()
         {
             var sb = new StringBuilder();
 
-            for (int levelIndex = 0; levelIndex < Levels.Count; levelIndex++)
+            foreach (KeyValuePair<int, CustomLevelInfo> pair in Levels)
             {
-                var level = Levels[levelIndex];
+                var level = pair.Value;
 
                 if (level.GetAreaCount() > 0)
                 {
@@ -32,9 +32,9 @@ namespace Quad64.src
             var sb = new StringBuilder();
             sb.AppendLine(GetHeaderLine());
 
-            for (int levelIndex = 0; levelIndex < Levels.Count; levelIndex++)
+            foreach (KeyValuePair<int, CustomLevelInfo> pair in Levels)
             {
-                var level = Levels[levelIndex];
+                var level = pair.Value;
 
                 if (level.GetAreaCount() > 0)
                 {
@@ -50,7 +50,17 @@ namespace Quad64.src
             var sb = new StringBuilder();
             sb.AppendLine(GetHeaderLine());
 
-            for (int levelIndex = 0; levelIndex < Levels.Count; levelIndex++)
+            foreach (KeyValuePair<int, CustomLevelInfo> pair in Levels)
+            {
+                var level = pair.Value;
+
+                if (level.GetAreaCount() > 0)
+                {
+                    sb.Append(level.GetCoinObjectList());
+                }
+            }
+
+                for (int levelIndex = 0; levelIndex < Levels.Count; levelIndex++)
             {
                 var level = Levels[levelIndex];
 
@@ -61,6 +71,14 @@ namespace Quad64.src
             }
 
             return sb.ToString();
+        }
+
+        public string GetObjectListForArea(int levelID, int areaIndex)
+        {
+            var level = Levels[levelID];
+            var area = level.Areas[areaIndex];
+
+            return area.GetCoinObjectList();
         }
 
         private string GetHeaderLine()
