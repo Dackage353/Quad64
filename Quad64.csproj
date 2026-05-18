@@ -87,7 +87,6 @@
     <Compile Include="custom\CustomGameInfo.cs" />
     <Compile Include="custom\CustomLevelInfo.cs" />
     <Compile Include="custom\CustomObjectInfo.cs" />
-    <Compile Include="custom\CustomObjectType.cs" />
     <Compile Include="custom\DistanceObjectSorter.cs" />
     <Compile Include="custom\Helper.cs" />
     <Compile Include="custom\HexIntConverter.cs" />

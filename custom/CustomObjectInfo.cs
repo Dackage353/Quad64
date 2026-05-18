@@ -15,6 +15,7 @@ namespace Quad64.src
         public string Address { get; set; }
         public string BehaviorName { get; set; }
         public string BehaviorAddress { get; set; }
+        [JsonConverter(typeof(HexIntConverter))]
         public int ModelID { get; set; }
         public int Param1 { get; set; } = -1;
         public int Param2 { get; set; } = -1;
