@@ -23,21 +23,21 @@ namespace Quad64.src
             };
 
 
-        public List<CustomObjectInfo> SortByType(List<CustomObjectInfo> list)
+        public List<Object3D> SortByType(List<Object3D> list)
         {
             if (list.Count == 0) return list;
 
-            List<CustomObjectInfo>[] groups = new List<CustomObjectInfo>[typeOrder.Length];
-            var remaining = new List<CustomObjectInfo>(list);
+            List<Object3D>[] groups = new List<Object3D>[typeOrder.Length];
+            var remaining = new List<Object3D>(list);
 
             for (int i = 0; i < typeOrder.Length; i++)
             {
-                groups[i] = new List<CustomObjectInfo>();
+                groups[i] = new List<Object3D>();
                 var type = typeOrder[i];
 
                 foreach (var obj in remaining)
                 {
-                    if (obj.Types.Contains(type))
+                    if (obj.CompanionInfo != null && obj.CompanionInfo.Types.Contains(type))
                     {
                         groups[i].Add(obj);
                     }
@@ -52,7 +52,7 @@ namespace Quad64.src
                 }
             }
 
-            var finalList = new List<CustomObjectInfo>();
+            var finalList = new List<Object3D>();
             foreach (var group in groups)
             {
                 finalList.AddRange(group);
