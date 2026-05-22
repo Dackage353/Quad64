@@ -72,7 +72,7 @@ namespace Quad64
         public void setLevel(Level level)
         {
             this.level = level;
-            camMode = CameraMode.FLY;
+            camMode = CameraMode.ORBIT;
         }
 
         private float clampf(float value, float min, float max)
