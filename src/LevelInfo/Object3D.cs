@@ -1,4 +1,5 @@
-﻿using Quad64.src.JSON;
+﻿using Quad64.src;
+using Quad64.src.JSON;
 using Quad64.src.LevelInfo;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,19 @@ namespace Quad64
 
     class Object3D
     {
+        private MyObjectInfo _companionInfo = null;
+        public MyObjectInfo CompanionInfo { 
+        get
+            {
+                if (_companionInfo == null)
+                {
+                    _companionInfo = GameInfoBuilder.GetBuilder().GetCustomObjectInfo(Behavior, BehaviorParameter1, BehaviorParameter2, BehaviorParameter3, BehaviorParameter4, ModelID);
+                }
+                return _companionInfo;
+            }
+        }
+
+
         public enum FLAGS {
             POSITION_X = 0x1,
             POSITION_Y = 0x2,
