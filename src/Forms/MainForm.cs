@@ -277,9 +277,9 @@ namespace Quad64
             propertyGrid1.SelectedObject = null;
 
 
-            level.getCurrentArea().Objects = new ObjectSorter().SortByNameAndDistance(level.getCurrentArea().Objects);
-            level.getCurrentArea().MacroObjects = new ObjectSorter().SortByNameAndDistance(level.getCurrentArea().MacroObjects);
-            level.getCurrentArea().SpecialObjects = new ObjectSorter().SortByNameAndDistance(level.getCurrentArea().SpecialObjects);
+            level.getCurrentArea().Objects = new TypeObjectSorter().SortByType(level.getCurrentArea().Objects);
+            level.getCurrentArea().MacroObjects = new DistanceObjectSorter().SortByNameAndDistance(level.getCurrentArea().MacroObjects);
+            level.getCurrentArea().SpecialObjects = new DistanceObjectSorter().SortByNameAndDistance(level.getCurrentArea().SpecialObjects);
             
 
 

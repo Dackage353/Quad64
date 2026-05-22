@@ -11,7 +11,7 @@ namespace Quad64.src
         public string Name { get; set; }
         public int AreaIndex { get; set; }
         public int[] CoinCountByAct { get; set; } = new int[6];
-        public List<CustomObjectInfo> Objects { get; set; } = new List<CustomObjectInfo>();
+        public List<MyObjectInfo> Objects { get; set; } = new List<MyObjectInfo>();
 
         public string GetCoinCountPerAct()
         {

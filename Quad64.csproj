@@ -83,18 +83,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="custom\Constants.cs" />
     <Compile Include="custom\CustomAreaInfo.cs" />
     <Compile Include="custom\CustomGameInfo.cs" />
     <Compile Include="custom\CustomLevelInfo.cs" />
-    <Compile Include="custom\CustomObjectInfo.cs" />
-    <Compile Include="custom\DistanceObjectSorter.cs" />
+    <Compile Include="custom\MyObjectInfo.cs" />
     <Compile Include="custom\Helper.cs" />
     <Compile Include="custom\HexIntConverter.cs" />
     <Compile Include="custom\MyGlControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="custom\TypeObjectSorter.cs" />
-    <Compile Include="custom\ObjectSorter.cs" />
+    <Compile Include="custom\DistanceObjectSorter.cs" />
     <Compile Include="src\COLLADA\collada_schema_1_4.cs" />
     <Compile Include="src\COLLADA\DumpModel.cs" />
     <Compile Include="custom\AreaReport.cs" />

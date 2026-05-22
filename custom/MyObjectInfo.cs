@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Quad64.src
 {
-    class CustomObjectInfo
+    class MyObjectInfo
     {
         public string Name { get; set; }
         public string[] Types { get; set; }
@@ -16,7 +16,7 @@ namespace Quad64.src
         public string BehaviorName { get; set; }
         public string BehaviorAddress { get; set; }
         [JsonConverter(typeof(HexIntConverter))]
-        public int ModelID { get; set; }
+        public int ModelID { get; set; } = -1;
         public int Param1 { get; set; } = -1;
         public int Param2 { get; set; } = -1;
         public int Param3 { get; set; } = -1;
