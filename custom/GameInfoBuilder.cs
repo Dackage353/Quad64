@@ -20,7 +20,7 @@ namespace Quad64.src
     {
         public List<Level> levels { get; } = new List<Level>();
 
-        private Dictionary<string, CustomObjectInfo> customObjectInfo = new Dictionary<string, CustomObjectInfo>();
+        private Dictionary<string, List<MyObjectInfo>> behaviorLists = new Dictionary<string, List<MyObjectInfo>>();
 
         private StringBuilder simpleSB = new StringBuilder();
         private StringBuilder detailedSB = new StringBuilder();
@@ -63,12 +63,22 @@ namespace Quad64.src
             LoadLevels();
 
             var json = File.ReadAllText("./custom/CustomObjectInfo.json");
-            var objectInfo = JsonConvert.DeserializeObject<List<CustomObjectInfo>>(json);
+            var objectInfo = JsonConvert.DeserializeObject<List<MyObjectInfo>>(json);
             
             for (int i = 0; i < objectInfo.Count; i++)
             {
                 var info = objectInfo[i];
-                customObjectInfo.Add(GetKey(info.BehaviorAddress, info.Param1, info.Param2, info.Param3, info.Param4), info);
+
+                if (behaviorLists.ContainsKey(info.BehaviorAddress))
+                {
+
+                    behaviorLists[info.BehaviorAddress].Add(info);
+                }
+                else
+                {
+                    behaviorLists[info.BehaviorAddress] = new List<MyObjectInfo>();
+                    behaviorLists[info.BehaviorAddress].Add(info);
+                }
             }
 
             MakeGameInfo();
@@ -130,9 +140,9 @@ namespace Quad64.src
 
         }
 
-        private List<CustomObjectInfo> Object3DListToCustom(List<Object3D> list, bool forceAllActs)
+        private List<MyObjectInfo> Object3DListToCustom(List<Object3D> list, bool forceAllActs)
         {
-            var newList = new List<CustomObjectInfo>();
+            var newList = new List<MyObjectInfo>();
 
             foreach (Object3D obj in list)
             {
@@ -144,11 +154,11 @@ namespace Quad64.src
             return newList;
         }
 
-        public CustomObjectInfo Object3DToCustom(Object3D obj, bool forceAllActs = false)
+        public MyObjectInfo Object3DToCustom(Object3D obj, bool forceAllActs = false)
         {
-            var objectInfo = new CustomObjectInfo();
+            var objectInfo = new MyObjectInfo();
 
-            var coinInfo = GetCustomObjectInfo(obj.Behavior, obj.BehaviorParameter1, obj.BehaviorParameter2, obj.BehaviorParameter3, obj.BehaviorParameter4);
+            var coinInfo = GetCustomObjectInfo(obj.Behavior, obj.BehaviorParameter1, obj.BehaviorParameter2, obj.BehaviorParameter3, obj.BehaviorParameter4, obj.ModelID);
             if (coinInfo != null)
             {
                 objectInfo.Name = coinInfo.Name;
@@ -158,6 +168,7 @@ namespace Quad64.src
             {
                 objectInfo.Name = obj.getObjectComboName();
             }
+
 
             objectInfo.Address = obj.Address;
             objectInfo.ModelID = obj.ModelID;
@@ -187,35 +198,26 @@ namespace Quad64.src
             return objectInfo;
         }
 
-        private CustomObjectInfo GetCustomObjectInfo(string behaviorAddress, int param1, int param2, int param3, int param4)
+        public MyObjectInfo GetCustomObjectInfo(string behaviorAddress, int param1, int param2, int param3, int param4, int modelID)
         {
-            string specificKey = GetKey(behaviorAddress, param1, param2, param3, param4);
-            string genericKey = GetKey(behaviorAddress, -1, -1, -1, -1);
-            CustomObjectInfo info = null;
-
-            if (customObjectInfo.ContainsKey(specificKey))
+            if (behaviorLists.ContainsKey(behaviorAddress))
             {
-                info = customObjectInfo[specificKey];
+                var infos = behaviorLists[behaviorAddress];
+
+                foreach (var info in infos)
+                {
+                    if ((info.Param1 == param1 || info.Param1 < 0) &&
+                        (info.Param2 == param2 || info.Param2 < 0) &&
+                        (info.Param3 == param3 || info.Param3 < 0) &&
+                        (info.Param4 == param4 || info.Param4 < 0) &&
+                        (info.ModelID == modelID || info.ModelID < 0))
+                    {
+                        return info;
+                    }
+                }
             }
-            else if (customObjectInfo.ContainsKey(genericKey))
-            {
-                info = customObjectInfo[genericKey];
-            }
 
-            return info;
-        }
-
-        private string GetKey(string behaviorAddress, int param1, int param2, int param3, int param4)
-        {
-            string p1 = param1 < 0 ? "x" : param1.ToString();
-            string p2 = param2 < 0 ? "x" : param2.ToString();
-            string p3 = param3 < 0 ? "x" : param3.ToString();
-            string p4 = param4 < 0 ? "x" : param4.ToString();
-
-            string s =  behaviorAddress + "_" + "_" + p1 + "_" + p2 + "_" + p3 + "_" + p4;
-
-            //MessageBox.Show(s);
-            return s;
+            return null;
         }
     }
 }
