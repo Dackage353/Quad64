@@ -1,26 +1,30 @@
-﻿using NaturalSort.Extension;
+using NaturalSort.Extension;
 using OpenTK;
-using Quad64.src;
+using Quad64.src.LevelInfo;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Security.AccessControl;
+using System.Windows.Forms;
 
-namespace Quad64.custom
+namespace Quad64.src
 {
     internal class DistanceObjectSorter
     {
-        private List<CustomObjectInfo> _nameSortedList, _sameTypeList;
-        private List<CustomObjectInfo> _finalSorted = new List<CustomObjectInfo>();
-        private List<CustomObjectInfo> _remaining = new List<CustomObjectInfo>();
+        private List<Object3D> _nameSortedList, _sameTypeList;
+        private List<Object3D> _finalSorted = new List<Object3D>();
+        private List<Object3D> _remaining = new List<Object3D>();
 
-        public List<CustomObjectInfo> SortByNameAndDistance(List<CustomObjectInfo> list)
+        public List<Object3D> SortByNameAndDistance(List<Object3D> list)
         {
             if (list.Count == 0) return list;
 
-            _nameSortedList = list.OrderBy(c => c.Name, StringComparison.OrdinalIgnoreCase.WithNaturalSort()).ToList();
-            _remaining = new List<CustomObjectInfo>(_nameSortedList);
+            var builder = GameInfoBuilder.GetBuilder();
+
+            _nameSortedList = list.OrderBy(c => builder.Object3DToCustom(c).Name, StringComparison.OrdinalIgnoreCase.WithNaturalSort()).ToList();
+            _remaining = new List<Object3D>(_nameSortedList);
+
             while (_remaining.Count > 0)
             {
                 GetSameTypeList();
@@ -32,7 +36,7 @@ namespace Quad64.custom
 
         private void GetSameTypeList()
         {
-            _sameTypeList = new List<CustomObjectInfo>();
+            _sameTypeList = new List<Object3D>();
 
             var first = _remaining.First();
             _sameTypeList.Add(first);
@@ -41,7 +45,7 @@ namespace Quad64.custom
             {
                 var next = _remaining[i];
 
-                if (first.BehaviorAddress == next.BehaviorAddress)
+                if (first.Behavior == next.Behavior)
                 {
                     _sameTypeList.Add(next);
                 }
@@ -59,7 +63,7 @@ namespace Quad64.custom
 
         private void ProcessSameType()
         {
-            List<CustomObjectInfo> sameTypeRemaining = new List<CustomObjectInfo>(_sameTypeList);
+            List<Object3D> sameTypeRemaining = new List<Object3D>(_sameTypeList);
 
             var corner = new Vector3(short.MinValue, 0, short.MinValue);
             var previous = GetClosestToPoint(corner, sameTypeRemaining);
@@ -68,8 +72,8 @@ namespace Quad64.custom
 
             while (sameTypeRemaining.Count > 0)
             {
-                var previousPosition = new Vector3(previous.XPosition, previous.YPosition, previous.ZPosition);
-                CustomObjectInfo nearest = GetClosestToPoint(previousPosition, sameTypeRemaining);
+                var previousPosition = new Vector3(previous.xPos, previous.yPos, previous.zPos);
+                Object3D nearest = GetClosestToPoint(previousPosition, sameTypeRemaining);
 
                 _finalSorted.Add(nearest);
                 sameTypeRemaining.Remove(nearest);
@@ -77,14 +81,14 @@ namespace Quad64.custom
             }
         }
 
-        private CustomObjectInfo GetClosestToPoint(Vector3 point, List<CustomObjectInfo> list)
+        private Object3D GetClosestToPoint(Vector3 point, List<Object3D> list)
         {
             float lowestDistance = float.MaxValue;
-            CustomObjectInfo nearest = null;
+            Object3D nearest = null;
 
             foreach (var obj in list)
             {
-                var position = new Vector3(obj.XPosition, obj.YPosition, obj.ZPosition);
+                var position = new Vector3(obj.xPos, obj.yPos, obj.zPos);
                 var distance = Vector3.DistanceSquared(position, point);
 
                 if (distance < lowestDistance)
