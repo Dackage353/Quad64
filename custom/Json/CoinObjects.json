@@ -1,0 +1,97 @@
+﻿[
+  // basic coins
+  {
+    "Name": "blue coin (moves)",
+    "Tags": [
+      "Coin",
+      "BlueCoin"
+    ],
+    "BehaviorAddress": "0x130030A4",
+    "CoinValue": 5
+  },
+  {
+    "Name": "blue coin (hidden)",
+    "Tags": [
+      "Coin",
+      "BlueCoin"
+    ],
+    "BehaviorAddress": "0x13002588",
+    "CoinValue": 5
+  },
+  {
+    "Name": "red coin",
+    "Tags": [
+      "Coin",
+      "StarTrigger"
+    ],
+    "BehaviorAddress": "0x13003EAC",
+    "CoinValue": 2
+  },
+  {
+    "Name": "yellow coin (type 1)",
+    "Tags": [
+      "Coin"
+    ],
+    "BehaviorAddress": "0x1300090C",
+    "CoinValue": 1
+  },
+  {
+    "Name": "yellow coin (type 2)",
+    "Tags": [
+      "Coin"
+    ],
+    "BehaviorAddress": "0x1300091C",
+    "CoinValue": 1
+  },
+
+  // coin formation
+  {
+    "Name": "5 coin line (grounded, horizontal)",
+    "Tags": [ "CoinFormation" ],
+    "BehaviorAddress": "0x130008EC",
+    "Param2": 0,
+    "CoinValue": 5
+  },
+  {
+    "Name": "coin ring (grounded, flat)",
+    "Tags": [ "CoinFormation" ],
+    "BehaviorAddress": "0x130008EC",
+    "Param2": 2,
+    "CoinValue": 8
+  },
+  {
+    "Name": "coin arrow (grounded, flat)",
+    "Tags": [ "CoinFormation" ],
+    "BehaviorAddress": "0x130008EC",
+    "Param2": 4,
+    "CoinValue": 8
+  },
+  {
+    "Name": "5 coin line (flying, horizontal)",
+    "Tags": [ "CoinFormation" ],
+    "BehaviorAddress": "0x130008EC",
+    "Param2": 16,
+    "CoinValue": 5
+  },
+  {
+    "Name": "5 coin line (flying, vertical)",
+    "Tags": [ "CoinFormation" ],
+    "BehaviorAddress": "0x130008EC",
+    "Param2": 17,
+    "CoinValue": 5
+  },
+  {
+    "Name": "coin ring (flying, flat)",
+    "Tags": [ "CoinFormation" ],
+    "BehaviorAddress": "0x130008EC",
+    "Param2": 18,
+    "CoinValue": 8
+  },
+  {
+    "Name": "coin ring (flying, vertical)",
+    "Tags": [ "CoinFormation" ],
+    "BehaviorAddress": "0x130008EC",
+    "Param2": 19,
+    "CoinValue": 8
+  }
+]

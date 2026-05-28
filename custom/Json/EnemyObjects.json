@@ -1,0 +1,233 @@
+﻿[
+  {
+    "Name": "haunted book (big)",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x1300506C",
+    "CoinValue": 5
+  },
+  {
+    "Name": "bob-omb",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13003174",
+    "CoinValue": 1
+  },
+  {
+    "Name": "boo (regular, no message)",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x130027E4",
+    "CoinValue": 5
+  },
+  {
+    "Name": "boo (regular, with message)",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13002804",
+    "CoinValue": 5
+  },
+  {
+    "Name": "boo spawner (courtyard)",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x130027D0",
+    "CoinValue": 3
+  },
+  {
+    "Name": "bullet bill spawner",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x1300179C"
+  },
+  {
+    "Name": "bully (regular)",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x1300362C",
+    "CoinValue": 1
+  },
+  {
+    "Name": "chain chomp",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x1300478C",
+    "CoinValue": 5
+  },
+  {
+    "Name": "chuckya",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13000528",
+    "CoinValue": 5
+  },
+  {
+    "Name": "fly guy (no fire)",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x130046DC",
+    "Param2": 0,
+    "CoinValue": 2
+  },
+  {
+    "Name": "fly guy (shoots fire)",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x130046DC",
+    "Param2": 1,
+    "CoinValue": 2
+  },
+  {
+    "Name": "goomba (huge)",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x1300472C",
+    "Param2": 1,
+    "CoinValue": 5
+  },
+  {
+    "Name": "goomba (regular)",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x1300472C",
+    "Param2": 0,
+    "CoinValue": 1
+  },
+  {
+    "Name": "goomba (tiny)",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x1300472C",
+    "Param2": 2,
+    "CoinValue": 1
+  },
+  {
+    "Name": "goomba spawner (3 regular)",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13004770",
+    "Param2": 0,
+    "CoinValue": 3
+  },
+  {
+    "Name": "goomba spawner (3 huge)",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13004770",
+    "Param2": 1,
+    "CoinValue": 15
+  },
+  {
+    "Name": "goomba spawner (3 tiny)",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13004770",
+    "Param2": 2,
+    "CoinValue": 3
+  },
+  {
+    "Name": "koopa (regular, has shell)",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13004580",
+    "Param2": 1,
+    "CoinValue": 5
+  },
+  {
+    "Name": "koopa (regular, no shell)",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13004580",
+    "Param2": 0,
+    "CoinValue": 5
+  },
+  {
+    "Name": "koopa (tiny)",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13004580",
+    "Param2": 4,
+    "CoinValue": 5
+  },
+  {
+    "Name": "lakitu",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13004918",
+    "CoinValue": 5
+  },
+  {
+    "Name": "moneybag",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x130039D4",
+    "CoinValue": 5
+  },
+  {
+    "Name": "mr. blizzard (hidden, no cap)",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13004DBC",
+    "Param2": 0,
+    "CoinValue": 3
+  },
+  {
+    "Name": "mr. blizzard (hidden, can have cap)",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13004DBC",
+    "Param2": 2,
+    "CoinValue": 3
+  },
+  {
+    "Name": "mr. i",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13000054",
+    "Param2": 0,
+    "CoinValue": 5
+  },
+  {
+    "Name": "piranha plant (huge)",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13005120",
+    "Param2": 1,
+    "CoinValue": 2
+  },
+  {
+    "Name": "piranha plant (regular)",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13001FBC",
+    "CoinValue": 5
+  },
+  {
+    "Name": "piranha plant (tiny)",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13005120",
+    "Param2": 0,
+    "CoinValue": 1
+  },
+  {
+    "Name": "pokey",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13004634",
+    "CoinValue": 5
+  },
+  {
+    "Name": "scuttlebug",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13002B5C",
+    "CoinValue": 3
+  },
+  {
+    "Name": "scuttlebug spawner",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13002BA0",
+    "CoinValue": 3
+  },
+  {
+    "Name": "skeeter",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13005468",
+    "CoinValue": 3
+  },
+  {
+    "Name": "swoop",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13004698",
+    "CoinValue": 1
+  },
+  {
+    "Name": "snufit",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x130051E0",
+    "CoinValue": 2
+  },
+  {
+    "Name": "spindrift",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x130012B4",
+    "CoinValue": 3
+  },
+  {
+    "Name": "whomp",
+    "Tags": [ "Enemy" ],
+    "BehaviorAddress": "0x13002BCC",
+    "CoinValue": 10
+  }
+]

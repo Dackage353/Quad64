@@ -1,0 +1,56 @@
+[
+  {
+    "Name": "door (dark wood)",
+    "Tags": [ "Door" ],
+    "BehaviorAddress": "0x13000B0C",
+    "ModelID": "29"
+  },
+  {
+    "Name": "door (metal)",
+    "Tags": [ "Door" ],
+    "BehaviorAddress": "0x13000B0C",
+    "ModelID": "31"
+  },
+  {
+    "Name": "door (temple)",
+    "Tags": [ "Door" ],
+    "BehaviorAddress": "0x13000B0C",
+    "ModelID": "32"
+  },
+  {
+    "Name": "door (blank star)",
+    "Tags": [ "Door" ],
+    "BehaviorAddress": "0x13000B0C",
+    "ModelID": "34"
+  },
+  {
+    "Name": "door (1 star)",
+    "Tags": [ "Door" ],
+    "BehaviorAddress": "0x13000B0C",
+    "ModelID": "35"
+  },
+  {
+    "Name": "door (3 stars)",
+    "Tags": [ "Door" ],
+    "BehaviorAddress": "0x13000B0C",
+    "ModelID": "36"
+  },
+  {
+    "Name": "door (warp, key door)",
+    "Tags": [ "Door", "WarpUsable" ],
+    "BehaviorAddress": "0x13000AFC",
+    "ModelID": "37"
+  },
+  {
+    "Name": "door (warp, brown)",
+    "Tags": [ "Door", "WarpUsable" ],
+    "BehaviorAddress": "0x13000AFC",
+    "ModelID": "38"
+  },
+  {
+    "Name": "door (warp, metal)",
+    "Tags": [ "Door", "WarpUsable" ],
+    "BehaviorAddress": "0x13000AFC",
+    "ModelID": "41"
+  }
+]

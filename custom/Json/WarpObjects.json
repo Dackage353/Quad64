@@ -1,0 +1,99 @@
+﻿[
+  // WarpStart
+  {
+    "Name": "warp (mario start 1)",
+    "Tags": [ "Warp", "WarpStart" ],
+    "BehaviorAddress": "0x13002F74"
+  },
+  {
+    "Name": "warp (mario start 2)",
+    "Tags": [ "Warp", "WarpStart" ],
+    "BehaviorAddress": "0x13002F64"
+  },
+  {
+    "Name": "warp (mario start 3)",
+    "Tags": [ "Warp", "WarpStart" ],
+    "BehaviorAddress": "0x13002F6C"
+  },
+  {
+    "Name": "warp (mario start 4)",
+    "Tags": [ "Warp", "WarpStart" ],
+    "BehaviorAddress": "0x130056A4"
+  },
+  {
+    "Name": "warp (mario start 5)",
+    "Tags": [ "Warp", "WarpStart" ],
+    "BehaviorAddress": "0x13002F78"
+  },
+  {
+    "Name": "warp (mario start in water)",
+    "Tags": [ "Warp", "WarpStart" ],
+    "BehaviorAddress": "0x13002F94"
+  },
+
+  //WarpUsable
+  {
+    "Name": "warp (fading)",
+    "Tags": [ "Warp", "WarpUsable" ],
+    "BehaviorAddress": "0x1300075C"
+  },
+  {
+    "Name": "warp pipe",
+    "Tags": [ "Warp", "WarpUsable" ],
+    "BehaviorAddress": "0x130007A0"
+  },
+  {
+    "Name": "warp hole",
+    "Tags": [ "Warp", "WarpUsable" ],
+    "BehaviorAddress": "0x13000780"
+  },
+
+  // WarpExit
+  {
+    "Name": "warp (for level exit)",
+    "Tags": [ "Warp", "WarpExit" ],
+    "BehaviorAddress": "0x13002F84"
+  },
+  {
+    "Name": "warp (level exit)",
+    "Tags": [ "Warp", "WarpExit" ],
+    "BehaviorAddress": "0x13002F8C"
+  },
+  {
+    "Name": "warp (level exit, ceiling)",
+    "Tags": [ "Warp", "WarpExit" ],
+    "BehaviorAddress": "0x13002F88"
+  },
+  {
+    "Name": "warp (level exit, from hole)",
+    "Tags": [ "Warp", "WarpExit" ],
+    "BehaviorAddress": "0x13002F90"
+  },
+  {
+    "Name": "warp (level exit, restore life)",
+    "Tags": [ "Warp", "WarpExit" ],
+    "BehaviorAddress": "0x13002F70"
+  },
+  {
+    "Name": "warp painting exit (failure)",
+    "Tags": [ "Warp", "WarpExit" ],
+    "BehaviorAddress": "0x13002F80"
+  },
+  {
+    "Name": "warp painting exit (success)",
+    "Tags": [ "Warp", "WarpExit" ],
+    "BehaviorAddress": "0x13002F7C"
+  },
+
+  // Misc
+  {
+    "Name": "warp",
+    "Tags": [ "Warp" ],
+    "BehaviorAddress": "0x13002F60"
+  },
+  {
+    "Name": "warp",
+    "Tags": [ "Warp" ],
+    "BehaviorAddress": "0x13002F68"
+  }
+]

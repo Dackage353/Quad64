@@ -1,0 +1,50 @@
+﻿[
+  {
+    "Name": "mips",
+    "Tags": [ "Dialog", "Star" ],
+    "BehaviorAddress": "0x130044FC"
+  },
+  {
+    "Name": "pink bob-omb (with message)",
+    "Tags": [ "Dialog" ],
+    "BehaviorAddress": "0x130031DC"
+  },
+  {
+    "Name": "pink bob-omb (opens cannon)",
+    "Tags": [ "Dialog" ],
+    "BehaviorAddress": "0x13003228"
+  },
+  {
+    "Name": "sign (wooden)",
+    "Tags": [ "Dialog" ],
+    "BehaviorAddress": "0x130032E0"
+  },
+  {
+    "Name": "toad (with star 1)",
+    "Tags": [ "Dialog", "Star" ],
+    "BehaviorAddress": "0x13002EF8",
+    "Param1": 82
+  },
+  {
+    "Name": "toad (with star 2)",
+    "Tags": [ "Dialog", "Star" ],
+    "BehaviorAddress": "0x13002EF8",
+    "Param1": 76
+  },
+  {
+    "Name": "toad (with star 3)",
+    "Tags": [ "Dialog", "Star" ],
+    "BehaviorAddress": "0x13002EF8",
+    "Param1": 83
+  },
+  {
+    "Name": "toad (with dialog)",
+    "Tags": [ "Dialog" ],
+    "BehaviorAddress": "0x13002EF8"
+  },
+  {
+    "Name": "yoshi",
+    "Tags": [ "Dialog" ],
+    "BehaviorAddress": "0x13004538"
+  }
+]

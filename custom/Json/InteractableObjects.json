@@ -1,0 +1,81 @@
+﻿[
+  {
+    "Name": "cannon (closed)",
+    "Tags": [ "Interactable" ],
+    "BehaviorAddress": "0x13003274"
+  },
+  {
+    "Name": "breakable box (hidden)",
+    "Tags": [ "Interactable", "HiddenBox" ],
+    "BehaviorAddress": "0x130014BC"
+  },
+  {
+    "Name": "gate",
+    "Tags": [ "Interactable", "GateSwitch" ],
+    "BehaviorAddress": "0x130025E0"
+  },
+  {
+    "Name": "koopa flag",
+    "Tags": [ "Interactable" ],
+    "BehaviorAddress": "0x130045D0"
+  },
+  {
+    "Name": "metal box",
+    "Tags": [ "Interactable" ],
+    "BehaviorAddress": "0x13001518"
+  },
+  {
+    "Name": "pole",
+    "Tags": [ "Interactable" ],
+    "BehaviorAddress": "0x13000144"
+  },
+  {
+    "Name": "tree (bubbly)",
+    "Tags": [ "Interactable" ],
+    "BehaviorAddress": "0x13002AA4",
+    "ModelID": "23"
+  },
+  {
+    "Name": "tree (spiky)",
+    "Tags": [ "Interactable" ],
+    "BehaviorAddress": "0x13002AA4",
+    "ModelID": "24"
+  },
+  {
+    "Name": "tree (snow)",
+    "Tags": [ "Interactable" ],
+    "BehaviorAddress": "0x13002AA4",
+    "ModelID": "25"
+  },
+  {
+    "Name": "tree (palm)",
+    "Tags": [ "Interactable" ],
+    "BehaviorAddress": "0x13002AA4",
+    "ModelID": "27"
+  },
+  {
+    "Name": "tree (unknown model)",
+    "Tags": [ "Interactable" ],
+    "BehaviorAddress": "0x13002AA4"
+  },
+  {
+    "Name": "tilting platform (bowser 2 fight)",
+    "Tags": [ "Interactable" ],
+    "BehaviorAddress": "0x13001920"
+  },
+  {
+    "Name": "falling green triangle (bowser 3 fight)",
+    "Tags": [ "Interactable" ],
+    "BehaviorAddress": "0x13001958"
+  },
+  {
+    "Name": "cannon (shoots water bombs)",
+    "Tags": [ "Interactable" ],
+    "BehaviorAddress": "0x13004F10"
+  },
+  {
+    "Name": "tilting bridge (bob)",
+    "Tags": [ "Interactable" ],
+    "BehaviorAddress": "0x13004B1C"
+  }
+]

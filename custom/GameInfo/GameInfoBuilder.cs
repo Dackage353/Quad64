@@ -65,17 +65,38 @@ namespace Quad64.custom.GameInfo
 
         private GameInfoBuilder()
         {
-            LoadObjectInfo();
+            switch (ROM.Instance.getInternalName().Trim())
+            {
+                case "SM Treasure World":
+                    LoadObjectInfo("./custom/Json/GameSpecific/TreasureWorld.json");
+                    break;
+            }
+
+            LoadObjectInfo("./custom/Json/BossObjects.json");
+            LoadObjectInfo("./custom/Json/CoinObjects.json");
+            LoadObjectInfo("./custom/Json/ContainerObjects.json");
+            LoadObjectInfo("./custom/Json/DecorationObjects.json");
+            LoadObjectInfo("./custom/Json/DialogObjects.json");
+
+            LoadObjectInfo("./custom/Json/DoorObjects.json");
+            LoadObjectInfo("./custom/Json/EnemyObjects.json");
+            LoadObjectInfo("./custom/Json/InteractableObjects.json");
+            LoadObjectInfo("./custom/Json/MiscObjects.json");
+            LoadObjectInfo("./custom/Json/ObstacleObjects.json");
+
+            LoadObjectInfo("./custom/Json/StarObjects.json");
+            LoadObjectInfo("./custom/Json/SwitchObjects.json");
+            LoadObjectInfo("./custom/Json/WarpObjects.json");
         }
 
-        private void LoadObjectInfo()
+        private void LoadObjectInfo(string jsonLocation)
         {
-            var json = File.ReadAllText("./custom/ObjectInfo.json");
-            var objectInfo = JsonConvert.DeserializeObject<List<ObjectInfo>>(json);
+            var contents = File.ReadAllText(jsonLocation);
+            var objectInfos = JsonConvert.DeserializeObject<List<ObjectInfo>>(contents);
 
-            for (int i = 0; i < objectInfo.Count; i++)
+            for (int i = 0; i < objectInfos.Count; i++)
             {
-                var info = objectInfo[i];
+                var info = objectInfos[i];
 
                 if (!behaviorLists.ContainsKey(info.BehaviorAddress))
                 {

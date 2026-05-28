@@ -1,0 +1,35 @@
+﻿[
+  {
+    "Name": "blue coin switch",
+    "Tags": [ "Switch", "BlueCoin" ],
+    "BehaviorAddress": "0x13002568"
+  },
+  {
+    "Name": "cap switch (wing cap)",
+    "Tags": [ "Switch", "CapSwitch" ],
+    "BehaviorAddress": "0x130001CC",
+    "Param2": 0
+  },
+  {
+    "Name": "cap switch (metal cap)",
+    "Tags": [ "Switch", "CapSwitch" ],
+    "BehaviorAddress": "0x130001CC",
+    "Param2": 1
+  },
+  {
+    "Name": "cap switch (vanish cap)",
+    "Tags": [ "Switch", "CapSwitch" ],
+    "BehaviorAddress": "0x130001CC",
+    "Param2": 2
+  },
+  {
+    "Name": "purple switch (spawns boxes)",
+    "Tags": [ "Switch", "HiddenBox" ],
+    "BehaviorAddress": "0x130014AC"
+  },
+  {
+    "Name": "purple switch (opens gate)",
+    "Tags": [ "Switch", "GateSwitch" ],
+    "BehaviorAddress": "0x13001478"
+  }
+]

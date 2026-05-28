@@ -1,0 +1,28 @@
+[
+  // random
+  {
+    "Name": "1-up mushroom (open, still)",
+    "Tags": [ "1-Up", "Helper" ],
+    "BehaviorAddress": "0x1300407C"
+  },
+  {
+    "Name": "1-up trigger",
+    "Tags": [ "1-Up", "Helper" ],
+    "BehaviorAddress": "0x13004124"
+  },
+  {
+    "Name": "1-up trigger",
+    "Tags": [ "1-Up", "Helper" ],
+    "BehaviorAddress": "0x13004124"
+  },
+  {
+    "Name": "heart",
+    "Tags": [ "Helper" ],
+    "BehaviorAddress": "0x13004EF8"
+  },
+  {
+    "Name": "secret",
+    "Tags": [ "StarTrigger" ],
+    "BehaviorAddress": "0x13003F1C"
+  }
+]

@@ -1,0 +1,161 @@
+﻿[
+  // [!] box
+  {
+    "Name": "[!] box (wing cap)",
+    "Tags": [ "Container", "CapOrShellBox" ],
+    "BehaviorAddress": "0x13002250",
+    "Param2": 0
+  },
+  {
+    "Name": "[!] box (metal cap)",
+    "Tags": [ "Container", "CapOrShellBox" ],
+    "BehaviorAddress": "0x13002250",
+    "Param2": 1
+  },
+  {
+    "Name": "[!] box (vanish cap)",
+    "Tags": [ "Container", "CapOrShellBox" ],
+    "BehaviorAddress": "0x13002250",
+    "Param2": 2
+  },
+  {
+    "Name": "[!] box (shell)",
+    "Tags": [ "Container", "CapOrShellBox" ],
+    "BehaviorAddress": "0x13002250",
+    "Param2": 3
+  },
+  {
+    "Name": "[!] box (1 coin)",
+    "Tags": [ "Container", "CoinContainer" ],
+    "BehaviorAddress": "0x13002250",
+    "Param2": 4,
+    "CoinValue": 1
+  },
+  {
+    "Name": "[!] box (3 coins)",
+    "Tags": [ "Container", "CoinContainer" ],
+    "BehaviorAddress": "0x13002250",
+    "Param2": 5,
+    "CoinValue": 3
+  },
+  {
+    "Name": "[!] box (10 coins)",
+    "Tags": [ "Container", "CoinContainer" ],
+    "BehaviorAddress": "0x13002250",
+    "Param2": 6,
+    "CoinValue": 10
+  },
+  {
+    "Name": "[!] box (1-up, slow)",
+    "Tags": [ "Container", "1-Up", "Helper" ],
+    "BehaviorAddress": "0x13002250",
+    "Param2": 7
+  },
+  {
+    "Name": "[!] box (star 1)",
+    "Tags": [ "Container", "Star" ],
+    "BehaviorAddress": "0x13002250",
+    "Param2": 8,
+    "StarNumber": 1
+  },
+  {
+    "Name": "[!] box (1-up, running away)",
+    "Tags": [ "Container", "1-Up", "Helper" ],
+    "BehaviorAddress": "0x13002250",
+    "Param2": 9
+  },
+  {
+    "Name": "[!] box (star 2)",
+    "Tags": [ "Container", "Star" ],
+    "BehaviorAddress": "0x13002250",
+    "Param2": 10,
+    "StarNumber": 2
+  },
+  {
+    "Name": "[!] box (star 3)",
+    "Tags": [ "Container", "Star" ],
+    "BehaviorAddress": "0x13002250",
+    "Param2": 11,
+    "StarNumber": 3
+  },
+  {
+    "Name": "[!] box (star 4)",
+    "Tags": [ "Container", "Star" ],
+    "BehaviorAddress": "0x13002250",
+    "Param2": 12,
+    "StarNumber": 4
+  },
+  {
+    "Name": "[!] box (star 5)",
+    "Tags": [ "Container", "Star" ],
+    "BehaviorAddress": "0x13002250",
+    "Param2": 13,
+    "StarNumber": 5
+  },
+  {
+    "Name": "[!] box (star 6)",
+    "Tags": [ "Container", "Star" ],
+    "BehaviorAddress": "0x13002250",
+    "Param2": 14,
+    "StarNumber": 6
+  },
+  {
+    "Name": "[!] box (empty)",
+    "Tags": [ "Container" ],
+    "BehaviorAddress": "0x13002250",
+    "Param2": 15
+  },
+  {
+    "Name": "[!] box (unknown content)",
+    "Tags": [ "Container" ],
+    "BehaviorAddress": "0x13002250"
+  },
+
+  // Breakable boxes
+  {
+    "Name": "breakable box (large, empty)",
+    "Tags": [ "Container", "CoinContainer" ],
+    "BehaviorAddress": "0x130014E0",
+    "Param2": 0
+  },
+  {
+    "Name": "breakable box (medium, 3 coins)",
+    "Tags": [ "Container", "CoinContainer" ],
+    "BehaviorAddress": "0x130014E0",
+    "Param2": 1,
+    "CoinValue": 3
+  },
+  {
+    "Name": "breakable box (medium, 5 coins)",
+    "Tags": [ "Container", "CoinContainer" ],
+    "BehaviorAddress": "0x130014E0",
+    "Param2": 2,
+    "CoinValue": 5
+  },
+  {
+    "Name": "breakable box (small/throwable)",
+    "Tags": [ "Container", "CoinContainer" ],
+    "BehaviorAddress": "0x13004218",
+    "CoinValue": 3
+  },
+
+  // Misc
+  {
+    "Name": "bowser puzzle (lethal lava land)",
+    "Tags": [ "Container", "CoinContainer" ],
+    "BehaviorAddress": "0x13002068",
+    "CoinValue": 5
+  },
+  {
+    "Name": "crazy box",
+    "Tags": [ "Container", "CoinContainer" ],
+    "BehaviorAddress": "0x13001650",
+    "CoinValue": 5
+  },
+  {
+    "Name": "wooden post",
+    "Tags": [ "Container", "CoinContainer" ],
+    "BehaviorAddress": "0x1300481C",
+    "CoinValue": 5
+  }
+]

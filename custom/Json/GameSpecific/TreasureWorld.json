@@ -1,0 +1,22 @@
+﻿[
+  {
+    "Name": "[!] box (chuckya)",
+    "Tags": [ "Container", "Enemy" ],
+    "BehaviorAddress": "0x13002250",
+    "Param2": 15,
+    "CoinValue": 5
+  },
+  {
+    "Name": "[!] box (troll star)",
+    "Tags": [ "Container", "Star" ],
+    "BehaviorAddress": "0x13002250",
+    "Param2": 16
+  },
+  {
+    "Name": "[!] box (star 7)",
+    "Tags": [ "Container", "Star" ],
+    "BehaviorAddress": "0x13002250",
+    "Param2": 17,
+    "StarNumber": 7
+  }
+]

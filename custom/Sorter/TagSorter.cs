@@ -16,24 +16,25 @@ namespace Quad64.custom.Sorter
         private readonly string[] TagOrder = new string[]
             {
                 "WarpStart",
-                "WarpRegular",
+                "WarpUsable",
                 "Star",
                 "StarTrigger",
                 "CapOrShellBox",
-                "Container",
-                "Helper",
-                "Switch",
-                "BlueCoin",
+                "CapSwitch",
+                "GateSwitch",
                 "HiddenBox",
+                "Dialog",
+                "Helper",
+                "BlueCoin",
                 "CoinContainer",
                 "CoinFormation",
                 "Coin",
                 "Enemy",
                 "Obstacle",
-                "Platform",
-                "Environment",
-                "Dialog",
-                "WarpExit"
+                "Interactable",
+                "Door",
+                "Decoration",
+                "Warp"
             };
 
 

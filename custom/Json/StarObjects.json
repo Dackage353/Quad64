@@ -1,0 +1,148 @@
+﻿[
+  {
+    "Name": "star 1 (open)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003E3C",
+    "Param1": 0,
+    "StarNumber": 1
+  },
+  {
+    "Name": "star 2 (open)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003E3C",
+    "Param1": 1,
+    "StarNumber": 2
+  },
+  {
+    "Name": "star 3 (open)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003E3C",
+    "Param1": 2,
+    "StarNumber": 3
+  },
+  {
+    "Name": "star 4 (open)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003E3C",
+    "Param1": 3,
+    "StarNumber": 4
+  },
+  {
+    "Name": "star 5 (open)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003E3C",
+    "Param1": 4,
+    "StarNumber": 5
+  },
+  {
+    "Name": "star 6 (open)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003E3C",
+    "Param1": 5,
+    "StarNumber": 6
+  },
+  {
+    "Name": "star 1 (secrets)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003EFC",
+    "Param1": 0,
+    "StarNumber": 1
+  },
+  {
+    "Name": "star 2 (secrets)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003EFC",
+    "Param1": 1,
+    "StarNumber": 2
+  },
+  {
+    "Name": "star 3 (secrets)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003EFC",
+    "Param1": 2,
+    "StarNumber": 3
+  },
+  {
+    "Name": "star 4 (secrets)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003EFC",
+    "Param1": 3,
+    "StarNumber": 4
+  },
+  {
+    "Name": "star 5 (secrets)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003EFC",
+    "Param1": 4,
+    "StarNumber": 5
+  },
+  {
+    "Name": "star 6 (secrets)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003EFC",
+    "Param1": 5,
+    "StarNumber": 6
+  },
+  {
+    "Name": "star 1 (red coins)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003E8C",
+    "Param1": 0,
+    "StarNumber": 1
+  },
+  {
+    "Name": "star 2 (red coins)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003E8C",
+    "Param1": 1,
+    "StarNumber": 2
+  },
+  {
+    "Name": "star 3 (red coins)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003E8C",
+    "Param1": 2,
+    "StarNumber": 3
+  },
+  {
+    "Name": "star 4 (red coins)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003E8C",
+    "Param1": 3,
+    "StarNumber": 4
+  },
+  {
+    "Name": "star 5 (red coins)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003E8C",
+    "Param1": 4,
+    "StarNumber": 5
+  },
+  {
+    "Name": "star 6 (red coins)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003E8C",
+    "Param1": 5,
+    "StarNumber": 6
+  },
+  {
+    "Name": "star (reds for bowser or overworld)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003EE4"
+  },
+  {
+    "Name": "troll star (open)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003E3C"
+  },
+  {
+    "Name": "troll star (secrets)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003EFC"
+  },
+  {
+    "Name": "troll star (reds coins)",
+    "Tags": [ "Star" ],
+    "BehaviorAddress": "0x13003E8C"
+  }
+]

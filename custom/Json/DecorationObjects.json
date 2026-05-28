@@ -1,0 +1,53 @@
+﻿[
+  // sounds
+  {
+    "Name": "ambient sounds (birds)",
+    "Tags": [ "Decoration" ],
+    "BehaviorAddress": "0x13003C7C"
+  },
+  {
+    "Name": "ambient sounds (cricket)",
+    "Tags": [ "Decoration" ],
+    "BehaviorAddress": "0x13003C90"
+  },
+  {
+    "Name": "ambient sounds (waterfall)",
+    "Tags": [ "Decoration" ],
+    "BehaviorAddress": "0x13003C30"
+  },
+
+  // animals
+  {
+    "Name": "butterfly",
+    "Tags": [ "Decoration" ],
+    "BehaviorAddress": "0x130033BC"
+  },
+  {
+    "Name": "birds",
+    "Tags": [ "Decoration" ],
+    "BehaviorAddress": "0x13005354"
+  },
+  {
+    "Name": "fish 1",
+    "Tags": [ "Decoration" ],
+    "BehaviorAddress": "0x1300215C"
+  },
+  {
+    "Name": "fish 2",
+    "Tags": [ "Decoration" ],
+    "BehaviorAddress": "0x1300213C"
+  },
+
+  // other
+  {
+    "Name": "yellow orb in bowser or ow1 castle?",
+    "Tags": [ "Decoration" ],
+    "BehaviorAddress": "0x13002A48",
+    "ModelID": 3
+  },
+  {
+    "Name": "water mist",
+    "Tags": [ "Decoration" ],
+    "BehaviorAddress": "0x13000DD8"
+  }
+]

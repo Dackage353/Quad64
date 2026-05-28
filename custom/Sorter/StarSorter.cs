@@ -19,7 +19,7 @@ namespace Quad64.custom.Sorter
             List<List<Object3D>> groups = new List<List<Object3D>>();
             var remaining = new List<Object3D>(list);
 
-            for (int starNumber = 1; starNumber <= 6; starNumber++)
+            for (int starNumber = 1; starNumber <= 7; starNumber++)
             {
                 var group = new List<Object3D>();
 

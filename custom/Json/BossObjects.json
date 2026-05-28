@@ -1,0 +1,574 @@
+﻿[
+  {
+    "Name": "bowser",
+    "Tags": [ "Boss" ],
+    "BehaviorAddress": "0x13001850"
+  },
+  {
+    "Name": "big boo (open, star 1)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13002768",
+    "Param1": 0,
+    "StarNumber": 1
+  },
+  {
+    "Name": "big boo (open, star 2)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13002768",
+    "Param1": 1,
+    "StarNumber": 2
+  },
+  {
+    "Name": "big boo (open, star 3)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13002768",
+    "Param1": 2,
+    "StarNumber": 3
+  },
+  {
+    "Name": "big boo (open, star 4)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13002768",
+    "Param1": 3,
+    "StarNumber": 4
+  },
+  {
+    "Name": "big boo (open, star 5)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13002768",
+    "Param1": 4,
+    "StarNumber": 5
+  },
+  {
+    "Name": "big boo (open, star 6)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13002768",
+    "Param1": 5,
+    "StarNumber": 6
+  },
+  {
+    "Name": "big bully (open, star 1)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13003660",
+    "Param1": 0,
+    "StarNumber": 1
+  },
+  {
+    "Name": "big bully (open, star 2)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13003660",
+    "Param1": 1,
+    "StarNumber": 2
+  },
+  {
+    "Name": "big bully (open, star 3)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13003660",
+    "Param1": 2,
+    "StarNumber": 3
+  },
+  {
+    "Name": "big bully (open, star 4)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13003660",
+    "Param1": 3,
+    "StarNumber": 4
+  },
+  {
+    "Name": "big bully (open, star 5)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13003660",
+    "Param1": 4,
+    "StarNumber": 5
+  },
+  {
+    "Name": "big bully (open, star 6)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13003660",
+    "Param1": 5,
+    "StarNumber": 6
+  },
+  {
+    "Name": "boo spawner (merry-go-round, star 1)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13002684",
+    "CoinValue": 25,
+    "StarNumber": 1,
+    "Param1": 0
+  },
+  {
+    "Name": "boo spawner (merry-go-round, star 2)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13002684",
+    "CoinValue": 25,
+    "StarNumber": 2,
+    "Param1": 1
+  },
+  {
+    "Name": "boo spawner (merry-go-round, star 3)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13002684",
+    "CoinValue": 25,
+    "StarNumber": 3,
+    "Param1": 2
+  },
+  {
+    "Name": "boo spawner (merry-go-round, star 4)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13002684",
+    "CoinValue": 25,
+    "StarNumber": 4,
+    "Param1": 3
+  },
+  {
+    "Name": "boo spawner (merry-go-round, star 5)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13002684",
+    "CoinValue": 25,
+    "StarNumber": 5,
+    "Param1": 4
+  },
+  {
+    "Name": "boo spawner (merry-go-round, star 6)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13002684",
+    "CoinValue": 25,
+    "StarNumber": 6,
+    "Param1": 5
+  },
+  {
+    "Name": "bully spawner",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13003694",
+    "CoinValue": 3
+  },
+  {
+    "Name": "eyerok (star 1)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x130052B4",
+    "Param1": 0,
+    "StarNumber": 1
+  },
+  {
+    "Name": "eyerok (star 2)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x130052B4",
+    "Param1": 1,
+    "StarNumber": 2
+  },
+  {
+    "Name": "eyerok (star 3)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x130052B4",
+    "Param1": 2,
+    "StarNumber": 3
+  },
+  {
+    "Name": "eyerok (star 4)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x130052B4",
+    "Param1": 3,
+    "StarNumber": 4
+  },
+  {
+    "Name": "eyerok (star 5)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x130052B4",
+    "Param1": 4,
+    "StarNumber": 5
+  },
+  {
+    "Name": "eyerok (star 6)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x130052B4",
+    "Param1": 5,
+    "StarNumber": 6
+  },
+  {
+    "Name": "king bob-omb (star 1)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x130001F4",
+    "Param1": 0,
+    "StarNumber": 1
+  },
+  {
+    "Name": "king bob-omb (star 2)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x130001F4",
+    "Param1": 0,
+    "StarNumber": 2
+  },
+  {
+    "Name": "king bob-omb (star 3)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x130001F4",
+    "Param1": 0,
+    "StarNumber": 3
+  },
+  {
+    "Name": "king bob-omb (star 4)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x130001F4",
+    "Param1": 0,
+    "StarNumber": 4
+  },
+  {
+    "Name": "king bob-omb (star 5)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x130001F4",
+    "Param1": 0,
+    "StarNumber": 5
+  },
+  {
+    "Name": "king bob-omb (star 6)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x130001F4",
+    "Param1": 0,
+    "StarNumber": 6
+  },
+  {
+    "Name": "koopa the quick 1 (star 1)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004580",
+    "Param2": 2,
+    "Param1": 0,
+    "StarNumber": 1
+  },
+  {
+    "Name": "koopa the quick 1 (star 2)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004580",
+    "Param2": 2,
+    "Param1": 1,
+    "StarNumber": 2
+  },
+  {
+    "Name": "koopa the quick 1 (star 3)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004580",
+    "Param2": 2,
+    "Param1": 2,
+    "StarNumber": 3
+  },
+  {
+    "Name": "koopa the quick 1 (star 4)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004580",
+    "Param2": 2,
+    "Param1": 3,
+    "StarNumber": 4
+  },
+  {
+    "Name": "koopa the quick 1 (star 5)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004580",
+    "Param2": 2,
+    "Param1": 4,
+    "StarNumber": 5
+  },
+  {
+    "Name": "koopa the quick 1 (star 6)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004580",
+    "Param2": 2,
+    "Param1": 5,
+    "StarNumber": 6
+  },
+  {
+    "Name": "koopa the quick 2 (star 1)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004580",
+    "Param2": 3,
+    "Param1": 0,
+    "StarNumber": 1
+  },
+  {
+    "Name": "koopa the quick 2 (star 2)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004580",
+    "Param2": 3,
+    "Param1": 1,
+    "StarNumber": 2
+  },
+  {
+    "Name": "koopa the quick 2 (star 3)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004580",
+    "Param2": 3,
+    "Param1": 2,
+    "StarNumber": 3
+  },
+  {
+    "Name": "koopa the quick 2 (star 4)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004580",
+    "Param2": 3,
+    "Param1": 3,
+    "StarNumber": 4
+  },
+  {
+    "Name": "koopa the quick 2 (star 5)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004580",
+    "Param2": 3,
+    "Param1": 4,
+    "StarNumber": 5
+  },
+  {
+    "Name": "koopa the quick 2 (star 6)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004580",
+    "Param2": 3,
+    "Param1": 5,
+    "StarNumber": 6
+  },
+  {
+    "Name": "whomp king (star 1)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13002BB8",
+    "Param1": 0,
+    "StarNumber": 1
+  },
+  {
+    "Name": "whomp king (star 2)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13002BB8",
+    "Param1": 1,
+    "StarNumber": 2
+  },
+  {
+    "Name": "whomp king (star 3)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13002BB8",
+    "Param1": 2,
+    "StarNumber": 3
+  },
+  {
+    "Name": "whomp king (star 4)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13002BB8",
+    "Param1": 3,
+    "StarNumber": 4
+  },
+  {
+    "Name": "whomp king (star 5)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13002BB8",
+    "Param1": 4,
+    "StarNumber": 5
+  },
+  {
+    "Name": "whomp king (star 6)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13002BB8",
+    "Param1": 5,
+    "StarNumber": 6
+  },
+  {
+    "Name": "wiggler (star 1)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004898",
+    "Param1": 0,
+    "StarNumber": 1
+  },
+  {
+    "Name": "wiggler (star 2)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004898",
+    "Param1": 1,
+    "StarNumber": 2
+  },
+  {
+    "Name": "wiggler (star 3)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004898",
+    "Param1": 2,
+    "StarNumber": 3
+  },
+  {
+    "Name": "wiggler (star 4)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004898",
+    "Param1": 3,
+    "StarNumber": 4
+  },
+  {
+    "Name": "wiggler (star 5)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004898",
+    "Param1": 4,
+    "StarNumber": 5
+  },
+  {
+    "Name": "wiggler (star 6)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004898",
+    "Param1": 5,
+    "StarNumber": 6
+  }
+]

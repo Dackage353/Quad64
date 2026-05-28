@@ -1,0 +1,93 @@
+﻿[
+  {
+    "Name": "amp (chasing)",
+    "Tags": [
+      "Obstacle"
+    ],
+    "BehaviorAddress": "0x13003354"
+  },
+  {
+    "Name": "amp (orbiting)",
+    "Tags": [
+      "Obstacle"
+    ],
+    "BehaviorAddress": "0x13003388"
+  },
+  {
+    "Name": "fire spitter",
+    "Tags": [
+      "Obstacle"
+    ],
+    "BehaviorAddress": "0x1300518C"
+  },
+  {
+    "Name": "flame (blue)",
+    "Tags": [
+      "Obstacle"
+    ],
+    "BehaviorAddress": "0x13000C84",
+    "ModelID": "145"
+  },
+  {
+    "Name": "flame (red)",
+    "Tags": [
+      "Obstacle"
+    ],
+    "BehaviorAddress": "0x13000C84",
+    "ModelID": "144"
+  },
+  {
+    "Name": "flamethrower",
+    "Tags": [
+      "Obstacle"
+    ],
+    "BehaviorAddress": "0x13001108"
+  },
+  {
+    "Name": "haunted chair",
+    "Tags": [
+      "Obstacle"
+    ],
+    "BehaviorAddress": "0x13004FD4"
+  },
+  {
+    "Name": "haunted piano",
+    "Tags": [
+      "Obstacle"
+    ],
+    "BehaviorAddress": "0x13005024"
+  },
+  {
+    "Name": "heave-ho",
+    "Tags": [
+      "Obstacle"
+    ],
+    "BehaviorAddress": "0x13001548"
+  },
+  {
+    "Name": "thwomp 1",
+    "Tags": [
+      "Obstacle"
+    ],
+    "BehaviorAddress": "0x13000BC8"
+  },
+  {
+    "Name": "thwomp 2",
+    "Tags": [
+      "Obstacle"
+    ],
+    "BehaviorAddress": "0x13000B8C"
+  },
+  {
+    "Name": "water bomb spawner",
+    "Tags": [
+      "Obstacle"
+    ],
+    "BehaviorAddress": "0x13004B8C"
+  },
+  {
+    "Name": "spiky bomb (bowser fights)",
+    "Tags": [ "Obstacle" ],
+    "BehaviorAddress": "0x130037EC"
+  }
+]
