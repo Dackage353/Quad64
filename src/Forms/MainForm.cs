@@ -38,6 +38,8 @@ namespace Quad64
         private GameInfo gameInfo = null;
         private int myIndex = 0;
 
+        private const double MouseWheelMultiplier = 5;
+
         public static GameInfoBuilder Builder;
 
         public Level getLevelData { get { return level; } }
@@ -489,7 +491,7 @@ namespace Quad64
         private void glControl1_Wheel(object sender, MouseEventArgs e)
         {
             camera.resetMouseStuff();
-            camera.updateCameraMatrixWithScrollWheel((int)(e.Delta * 1.5f), ref camMtx);
+            camera.updateCameraMatrixWithScrollWheel((int)(e.Delta * MouseWheelMultiplier), ref camMtx);
             savedCamPos = camera.Position;
             glControl1.Invalidate();
         }
