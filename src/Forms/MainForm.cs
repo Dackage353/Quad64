@@ -40,8 +40,6 @@ namespace Quad64
 
         private const double MouseWheelMultiplier = 5;
 
-        public static GameInfoBuilder Builder;
-
         public Level getLevelData { get { return level; } }
 
         public object SettingsForms { get; private set; }
