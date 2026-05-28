@@ -62,7 +62,7 @@ namespace Quad64.custom.GameInfo
             {
                 var obj = Objects[i];
 
-                if (obj.CompanionInfo.CoinValue > 0) sb.AppendLine(obj.ToString());
+                if (obj.CompanionInfo != null && obj.CompanionInfo.CoinValue > 0) sb.AppendLine(obj.ToString());
             }
 
             sb.AppendLine();
@@ -84,8 +84,6 @@ namespace Quad64.custom.GameInfo
 
         public void CalculateCoinCountByAct()
         {
-            CoinCountByAct = new int[6];
-
             for (int i = 0; i < Objects.Count; i++)
             {
                 var obj = Objects[i];

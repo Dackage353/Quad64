@@ -60,16 +60,6 @@ namespace Quad64.custom.GameInfo
                 }
             }
 
-                for (int levelIndex = 0; levelIndex < Levels.Count; levelIndex++)
-            {
-                var level = Levels[levelIndex];
-
-                if (level.GetAreaCount() > 0)
-                {
-                    sb.Append(level.GetCoinObjectList());
-                }
-            }
-
             return sb.ToString();
         }
 
@@ -98,7 +88,6 @@ namespace Quad64.custom.GameInfo
                 "rotation y",
                 "rotation z",
                 "behavior address",
-                "behavior name",
                 "behavior param 1",
                 "behavior param 2",
                 "behavior param 3",

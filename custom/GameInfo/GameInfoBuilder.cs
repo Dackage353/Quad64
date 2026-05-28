@@ -137,10 +137,6 @@ namespace Quad64.custom.GameInfo
                 levelInfo.CalculateCoinCountByAct();
                 gameInfo.Levels[levelInfo.LevelID] = levelInfo;
             }
-
-
-            //gameInfo.Levels = gameInfo.Levels.OrderBy(c => c.Value.Name, StringComparison.OrdinalIgnoreCase.WithNaturalSort()).ToList();
-
         }
 
         public ObjectInfo GetCustomObjectInfo(string behaviorAddress, int param1, int param2, int param3, int param4, int modelID)

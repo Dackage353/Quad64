@@ -8,6 +8,8 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.Reflection;
+using System.Text;
+using System.Xml.Linq;
 
 namespace Quad64
 {
@@ -17,7 +19,7 @@ namespace Quad64
         private ObjectInfo _companionInfo = null;
         [Browsable(false)]
         public ObjectInfo CompanionInfo
-        { 
+        {
             get
             {
                 if (_companionInfo == null)
@@ -168,7 +170,8 @@ namespace Quad64
         [CustomSortedCategory("Behavior", 5, NUM_OF_CATERGORIES)]
         [Browsable(true)]
         [DisplayName("Behavior")]
-        public string BehaviorAddress {
+        public string BehaviorAddress
+        {
             get => "0x" + m_data.Behaviour.ToString("X8");
             set { m_data.Behaviour = uint.Parse(value.Substring(2), NumberStyles.HexNumber); }
         }
@@ -425,7 +428,7 @@ namespace Quad64
             if (isBrow != null)
                 isBrow.SetValue(attrib, show);
         }
-        
+
         private bool isHidden(FLAGS flag)
         {
             return (Flags & (ulong)flag) == (ulong)flag;
@@ -444,12 +447,12 @@ namespace Quad64
             if (isReadOnly)
             {
                 HideShowProperty(property, false);
-                HideShowProperty(property+"_ReadOnly", true);
+                HideShowProperty(property + "_ReadOnly", true);
             }
             else
             {
                 HideShowProperty(property, true);
-                HideShowProperty(property+"_ReadOnly", false);
+                HideShowProperty(property + "_ReadOnly", false);
             }
         }
 
@@ -461,7 +464,7 @@ namespace Quad64
               (DisplayNameAttribute)descriptor.Attributes[typeof(DisplayNameAttribute)];
             FieldInfo isBrow =
               attrib.GetType().GetField("_displayName", BindingFlags.NonPublic | BindingFlags.Instance);
-            
+
             if (isBrow != null)
                 isBrow.SetValue(attrib, name);
         }
@@ -555,7 +558,7 @@ namespace Quad64
         }
 
         FLAGS tempHideFlags;
-        
+
         bool isBehaviorReadOnly_tempTrigger = false, isModelIDReadOnly_tempTrigger = false;
         public void HideFieldsTemporarly(FLAGS showFlags)
         {
@@ -564,7 +567,7 @@ namespace Quad64
             //Console.WriteLine(Convert.ToString((int)tempHideFlags, 2).PadLeft(32, '0'));
 
             isTempHidden = true;
-            if(!isBehaviorReadOnly)
+            if (!isBehaviorReadOnly)
             {
                 isBehaviorReadOnly_tempTrigger = true;
                 isBehaviorReadOnly = true;
@@ -632,7 +635,7 @@ namespace Quad64
         public void DontShowActs()
         {
             Flags |= (ulong)(
-                FLAGS.ACT1 | FLAGS.ACT2 | FLAGS.ACT3 | 
+                FLAGS.ACT1 | FLAGS.ACT2 | FLAGS.ACT3 |
                 FLAGS.ACT4 | FLAGS.ACT5 | FLAGS.ACT6 |
                 FLAGS.ALLACTS);
         }
@@ -640,7 +643,7 @@ namespace Quad64
         public void ShowHideActs(bool hide)
         {
             if (hide)
-                Flags |= (ulong)(FLAGS.ACT1 | FLAGS.ACT2 | 
+                Flags |= (ulong)(FLAGS.ACT1 | FLAGS.ACT2 |
                     FLAGS.ACT3 | FLAGS.ACT4 | FLAGS.ACT5 | FLAGS.ACT6);
             else
                 Flags &= ~(ulong)(FLAGS.ACT1 | FLAGS.ACT2 |
@@ -662,7 +665,7 @@ namespace Quad64
         {
             string oldComboName = Title;
             Title = newName;
-            bool undefinedToDefined = oldComboName.StartsWith("Undefined Combo (") 
+            bool undefinedToDefined = oldComboName.StartsWith("Undefined Combo (")
                 && !newName.StartsWith("Undefined Combo (");
 
             if (!undefinedToDefined) // simple re-define
@@ -694,7 +697,7 @@ namespace Quad64
                 modelSegmentAddress = 0;
                 if (level.ModelIDs.ContainsKey(ModelID))
                     modelSegmentAddress = level.ModelIDs[ModelID].GeoDataSegAddress;
-                if (entry.ModelID == ModelID && entry.Behavior == behaviorAddr 
+                if (entry.ModelID == ModelID && entry.Behavior == behaviorAddr
                     && entry.ModelSegmentAddress == modelSegmentAddress)
                 {
                     objectComboEntry = entry;
@@ -711,6 +714,49 @@ namespace Quad64
         public bool isPropertyShown(FLAGS flag)
         {
             return !isHidden(flag);
+        }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+
+            string[] items =
+            {
+                GetCustomName(),
+                CompanionInfo == null ? "0" : CompanionInfo.CoinValue.ToString(),
+                Address,
+                ModelID.ToString(),
+                xPosition.ToString(),
+                yPosition.ToString(),
+                zPosition.ToString(),
+                xRotation.ToString(),
+                yRotation.ToString(),
+                zRotation.ToString(),
+                BehaviorAddress,
+                Param1.ToString(),
+                Param2.ToString(),
+                Param3.ToString(),
+                Param4.ToString(),
+                AllActs.ToString(),
+                Act1.ToString(),
+                Act2.ToString(),
+                Act3.ToString(),
+                Act4.ToString(),
+                Act5.ToString(),
+                Act6.ToString(),
+            };
+
+            for (int i = 0; i < items.Length; i++)
+            {
+                sb.Append(Helper.WithQuotesIfNeeded(items[i]));
+
+                if (i < items.Length - 1)
+                {
+                    sb.Append(",");
+                }
+            }
+
+            return sb.ToString();
         }
     }
 }
