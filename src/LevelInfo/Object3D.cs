@@ -5,6 +5,7 @@ using Quad64.src.LevelInfo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Globalization;
 using System.Reflection;
 
@@ -19,7 +20,7 @@ namespace Quad64
             {
                 if (_companionInfo == null)
                 {
-                    _companionInfo = GameInfoBuilder.GetBuilder().GetCustomObjectInfo(Behavior, BehaviorParameter1, BehaviorParameter2, BehaviorParameter3, BehaviorParameter4, ModelID);
+                    _companionInfo = GameInfoBuilder.GetBuilder().GetCustomObjectInfo(BehaviorAddress, Param1, Param2, Param3, Param4, ModelID);
                 }
                 return _companionInfo;
             }
@@ -135,38 +136,38 @@ namespace Quad64
         [Browsable(true)]
         [DisplayName("X")]
         [TypeConverter(typeof(HexNumberTypeConverter))]
-        public short xPos { get { return m_data.X; } set { m_data.X = value; } }
+        public short xPosition { get { return m_data.X; } set { m_data.X = value; } }
         [CustomSortedCategory("Position", 3, NUM_OF_CATERGORIES)]
         [Browsable(true)]
         [DisplayName("Y")]
         [TypeConverter(typeof(HexNumberTypeConverter))]
-        public short yPos { get { return m_data.Y; } set { m_data.Y = value; } }
+        public short yPosition { get { return m_data.Y; } set { m_data.Y = value; } }
         [CustomSortedCategory("Position", 3, NUM_OF_CATERGORIES)]
         [Browsable(true)]
         [DisplayName("Z")]
         [TypeConverter(typeof(HexNumberTypeConverter))]
-        public short zPos { get { return m_data.Z; } set { m_data.Z = value; } }
+        public short zPosition { get { return m_data.Z; } set { m_data.Z = value; } }
 
         [CustomSortedCategory("Rotation", 4, NUM_OF_CATERGORIES)]
         [Browsable(true)]
         [DisplayName("RX")]
         [TypeConverter(typeof(HexNumberTypeConverter))]
-        public short xRot { get { return m_data.RX; } set { m_data.RX = value; } }
+        public short xRotation { get { return m_data.RX; } set { m_data.RX = value; } }
         [CustomSortedCategory("Rotation", 4, NUM_OF_CATERGORIES)]
         [Browsable(true)]
         [DisplayName("RY")]
         [TypeConverter(typeof(HexNumberTypeConverter))]
-        public short yRot { get { return m_data.RY; } set { m_data.RY = value; } }
+        public short yRotation { get { return m_data.RY; } set { m_data.RY = value; } }
         [CustomSortedCategory("Rotation", 4, NUM_OF_CATERGORIES)]
         [Browsable(true)]
         [DisplayName("RZ")]
         [TypeConverter(typeof(HexNumberTypeConverter))]
-        public short zRot { get { return m_data.RZ; } set { m_data.RZ = value; } }
+        public short zRotation { get { return m_data.RZ; } set { m_data.RZ = value; } }
 
         [CustomSortedCategory("Behavior", 5, NUM_OF_CATERGORIES)]
         [Browsable(true)]
         [DisplayName("Behavior")]
-        public string Behavior {
+        public string BehaviorAddress {
             get => "0x" + m_data.Behaviour.ToString("X8");
             set { m_data.Behaviour = uint.Parse(value.Substring(2), NumberStyles.HexNumber); }
         }
@@ -175,7 +176,7 @@ namespace Quad64
         [Browsable(false)]
         [DisplayName("Behavior")]
         [ReadOnly(true)]
-        public string Behavior_ReadOnly => this.Behavior;
+        public string BehaviorAddress_ReadOnly => this.BehaviorAddress;
 
         [CustomSortedCategory("Behavior", 5, NUM_OF_CATERGORIES)]
         [Browsable(true)]
@@ -194,7 +195,7 @@ namespace Quad64
         [DisplayName(BP1DNAME)]
         [TypeConverter(typeof(HexNumberTypeConverter))]
         [Description("")]
-        public byte BehaviorParameter1
+        public byte Param1
         {
             get { return m_data.BehaviourArgs[0]; }
             set { m_data.BehaviourArgs[0] = value; }
@@ -205,7 +206,7 @@ namespace Quad64
         [DisplayName(BP2DNAME)]
         [TypeConverter(typeof(HexNumberTypeConverter))]
         [Description("")]
-        public byte BehaviorParameter2
+        public byte Param2
         {
             get { return m_data.BehaviourArgs[1]; }
             set { m_data.BehaviourArgs[1] = value; }
@@ -216,7 +217,7 @@ namespace Quad64
         [DisplayName(BP3DNAME)]
         [TypeConverter(typeof(HexNumberTypeConverter))]
         [Description("")]
-        public byte BehaviorParameter3
+        public byte Param3
         {
             get { return m_data.BehaviourArgs[2]; }
             set { m_data.BehaviourArgs[2] = value; }
@@ -227,7 +228,7 @@ namespace Quad64
         [DisplayName(BP4DNAME)]
         [TypeConverter(typeof(HexNumberTypeConverter))]
         [Description("")]
-        public byte BehaviorParameter4
+        public byte Param4
         {
             get { return m_data.BehaviourArgs[3]; }
             set { m_data.BehaviourArgs[3] = value; }
@@ -353,43 +354,43 @@ namespace Quad64
             {
                 rom.writeByte(romAddr + 2, getActMask());
                 rom.writeByte(romAddr + 3, ModelID);
-                rom.writeHalfword(romAddr + 4, xPos);
-                rom.writeHalfword(romAddr + 6, yPos);
-                rom.writeHalfword(romAddr + 8, zPos);
-                rom.writeHalfword(romAddr + 10, xRot);
-                rom.writeHalfword(romAddr + 12, yRot);
-                rom.writeHalfword(romAddr + 14, zRot);
-                rom.writeByte(romAddr + 16, BehaviorParameter1);
-                rom.writeByte(romAddr + 17, BehaviorParameter2);
-                rom.writeByte(romAddr + 18, BehaviorParameter3);
-                rom.writeByte(romAddr + 19, BehaviorParameter4);
+                rom.writeHalfword(romAddr + 4, xPosition);
+                rom.writeHalfword(romAddr + 6, yPosition);
+                rom.writeHalfword(romAddr + 8, zPosition);
+                rom.writeHalfword(romAddr + 10, xRotation);
+                rom.writeHalfword(romAddr + 12, yRotation);
+                rom.writeHalfword(romAddr + 14, zRotation);
+                rom.writeByte(romAddr + 16, Param1);
+                rom.writeByte(romAddr + 17, Param2);
+                rom.writeByte(romAddr + 18, Param3);
+                rom.writeByte(romAddr + 19, Param4);
                 rom.writeWord(romAddr + 20, getBehaviorAddress());
             }
             else if (Globals.list_selected == 1) // Macro Object
             {
                 //Console.WriteLine("Preset ID = 0x" + presetID.ToString("X"));
-                ushort first = (ushort)((((ushort)(yRot / 2.8125f) & 0x7F) << 9) | (presetID & 0x1FF));
+                ushort first = (ushort)((((ushort)(yRotation / 2.8125f) & 0x7F) << 9) | (presetID & 0x1FF));
                 rom.writeHalfword(romAddr, first);
-                rom.writeHalfword(romAddr + 2, xPos);
-                rom.writeHalfword(romAddr + 4, yPos);
-                rom.writeHalfword(romAddr + 6, zPos);
-                rom.writeByte(romAddr + 8, BehaviorParameter1);
-                rom.writeByte(romAddr + 9, BehaviorParameter2);
+                rom.writeHalfword(romAddr + 2, xPosition);
+                rom.writeHalfword(romAddr + 4, yPosition);
+                rom.writeHalfword(romAddr + 6, zPosition);
+                rom.writeByte(romAddr + 8, Param1);
+                rom.writeByte(romAddr + 9, Param2);
             }
             else if (Globals.list_selected == 2) // Special Object
             {
                 //Console.WriteLine("Special Preset ID = 0x" + presetID.ToString("X"));
                 rom.writeHalfword(romAddr, presetID);
-                rom.writeHalfword(romAddr + 2, xPos);
-                rom.writeHalfword(romAddr + 4, yPos);
-                rom.writeHalfword(romAddr + 6, zPos);
+                rom.writeHalfword(romAddr + 2, xPosition);
+                rom.writeHalfword(romAddr + 4, yPosition);
+                rom.writeHalfword(romAddr + 6, zPosition);
                 if (!isHidden(FLAGS.ROTATION_Y))
                 {
-                    rom.writeHalfword(romAddr + 8, (short)(yRot / 1.40625f));
+                    rom.writeHalfword(romAddr + 8, (short)(yRotation / 1.40625f));
                     if (!isHidden(FLAGS.BPARAM_1))
                     {
-                        rom.writeByte(romAddr + 10, BehaviorParameter1);
-                        rom.writeByte(romAddr + 11, BehaviorParameter2);
+                        rom.writeByte(romAddr + 10, Param1);
+                        rom.writeByte(romAddr + 11, Param2);
                     }
                 }
             }
@@ -413,6 +414,8 @@ namespace Quad64
 
         private void HideShowProperty(string property, bool show)
         {
+            Debug.WriteLine(property);
+
             PropertyDescriptor descriptor =
                 TypeDescriptor.GetProperties(this.GetType())[property];
             BrowsableAttribute attrib =
@@ -506,36 +509,36 @@ namespace Quad64
         {
             if (objectComboEntry != null)
             {
-                UpdatePropertyName("BehaviorParameter1", objectComboEntry.BP1_NAME, BP1DNAME);
-                UpdatePropertyName("BehaviorParameter2", objectComboEntry.BP2_NAME, BP2DNAME);
-                UpdatePropertyName("BehaviorParameter3", objectComboEntry.BP3_NAME, BP3DNAME);
-                UpdatePropertyName("BehaviorParameter4", objectComboEntry.BP4_NAME, BP4DNAME);
-                UpdatePropertyDescription("BehaviorParameter1", objectComboEntry.BP1_DESCRIPTION);
-                UpdatePropertyDescription("BehaviorParameter2", objectComboEntry.BP2_DESCRIPTION);
-                UpdatePropertyDescription("BehaviorParameter3", objectComboEntry.BP3_DESCRIPTION);
-                UpdatePropertyDescription("BehaviorParameter4", objectComboEntry.BP4_DESCRIPTION);
+                UpdatePropertyName("Param1", objectComboEntry.BP1_NAME, BP1DNAME);
+                UpdatePropertyName("Param2", objectComboEntry.BP2_NAME, BP2DNAME);
+                UpdatePropertyName("Param3", objectComboEntry.BP3_NAME, BP3DNAME);
+                UpdatePropertyName("Param4", objectComboEntry.BP4_NAME, BP4DNAME);
+                UpdatePropertyDescription("Param1", objectComboEntry.BP1_DESCRIPTION);
+                UpdatePropertyDescription("Param2", objectComboEntry.BP2_DESCRIPTION);
+                UpdatePropertyDescription("Param3", objectComboEntry.BP3_DESCRIPTION);
+                UpdatePropertyDescription("Param4", objectComboEntry.BP4_DESCRIPTION);
             }
             else
             {
-                ChangePropertyName("BehaviorParameter1", BP1DNAME);
-                ChangePropertyName("BehaviorParameter2", BP2DNAME);
-                ChangePropertyName("BehaviorParameter3", BP3DNAME);
-                ChangePropertyName("BehaviorParameter4", BP4DNAME);
-                ChangePropertyDescription("BehaviorParameter1", "");
-                ChangePropertyDescription("BehaviorParameter2", "");
-                ChangePropertyDescription("BehaviorParameter3", "");
-                ChangePropertyDescription("BehaviorParameter4", "");
+                ChangePropertyName("Param1", BP1DNAME);
+                ChangePropertyName("Param2", BP2DNAME);
+                ChangePropertyName("Param3", BP3DNAME);
+                ChangePropertyName("Param4", BP4DNAME);
+                ChangePropertyDescription("Param1", "");
+                ChangePropertyDescription("Param2", "");
+                ChangePropertyDescription("Param3", "");
+                ChangePropertyDescription("Param4", "");
             }
         }
 
         public void UpdateProperties()
         {
-            updateProperty("xPos", FLAGS.POSITION_X);
-            updateProperty("yPos", FLAGS.POSITION_Y);
-            updateProperty("zPos", FLAGS.POSITION_Z);
-            updateProperty("xRot", FLAGS.ROTATION_X);
-            updateProperty("yRot", FLAGS.ROTATION_Y);
-            updateProperty("zRot", FLAGS.ROTATION_Z);
+            updateProperty("xPosition", FLAGS.POSITION_X);
+            updateProperty("yPosition", FLAGS.POSITION_Y);
+            updateProperty("zPosition", FLAGS.POSITION_Z);
+            updateProperty("xRotation", FLAGS.ROTATION_X);
+            updateProperty("yRotation", FLAGS.ROTATION_Y);
+            updateProperty("zRotation", FLAGS.ROTATION_Z);
             updateProperty("Act1", FLAGS.ACT1);
             updateProperty("Act2", FLAGS.ACT2);
             updateProperty("Act3", FLAGS.ACT3);
@@ -543,11 +546,11 @@ namespace Quad64
             updateProperty("Act5", FLAGS.ACT5);
             updateProperty("Act6", FLAGS.ACT6);
             updateProperty("AllActs", FLAGS.ALLACTS);
-            updateProperty("BehaviorParameter1", FLAGS.BPARAM_1);
-            updateProperty("BehaviorParameter2", FLAGS.BPARAM_2);
-            updateProperty("BehaviorParameter3", FLAGS.BPARAM_3);
-            updateProperty("BehaviorParameter4", FLAGS.BPARAM_4);
-            updateReadOnlyProperty("Behavior", isBehaviorReadOnly);
+            updateProperty("Param1", FLAGS.BPARAM_1);
+            updateProperty("Param2", FLAGS.BPARAM_2);
+            updateProperty("Param3", FLAGS.BPARAM_3);
+            updateProperty("Param4", FLAGS.BPARAM_4);
+            updateReadOnlyProperty("BehaviorAddress", isBehaviorReadOnly);
             updateReadOnlyProperty("ModelID", isModelIDReadOnly);
             UpdateObjectComboNames();
         }
@@ -599,12 +602,12 @@ namespace Quad64
 
         public FLAGS getFlagFromDisplayName(string displayName)
         {
-            if (displayName == GetPropertyDisplayName("xPos")) return FLAGS.POSITION_X;
-            if (displayName == GetPropertyDisplayName("yPos")) return FLAGS.POSITION_Y;
-            if (displayName == GetPropertyDisplayName("zPos")) return FLAGS.POSITION_Z;
-            if (displayName == GetPropertyDisplayName("xRot")) return FLAGS.ROTATION_X;
-            if (displayName == GetPropertyDisplayName("yRot")) return FLAGS.ROTATION_Y;
-            if (displayName == GetPropertyDisplayName("zRot")) return FLAGS.ROTATION_Z;
+            if (displayName == GetPropertyDisplayName("xPosition")) return FLAGS.POSITION_X;
+            if (displayName == GetPropertyDisplayName("yPosition")) return FLAGS.POSITION_Y;
+            if (displayName == GetPropertyDisplayName("zPosition")) return FLAGS.POSITION_Z;
+            if (displayName == GetPropertyDisplayName("xRotation")) return FLAGS.ROTATION_X;
+            if (displayName == GetPropertyDisplayName("yRotation")) return FLAGS.ROTATION_Y;
+            if (displayName == GetPropertyDisplayName("zRotation")) return FLAGS.ROTATION_Z;
             if (displayName == GetPropertyDisplayName("Act1")) return FLAGS.ACT1;
             if (displayName == GetPropertyDisplayName("Act2")) return FLAGS.ACT2;
             if (displayName == GetPropertyDisplayName("Act3")) return FLAGS.ACT3;
@@ -612,19 +615,19 @@ namespace Quad64
             if (displayName == GetPropertyDisplayName("Act5")) return FLAGS.ACT5;
             if (displayName == GetPropertyDisplayName("Act6")) return FLAGS.ACT6;
             if (displayName == GetPropertyDisplayName("AllActs")) return FLAGS.ALLACTS;
-            if (displayName == GetPropertyDisplayName("BehaviorParameter1")) return FLAGS.BPARAM_1;
-            if (displayName == GetPropertyDisplayName("BehaviorParameter2")) return FLAGS.BPARAM_2;
-            if (displayName == GetPropertyDisplayName("BehaviorParameter3")) return FLAGS.BPARAM_3;
-            if (displayName == GetPropertyDisplayName("BehaviorParameter4")) return FLAGS.BPARAM_4;
+            if (displayName == GetPropertyDisplayName("Param1")) return FLAGS.BPARAM_1;
+            if (displayName == GetPropertyDisplayName("Param2")) return FLAGS.BPARAM_2;
+            if (displayName == GetPropertyDisplayName("Param3")) return FLAGS.BPARAM_3;
+            if (displayName == GetPropertyDisplayName("Param4")) return FLAGS.BPARAM_4;
             return 0;
         }
 
         public void SetBehaviorParametersToZero()
         {
-            BehaviorParameter1 = 0;
-            BehaviorParameter2 = 0;
-            BehaviorParameter3 = 0;
-            BehaviorParameter4 = 0;
+            Param1 = 0;
+            Param2 = 0;
+            Param3 = 0;
+            Param4 = 0;
         }
 
         public void DontShowActs()

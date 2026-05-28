@@ -61,8 +61,8 @@ namespace Quad64.src.LevelInfo
             {
                 Object3D obj = Objects[i];
                 Vector3 scale = Vector3.One;
-                Quaternion rotation = new Quaternion(obj.xRot, obj.yRot, obj.zRot, 1.0f);
-                Vector3 position = new Vector3(obj.xPos, obj.yPos, obj.zPos);
+                Quaternion rotation = new Quaternion(obj.xRotation, obj.yRotation, obj.zRotation, 1.0f);
+                Vector3 position = new Vector3(obj.xPosition, obj.yPosition, obj.zPosition);
                 if (obj.ModelID != 0)
                 {
                     if (parent.ModelIDs.ContainsKey(obj.ModelID))
@@ -85,8 +85,8 @@ namespace Quad64.src.LevelInfo
             {
                 Object3D obj = MacroObjects[i];
                 Vector3 scale = Vector3.One;
-                Quaternion rotation = new Quaternion(obj.xRot, obj.yRot, obj.zRot, 1.0f);
-                Vector3 position = new Vector3(obj.xPos, obj.yPos, obj.zPos);
+                Quaternion rotation = new Quaternion(obj.xRotation, obj.yRotation, obj.zRotation, 1.0f);
+                Vector3 position = new Vector3(obj.xPosition, obj.yPosition, obj.zPosition);
                 if (obj.ModelID != 0)
                 {
                     if (parent.ModelIDs.ContainsKey(obj.ModelID))
@@ -109,8 +109,8 @@ namespace Quad64.src.LevelInfo
             {
                 Object3D obj = SpecialObjects[i];
                 Vector3 scale = Vector3.One;
-                Quaternion rotation = new Quaternion(obj.xRot, obj.yRot, obj.zRot, 1.0f);
-                Vector3 position = new Vector3(obj.xPos, obj.yPos, obj.zPos);
+                Quaternion rotation = new Quaternion(obj.xRotation, obj.yRotation, obj.zRotation, 1.0f);
+                Vector3 position = new Vector3(obj.xPosition, obj.yPosition, obj.zPosition);
                 if (obj.ModelID != 0)
                 {
                     if (parent.ModelIDs.ContainsKey(obj.ModelID))
@@ -145,8 +145,8 @@ namespace Quad64.src.LevelInfo
                 // Need to slighting increase the model's size, just in-case of overlapping bounding boxes.
                 if (isObjectSelected(0, i))
                     scale = new Vector3(1.001f, 1.001f, 1.001f);
-                Quaternion rotation = new Quaternion(obj.xRot, obj.yRot, obj.zRot, 1.0f);
-                Vector3 position = new Vector3(obj.xPos, obj.yPos, obj.zPos);
+                Quaternion rotation = new Quaternion(obj.xRotation, obj.yRotation, obj.zRotation, 1.0f);
+                Vector3 position = new Vector3(obj.xPosition, obj.yPosition, obj.zPosition);
                 if (obj.ModelID != 0 && parent.ModelIDs.ContainsKey(obj.ModelID))
                 {
                     Model3D model = parent.ModelIDs[obj.ModelID];
@@ -168,8 +168,8 @@ namespace Quad64.src.LevelInfo
             {
                 Object3D obj = MacroObjects[i];
                 Vector3 scale = Vector3.One;
-                Quaternion rotation = new Quaternion(obj.xRot, obj.yRot, obj.zRot, 1.0f);
-                Vector3 position = new Vector3(obj.xPos, obj.yPos, obj.zPos);
+                Quaternion rotation = new Quaternion(obj.xRotation, obj.yRotation, obj.zRotation, 1.0f);
+                Vector3 position = new Vector3(obj.xPosition, obj.yPosition, obj.zPosition);
                 if (obj.ModelID != 0 && parent.ModelIDs.ContainsKey(obj.ModelID))
                 {
                     Model3D model = parent.ModelIDs[obj.ModelID];
@@ -191,8 +191,8 @@ namespace Quad64.src.LevelInfo
             {
                 Object3D obj = SpecialObjects[i];
                 Vector3 scale = Vector3.One;
-                Quaternion rotation = new Quaternion(obj.xRot, obj.yRot, obj.zRot, 1.0f);
-                Vector3 position = new Vector3(obj.xPos, obj.yPos, obj.zPos);
+                Quaternion rotation = new Quaternion(obj.xRotation, obj.yRotation, obj.zRotation, 1.0f);
+                Vector3 position = new Vector3(obj.xPosition, obj.yPosition, obj.zPosition);
                 if (obj.ModelID != 0 && parent.ModelIDs.ContainsKey(obj.ModelID))
                 {
                     Model3D model = parent.ModelIDs[obj.ModelID];

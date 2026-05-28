@@ -26,7 +26,7 @@ namespace Quad64.custom.Sorter
 
             while (remaining.Count > 0)
             {
-                var previousPosition = new Vector3(previous.xPos, previous.yPos, previous.zPos);
+                var previousPosition = new Vector3(previous.xPosition, previous.yPosition, previous.zPosition);
                 Object3D nearest = GetClosestToPoint(previousPosition, remaining);
 
                 sorted.Add(nearest);
@@ -44,7 +44,7 @@ namespace Quad64.custom.Sorter
 
             foreach (var obj in list)
             {
-                var position = new Vector3(obj.xPos, obj.yPos, obj.zPos);
+                var position = new Vector3(obj.xPosition, obj.yPosition, obj.zPosition);
                 var distance = Vector3.DistanceSquared(position, point);
 
                 if (distance < lowestDistance)

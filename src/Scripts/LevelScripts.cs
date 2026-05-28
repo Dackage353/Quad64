@@ -532,24 +532,24 @@ namespace Quad64.Scripts
             newObj.Act6 = ((actMask & 0x20) == 0x20);
             newObj.ShowHideActs(newObj.AllActs);
             newObj.ModelID = cmd[3];
-            newObj.xPos = (short)bytesToInt(cmd, 0x4, 2);
-            newObj.yPos = (short)bytesToInt(cmd, 0x6, 2);
-            newObj.zPos = (short)bytesToInt(cmd, 0x8, 2);
-            newObj.xRot = (short)bytesToInt(cmd, 0xA, 2);
-            newObj.yRot = (short)bytesToInt(cmd, 0xC, 2);
-            newObj.zRot = (short)bytesToInt(cmd, 0xE, 2);
+            newObj.xPosition = (short)bytesToInt(cmd, 0x4, 2);
+            newObj.yPosition = (short)bytesToInt(cmd, 0x6, 2);
+            newObj.zPosition = (short)bytesToInt(cmd, 0x8, 2);
+            newObj.xRotation = (short)bytesToInt(cmd, 0xA, 2);
+            newObj.yRotation = (short)bytesToInt(cmd, 0xC, 2);
+            newObj.zRotation = (short)bytesToInt(cmd, 0xE, 2);
             newObj.MakeBehaviorReadOnly(false);
             newObj.MakeModelIDReadOnly(false);
             newObj.setBehaviorFromAddress(bytesToInt(cmd, 0x14, 4));
-            newObj.BehaviorParameter1 = cmd[0x10];
-            newObj.BehaviorParameter2 = cmd[0x11];
-            newObj.BehaviorParameter3 = cmd[0x12];
-            newObj.BehaviorParameter4 = cmd[0x13];
+            newObj.Param1 = cmd[0x10];
+            newObj.Param2 = cmd[0x11];
+            newObj.Param3 = cmd[0x12];
+            newObj.Param4 = cmd[0x13];
             newObj.createdFromLevelScriptCommand = Object3D.FROM_LS_CMD.CMD_24;
             newObj.level = lvl;
             lvl.getCurrentArea().Objects.Add(newObj);
             
-            desc = "Place Object at pos (" + newObj.xPos + "," + newObj.yPos + ","  + newObj.zPos + ")";
+            desc = "Place Object at pos (" + newObj.xPosition + "," + newObj.yPosition + ","  + newObj.zPosition + ")";
         }
 
 
@@ -728,20 +728,20 @@ namespace Quad64.Scripts
                             newObj.HideProperty(Object3D.FLAGS.ROTATION_Z);
                             newObj.HideProperty(Object3D.FLAGS.BPARAM_3);
                             newObj.HideProperty(Object3D.FLAGS.BPARAM_4);
-                            newObj.xPos = (short)bytesToInt(data, (int)off + 2, 2);
-                            newObj.yPos = (short)bytesToInt(data, (int)off + 4, 2);
-                            newObj.zPos = (short)bytesToInt(data, (int)off + 6, 2);
-                            newObj.BehaviorParameter1 = entry[1];
-                            newObj.BehaviorParameter2 = entry[2];
+                            newObj.xPosition = (short)bytesToInt(data, (int)off + 2, 2);
+                            newObj.yPosition = (short)bytesToInt(data, (int)off + 4, 2);
+                            newObj.zPosition = (short)bytesToInt(data, (int)off + 6, 2);
+                            newObj.Param1 = entry[1];
+                            newObj.Param2 = entry[2];
                             newObj.MakeBehaviorReadOnly(true);
                             newObj.MakeModelIDReadOnly(true);
                             if (obj_len > 8)
                             {
-                                newObj.yRot = (short)(bytesToInt(data, (int)off + 8, 2) * 1.40625);
+                                newObj.yRotation = (short)(bytesToInt(data, (int)off + 8, 2) * 1.40625);
                                 if (obj_len > 10)
                                 {
-                                    newObj.BehaviorParameter1 = data[off + 10];
-                                    newObj.BehaviorParameter2 = data[off + 11];
+                                    newObj.Param1 = data[off + 10];
+                                    newObj.Param2 = data[off + 11];
                                     newObj.createdFromLevelScriptCommand = Object3D.FROM_LS_CMD.CMD_2E_12;
                                     lvl.AddSpecialObjectPreset_12(obj_id, entry[3], 
                                         bytesToInt(entry, 4, 4), data[off + 10], data[off + 11]);
@@ -887,23 +887,23 @@ namespace Quad64.Scripts
                 newObj.ModelID = entryData[5];
                 ushort firstAndSecond = (ushort)bytesToInt(data, 0, 2);
                 newObj.setPresetID((ushort)(firstAndSecond & 0x1FF));
-                newObj.yRot = (short)((firstAndSecond >> 9) * 2.8125);
-                newObj.xPos = (short)bytesToInt(data, 2, 2);
-                newObj.yPos = (short)bytesToInt(data, 4, 2);
-                newObj.zPos = (short)bytesToInt(data, 6, 2);
+                newObj.yRotation = (short)((firstAndSecond >> 9) * 2.8125);
+                newObj.xPosition = (short)bytesToInt(data, 2, 2);
+                newObj.yPosition = (short)bytesToInt(data, 4, 2);
+                newObj.zPosition = (short)bytesToInt(data, 6, 2);
                 newObj.DontShowActs();
                 newObj.MakeBehaviorReadOnly(true);
                 newObj.MakeModelIDReadOnly(true);
                 ushort bp = (ushort)bytesToInt(data, 8, 2);
                 if(data[8] != 0)
-                    newObj.BehaviorParameter1 = data[8];
+                    newObj.Param1 = data[8];
                 else
-                    newObj.BehaviorParameter1 = entryData[6];
+                    newObj.Param1 = entryData[6];
 
                 if (data[9] != 0)
-                    newObj.BehaviorParameter2 = data[9];
+                    newObj.Param2 = data[9];
                 else
-                    newObj.BehaviorParameter2 = entryData[7];
+                    newObj.Param2 = entryData[7];
                 
                 lvl.getCurrentArea().MacroObjects.Add(newObj);
                 pos += 10;

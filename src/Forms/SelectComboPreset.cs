@@ -58,7 +58,7 @@ namespace Quad64.src.Forms
                     {
                         uint modelAddress = level.ModelIDs[entry.ModelID].GeoDataSegAddress;
                         int oce_index = -1;
-                        ObjectComboEntry oce = level.getObjectComboFromData(entry.ModelID, modelAddress, entry.Behavior, out oce_index);
+                        ObjectComboEntry oce = level.getObjectComboFromData(entry.ModelID, modelAddress, entry.BehaviorAddress, out oce_index);
                         if (oce_index > -1)
                         {
                             string displayName = "(" + entry.PresetID + ") " + oce.Name;
@@ -109,12 +109,12 @@ namespace Quad64.src.Forms
                         {
                             uint modelAddress = level.ModelIDs[entry.ModelID].GeoDataSegAddress;
                             int oce_index = -1;
-                            ObjectComboEntry oce = level.getObjectComboFromData(entry.ModelID, modelAddress, entry.Behavior, out oce_index);
+                            ObjectComboEntry oce = level.getObjectComboFromData(entry.ModelID, modelAddress, entry.BehaviorAddress, out oce_index);
                             if (oce_index > -1)
                             {
                                 string displayName = "(" + entry.PresetID.ToString() + ") " + oce.Name;
-                                displayName += " {" + entry.BehaviorParameter1;
-                                displayName += ", " + entry.BehaviorParameter2 + "}";
+                                displayName += " {" + entry.Param1;
+                                displayName += ", " + entry.Param2 + "}";
                                 listView1.Items.Add(displayName);
                                 int index = listView1.Items.Count - 1;
                             }
@@ -279,14 +279,14 @@ namespace Quad64.src.Forms
                         {
                             uint modelAddress = level.ModelIDs[entry.ModelID].GeoDataSegAddress;
                             int oce_index = -1;
-                            ObjectComboEntry oce = level.getObjectComboFromData(entry.ModelID, modelAddress, entry.Behavior, out oce_index);
+                            ObjectComboEntry oce = level.getObjectComboFromData(entry.ModelID, modelAddress, entry.BehaviorAddress, out oce_index);
                             if (oce_index > -1)
                             {
                                 string displayName = "(" + entry.PresetID.ToString() + ") " + oce.Name;
                                 if (displayName.ToUpper().Contains(textBox_filter.Text.ToUpper()))
                                 {
-                                    displayName += " {" + entry.BehaviorParameter1;
-                                    displayName += ", " + entry.BehaviorParameter2 + "}";
+                                    displayName += " {" + entry.Param1;
+                                    displayName += ", " + entry.Param2 + "}";
                                     listView1.Items.Add(displayName);
                                 }
                             }

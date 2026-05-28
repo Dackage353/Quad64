@@ -699,12 +699,12 @@ namespace Quad64
             Area area = level.getCurrentArea();
             area.MacroObjects[index].ModelID = comboWindow.ReturnPresetMacro.ModelID;
             area.MacroObjects[index].setPresetID(comboWindow.ReturnPresetMacro.PresetID);
-            area.MacroObjects[index].setBehaviorFromAddress(comboWindow.ReturnPresetMacro.Behavior);
+            area.MacroObjects[index].setBehaviorFromAddress(comboWindow.ReturnPresetMacro.BehaviorAddress);
             //area.MacroObjects[Globals.item_selected].SetBehaviorParametersToZero();
-            area.MacroObjects[index].BehaviorParameter1
-                = comboWindow.ReturnPresetMacro.BehaviorParameter1;
-            area.MacroObjects[index].BehaviorParameter2
-                = comboWindow.ReturnPresetMacro.BehaviorParameter2;
+            area.MacroObjects[index].Param1
+                = comboWindow.ReturnPresetMacro.Param1;
+            area.MacroObjects[index].Param2
+                = comboWindow.ReturnPresetMacro.Param2;
             treeView1.Nodes[1].Nodes[index].Text
                 = area.MacroObjects[index].getObjectComboName();
             area.MacroObjects[index].UpdateProperties();
@@ -716,12 +716,12 @@ namespace Quad64
             Area area = level.getCurrentArea();
             area.SpecialObjects[index].ModelID = comboWindow.ReturnPresetMacro.ModelID;
             area.SpecialObjects[index].setPresetID(comboWindow.ReturnPresetMacro.PresetID);
-            area.SpecialObjects[index].setBehaviorFromAddress(comboWindow.ReturnPresetMacro.Behavior);
+            area.SpecialObjects[index].setBehaviorFromAddress(comboWindow.ReturnPresetMacro.BehaviorAddress);
             //area.SpecialObjects[Globals.item_selected].SetBehaviorParametersToZero();
-            area.SpecialObjects[index].BehaviorParameter1
-                = comboWindow.ReturnPresetMacro.BehaviorParameter1;
-            area.SpecialObjects[index].BehaviorParameter2
-                = comboWindow.ReturnPresetMacro.BehaviorParameter2;
+            area.SpecialObjects[index].Param1
+                = comboWindow.ReturnPresetMacro.Param1;
+            area.SpecialObjects[index].Param2
+                = comboWindow.ReturnPresetMacro.Param2;
             treeView1.Nodes[2].Nodes[index].Text
                 = area.SpecialObjects[index].getObjectComboName();
             area.SpecialObjects[index].UpdateProperties();
@@ -1744,9 +1744,9 @@ namespace Quad64
             {
                 Vec3S pos;
                 obj = getSelectedObject();
-                pos.X = obj.xPos;
-                pos.Y = obj.yPos;
-                pos.Z = obj.zPos;
+                pos.X = obj.xPosition;
+                pos.Y = obj.yPosition;
+                pos.Z = obj.zPosition;
                 posList.Add(pos);
             }
             else
@@ -1771,9 +1771,9 @@ namespace Quad64
                             default:
                                 return;
                         }
-                        pos.X = obj.xPos;
-                        pos.Y = obj.yPos;
-                        pos.Z = obj.zPos;
+                        pos.X = obj.xPosition;
+                        pos.Y = obj.yPosition;
+                        pos.Z = obj.zPosition;
                         posList.Add(pos);
                     }
                 }
@@ -1788,9 +1788,9 @@ namespace Quad64
             {
                 Vec3S rot;
                 obj = getSelectedObject();
-                rot.X = obj.xRot;
-                rot.Y = obj.yRot;
-                rot.Z = obj.zRot;
+                rot.X = obj.xRotation;
+                rot.Y = obj.yRotation;
+                rot.Z = obj.zRotation;
                 posList.Add(rot);
             }
             else
@@ -1815,9 +1815,9 @@ namespace Quad64
                             default:
                                 return;
                         }
-                        rot.X = obj.xRot;
-                        rot.Y = obj.yRot;
-                        rot.Z = obj.zRot;
+                        rot.X = obj.xRotation;
+                        rot.Y = obj.yRotation;
+                        rot.Z = obj.zRotation;
                         posList.Add(rot);
                     }
                 }
@@ -1875,9 +1875,9 @@ namespace Quad64
             if (!forRotation)
             {
                 if (obj.isPropertyShown(Object3D.FLAGS.POSITION_X))
-                    obj.xPos = (short)(savedPos.X - (short)(CX * my * speedMult * Globals.objSpeedMultiplier) - (short)(CX_2 * mx * speedMult * Globals.objSpeedMultiplier));
+                    obj.xPosition = (short)(savedPos.X - (short)(CX * my * speedMult * Globals.objSpeedMultiplier) - (short)(CX_2 * mx * speedMult * Globals.objSpeedMultiplier));
                 if (obj.isPropertyShown(Object3D.FLAGS.POSITION_Z))
-                    obj.zPos = (short)(savedPos.Z - (short)(CZ * my * speedMult * Globals.objSpeedMultiplier) - (short)(CZ_2 * mx * speedMult * Globals.objSpeedMultiplier));
+                    obj.zPosition = (short)(savedPos.Z - (short)(CZ * my * speedMult * Globals.objSpeedMultiplier) - (short)(CZ_2 * mx * speedMult * Globals.objSpeedMultiplier));
                 if (keepOnGround.Checked)
                     dropObjectToGround();
             }
@@ -1886,13 +1886,13 @@ namespace Quad64
                 speedMult = 0.5f;
                 if (obj.isPropertyShown(Object3D.FLAGS.ROTATION_X))
                 {
-                    obj.xRot = (short)(savedPos.X - (short)(CX * my * speedMult * Globals.objSpeedMultiplier) - (short)(CX_2 * mx * speedMult * Globals.objSpeedMultiplier));
-                    obj.xRot = keepDegreesWithin360(obj.xRot);
+                    obj.xRotation = (short)(savedPos.X - (short)(CX * my * speedMult * Globals.objSpeedMultiplier) - (short)(CX_2 * mx * speedMult * Globals.objSpeedMultiplier));
+                    obj.xRotation = keepDegreesWithin360(obj.xRotation);
                 }
                 if (obj.isPropertyShown(Object3D.FLAGS.ROTATION_Z))
                 {
-                    obj.zRot = (short)(savedPos.Z - (short)(CZ * my * speedMult * Globals.objSpeedMultiplier) - (short)(CZ_2 * mx * speedMult * Globals.objSpeedMultiplier));
-                    obj.zRot = keepDegreesWithin360(obj.zRot);
+                    obj.zRotation = (short)(savedPos.Z - (short)(CZ * my * speedMult * Globals.objSpeedMultiplier) - (short)(CZ_2 * mx * speedMult * Globals.objSpeedMultiplier));
+                    obj.zRotation = keepDegreesWithin360(obj.zRotation);
                 }
             }
             
@@ -1971,15 +1971,15 @@ namespace Quad64
             {
                 if (obj.isPropertyShown(Object3D.FLAGS.POSITION_Y))
                 {
-                    obj.yPos -= (short)(30 * (e.Y - moveObj_UpDown_lastMouseY) * Globals.objSpeedMultiplier);
+                    obj.yPosition -= (short)(30 * (e.Y - moveObj_UpDown_lastMouseY) * Globals.objSpeedMultiplier);
                 }
             }
             else
             {
                 if (obj.isPropertyShown(Object3D.FLAGS.ROTATION_Y))
                 {
-                    obj.yRot -= (short)((e.Y - rotObj_Yaw_lastMouseY) * Globals.objSpeedMultiplier);
-                    obj.yRot = keepDegreesWithin360(obj.yRot);
+                    obj.yRotation -= (short)((e.Y - rotObj_Yaw_lastMouseY) * Globals.objSpeedMultiplier);
+                    obj.yRotation = keepDegreesWithin360(obj.yRotation);
                 }
             }
 
@@ -2121,7 +2121,7 @@ namespace Quad64
                 {
                     Object3D obj = getSelectedObject();
                     if (obj == null) return;
-                    obj.yPos = level.getCurrentArea().collision.dropToGround(new Vector3(obj.xPos, obj.yPos, obj.zPos));
+                    obj.yPosition = level.getCurrentArea().collision.dropToGround(new Vector3(obj.xPosition, obj.yPosition, obj.zPosition));
                 }
                 else
                 {
@@ -2145,7 +2145,7 @@ namespace Quad64
                                     break;
                             }
                             if (obj == null) continue;
-                            obj.yPos = level.getCurrentArea().collision.dropToGround(new Vector3(obj.xPos, obj.yPos, obj.zPos));
+                            obj.yPosition = level.getCurrentArea().collision.dropToGround(new Vector3(obj.xPosition, obj.yPosition, obj.zPosition));
                         }
                     }
                 }

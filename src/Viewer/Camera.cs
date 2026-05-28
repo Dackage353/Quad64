@@ -140,7 +140,7 @@ namespace Quad64
             Object3D obj = getSelectedObject();
             if (obj != null)
             {
-                orbitTheta = -(obj.yRot * ((float)Math.PI / 180.0f));
+                orbitTheta = -(obj.yRotation * ((float)Math.PI / 180.0f));
                 orbitPhi = -0.3f;
                 orbitDistance = 1200.0f;
             }
@@ -153,12 +153,12 @@ namespace Quad64
                 Object3D obj = getSelectedObject();
                 if (obj == null)
                     return;
-                pos.X = obj.xPos + (float)(Math.Cos(orbitPhi) * -Math.Sin(orbitTheta) * orbitDistance);
-                pos.Y = obj.yPos + (float)(-Math.Sin(orbitPhi) * orbitDistance);
-                pos.Z = obj.zPos + (float)(Math.Cos(orbitPhi) * Math.Cos(orbitTheta) * orbitDistance);
-                lookat.X = obj.xPos;
-                lookat.Y = obj.yPos;
-                lookat.Z = obj.zPos;
+                pos.X = obj.xPosition + (float)(Math.Cos(orbitPhi) * -Math.Sin(orbitTheta) * orbitDistance);
+                pos.Y = obj.yPosition + (float)(-Math.Sin(orbitPhi) * orbitDistance);
+                pos.Z = obj.zPosition + (float)(Math.Cos(orbitPhi) * Math.Cos(orbitTheta) * orbitDistance);
+                lookat.X = obj.xPosition;
+                lookat.Y = obj.yPosition;
+                lookat.Z = obj.zPosition;
                 cameraMatrix = Matrix4.LookAt(pos.X, pos.Y, pos.Z, lookat.X, lookat.Y, lookat.Z, 0, 1, 0);
                 setRotationFromLookAt();
             }

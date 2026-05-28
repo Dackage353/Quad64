@@ -14,9 +14,9 @@ namespace Quad64.src.JSON
 
         public ushort PresetID { get { return presetID; } }
         public byte ModelID { get { return modelID; } }
-        public uint Behavior { get { return behavior; } }
-        public byte BehaviorParameter1 { get { return bp1; } }
-        public byte BehaviorParameter2 { get { return bp2; } }
+        public uint BehaviorAddress { get { return behavior; } }
+        public byte Param1 { get { return bp1; } }
+        public byte Param2 { get { return bp2; } }
 
         public PresetMacroEntry(ushort presetID, byte modelID, uint behavior)
         {
