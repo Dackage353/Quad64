@@ -1,17 +1,16 @@
 using Quad64.Scripts;
-using Quad64.src.LevelInfo;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Quad64.src
+namespace Quad64.custom.GameInfo
 {
-    class CustomLevelInfo
+    class LevelInfo
     {
         public string Name { get; set; }
         public int LevelID { get; set; }
         public int[] CoinCountByAct { get; set; } = new int[6];
-        public CustomAreaInfo[] Areas { get; set; } = new CustomAreaInfo[8];
+        public AreaInfo[] Areas { get; set; } = new AreaInfo[8];
 
         public int GetAreaCount()
         {
