@@ -1,6 +1,7 @@
 ﻿using Collada141;
 using NaturalSort.Extension;
 using Newtonsoft.Json;
+using Quad64.custom.GameInfo;
 using Quad64.Scripts;
 using Quad64.src.LevelInfo;
 using System;
@@ -14,29 +15,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Quad64.src
+namespace Quad64.custom.GameInfo
 {
     internal class GameInfoBuilder
     {
         public List<Level> levels { get; } = new List<Level>();
 
-        private Dictionary<string, List<MyObjectInfo>> behaviorLists = new Dictionary<string, List<MyObjectInfo>>();
+        private Dictionary<string, List<ObjectInfo>> behaviorLists = new Dictionary<string, List<ObjectInfo>>();
 
         private StringBuilder simpleSB = new StringBuilder();
         private StringBuilder detailedSB = new StringBuilder();
 
-        private CustomGameInfo gameInfo;
+        private GameInfo gameInfo;
 
         private int[] _levelCoinCountByAct = new int[6];
         private int[] _areaCoinCountByAct = new int[6];
 
         private static GameInfoBuilder builder = null;
 
-        public static CustomGameInfo GetGameInfo()
+        public static GameInfo GetGameInfo()
         {
             if (builder == null)
             {
                 builder = new GameInfoBuilder();
+            }
+            if (builder.gameInfo == null)
+            {
+                builder.MakeGameInfo();
             }
 
             return builder.gameInfo;
@@ -60,28 +65,25 @@ namespace Quad64.src
 
         private GameInfoBuilder()
         {
-            LoadLevels();
+            LoadObjectInfo();
+        }
 
-            var json = File.ReadAllText("./custom/CustomObjectInfo.json");
-            var objectInfo = JsonConvert.DeserializeObject<List<MyObjectInfo>>(json);
-            
+        private void LoadObjectInfo()
+        {
+            var json = File.ReadAllText("./custom/ObjectInfo.json");
+            var objectInfo = JsonConvert.DeserializeObject<List<ObjectInfo>>(json);
+
             for (int i = 0; i < objectInfo.Count; i++)
             {
                 var info = objectInfo[i];
 
-                if (behaviorLists.ContainsKey(info.BehaviorAddress))
+                if (!behaviorLists.ContainsKey(info.BehaviorAddress))
                 {
+                    behaviorLists[info.BehaviorAddress] = new List<ObjectInfo>();
+                }
 
-                    behaviorLists[info.BehaviorAddress].Add(info);
-                }
-                else
-                {
-                    behaviorLists[info.BehaviorAddress] = new List<MyObjectInfo>();
-                    behaviorLists[info.BehaviorAddress].Add(info);
-                }
+                behaviorLists[info.BehaviorAddress].Add(info);
             }
-
-            MakeGameInfo();
         }
 
         private void LoadLevels()
@@ -106,12 +108,13 @@ namespace Quad64.src
 
         private void MakeGameInfo()
         {
-            gameInfo = new CustomGameInfo();
+            gameInfo = new GameInfo();
+            LoadLevels();
 
             for (int i = 0; i < levels.Count; i++)
             {
                 var level = levels[i];
-                var levelInfo = new CustomLevelInfo();
+                var levelInfo = new LevelInfo();
                 levelInfo.Name = Helper.LevelIDToName(level.LevelID);
                 levelInfo.LevelID = level.LevelID;
 
@@ -120,11 +123,11 @@ namespace Quad64.src
                     if (level.hasArea((ushort)areaIndex))
                     {
                         var area = level.Areas[areaIndex - 1];
-                        var areaInfo = new CustomAreaInfo();
+                        var areaInfo = new AreaInfo();
                         areaInfo.Name = levelInfo.Name + "-" + areaIndex;
-                        areaInfo.Objects.AddRange(Object3DListToCustom(area.Objects, false));
-                        areaInfo.Objects.AddRange(Object3DListToCustom(area.MacroObjects, true));
-                        areaInfo.Objects.AddRange(Object3DListToCustom(area.SpecialObjects, true));
+                        areaInfo.Objects.AddRange(area.Objects);
+                        areaInfo.Objects.AddRange(area.MacroObjects);
+                        areaInfo.Objects.AddRange(area.SpecialObjects);
                         areaInfo.CalculateCoinCountByAct();
 
                         levelInfo.Areas[areaIndex] = areaInfo;
@@ -140,65 +143,7 @@ namespace Quad64.src
 
         }
 
-        private List<MyObjectInfo> Object3DListToCustom(List<Object3D> list, bool forceAllActs)
-        {
-            var newList = new List<MyObjectInfo>();
-
-            foreach (Object3D obj in list)
-            {
-                var objectInfo = Object3DToCustom(obj, forceAllActs);
-
-                newList.Add(objectInfo);
-            }
-
-            return newList;
-        }
-
-        public MyObjectInfo Object3DToCustom(Object3D obj, bool forceAllActs = false)
-        {
-            var objectInfo = new MyObjectInfo();
-
-            var coinInfo = GetCustomObjectInfo(obj.Behavior, obj.BehaviorParameter1, obj.BehaviorParameter2, obj.BehaviorParameter3, obj.BehaviorParameter4, obj.ModelID);
-            if (coinInfo != null)
-            {
-                objectInfo.Name = coinInfo.Name;
-                objectInfo.CoinValue = coinInfo.CoinValue;
-            }
-            else
-            {
-                objectInfo.Name = obj.getObjectComboName();
-            }
-
-
-            objectInfo.Address = obj.Address;
-            objectInfo.ModelID = obj.ModelID;
-            objectInfo.BehaviorName = obj.Behavior_Name;
-
-            objectInfo.BehaviorAddress = obj.Behavior;
-            objectInfo.Param1 = obj.BehaviorParameter1;
-            objectInfo.Param2 = obj.BehaviorParameter2;
-            objectInfo.Param3 = obj.BehaviorParameter3;
-            objectInfo.Param4 = obj.BehaviorParameter4;
-            objectInfo.XPosition = obj.xPos;
-            objectInfo.YPosition = obj.yPos;
-            objectInfo.ZPosition = obj.zPos;
-            objectInfo.XRotation = obj.xRot;
-            objectInfo.YRotation = obj.yRot;
-            objectInfo.ZRotation = obj.zRot;
-            objectInfo.Act1 = obj.Act1;
-            objectInfo.Act2 = obj.Act2;
-            objectInfo.Act3 = obj.Act3;
-            objectInfo.Act4 = obj.Act4;
-            objectInfo.Act5 = obj.Act5;
-            objectInfo.Act6 = obj.Act6;
-            objectInfo.AllActs = obj.AllActs;
-
-            if (forceAllActs) objectInfo.AllActs = true;
-
-            return objectInfo;
-        }
-
-        public MyObjectInfo GetCustomObjectInfo(string behaviorAddress, int param1, int param2, int param3, int param4, int modelID)
+        public ObjectInfo GetCustomObjectInfo(string behaviorAddress, int param1, int param2, int param3, int param4, int modelID)
         {
             if (behaviorLists.ContainsKey(behaviorAddress))
             {
