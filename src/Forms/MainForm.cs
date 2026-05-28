@@ -272,8 +272,16 @@ namespace Quad64
             Globals.multi_selected_nodes[3].Clear();
             propertyGrid1.SelectedObject = null;
 
+            var allObjects = new List<Object3D>();
+            allObjects.AddRange(level.getCurrentArea().Objects);
+            allObjects.AddRange(level.getCurrentArea().MacroObjects);
+            allObjects.AddRange(level.getCurrentArea().SpecialObjects);
 
-            level.getCurrentArea().Objects = new Sorter().SortByTypeThenNameThenDistance(level.getCurrentArea().Objects);
+            level.getCurrentArea().Objects = new Sorter().SortByTypeThenNameThenDistance(allObjects);
+            level.getCurrentArea().MacroObjects.Clear();
+            level.getCurrentArea().SpecialObjects.Clear();
+
+
             //level.getCurrentArea().MacroObjects = new DistanceObjectSorter().SortByNameAndDistance(level.getCurrentArea().MacroObjects);
             //level.getCurrentArea().SpecialObjects = new DistanceObjectSorter().SortByNameAndDistance(level.getCurrentArea().SpecialObjects);
             
