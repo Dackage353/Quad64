@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace Quad64
 {
@@ -270,6 +271,9 @@ namespace Quad64
 
         public void saveFile()
         {
+            MessageBox.Show("Saving disabled");
+            return;
+
             if (Endian == ROM_Endian.MIXED)
             {
                 swapMixedBig();
@@ -293,6 +297,9 @@ namespace Quad64
 
         public void saveFileAs(string filename, ROM_Endian saveType)
         {
+            MessageBox.Show("Saving disabled");
+            return;
+
             if (saveType == ROM_Endian.MIXED)
             {
                 swapMixedBig();
