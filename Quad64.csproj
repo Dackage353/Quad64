@@ -83,21 +83,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="custom\Constants.cs" />
-    <Compile Include="custom\CustomAreaInfo.cs" />
-    <Compile Include="custom\CustomGameInfo.cs" />
-    <Compile Include="custom\CustomLevelInfo.cs" />
-    <Compile Include="custom\MyObjectInfo.cs" />
+    <Compile Include="custom\GameInfo\AreaInfo.cs" />
+    <Compile Include="custom\GameInfo\GameInfo.cs" />
+    <Compile Include="custom\GameInfo\LevelInfo.cs" />
+    <Compile Include="custom\GameInfo\ObjectInfo.cs" />
     <Compile Include="custom\Helper.cs" />
-    <Compile Include="custom\HexIntConverter.cs" />
     <Compile Include="custom\MyGlControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="custom\TypeObjectSorter.cs" />
-    <Compile Include="custom\DistanceObjectSorter.cs" />
+    <Compile Include="custom\Sorter\DistanceSorter.cs" />
+    <Compile Include="custom\Sorter\Sorter.cs" />
+    <Compile Include="custom\Sorter\NameSorter.cs" />
+    <Compile Include="custom\Sorter\StarSorter.cs" />
+    <Compile Include="custom\Sorter\TagGroup.cs" />
+    <Compile Include="custom\Sorter\TagSorter.cs" />
     <Compile Include="src\COLLADA\collada_schema_1_4.cs" />
     <Compile Include="src\COLLADA\DumpModel.cs" />
-    <Compile Include="custom\AreaReport.cs" />
     <Compile Include="src\Forms\EditWarp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,12 +205,14 @@
     <Compile Include="src\JSON\OtherTexturesFile.cs" />
     <Compile Include="src\JSON\PresetMacroEntry.cs" />
     <Compile Include="src\JSON\SettingsFile.cs" />
+    <Compile Include="src\LevelInfo\Area.cs" />
+    <Compile Include="src\LevelInfo\AreaBackgroundInfo.cs" />
     <Compile Include="src\LevelInfo\CustomSortedCategoryAttribute.cs" />
     <Compile Include="src\LevelInfo\HexNumberTypeConverter.cs" />
     <Compile Include="src\LevelInfo\Level.cs" />
     <Compile Include="src\LevelInfo\WarpInstant.cs" />
     <Compile Include="src\LevelInfo\Warp.cs" />
-    <Compile Include="custom\GameInfoBuilder.cs" />
+    <Compile Include="custom\GameInfo\GameInfoBuilder.cs" />
     <Compile Include="src\MIO0\libmio0.cs" />
     <Compile Include="src\Prompts.cs" />
     <Compile Include="src\Scripts\CollisionMap.cs" />
@@ -283,7 +286,7 @@
     <EmbeddedResource Include="src\Forms\ThemeSelector.resx">
       <DependentUpon>ThemeSelector.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="custom\CustomObjectInfo.json">
+    <None Include="custom\ObjectInfo.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="custom\StarRoadCoinObjects.json">
