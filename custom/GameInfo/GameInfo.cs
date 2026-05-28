@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Quad64.custom.GameInfo
 {
-    class GameInfo
+    internal class GameInfo
     {
         public Dictionary<int, LevelInfo> Levels { get; set; } = new Dictionary<int, LevelInfo>();
 

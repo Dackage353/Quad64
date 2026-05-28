@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Quad64.custom.GameInfo
 {
-    class AreaInfo
+    internal class AreaInfo
     {
         public string Name { get; set; }
         public int AreaIndex { get; set; }

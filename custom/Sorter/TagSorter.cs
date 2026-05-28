@@ -9,7 +9,7 @@ using System.Linq;
 using System.Security.AccessControl;
 using System.Windows.Forms;
 
-namespace Quad64.src
+namespace Quad64.custom.Sorter
 {
     internal class TagSorter
     {

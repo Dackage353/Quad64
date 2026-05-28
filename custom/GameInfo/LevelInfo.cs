@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Quad64.custom.GameInfo
 {
-    class LevelInfo
+    internal class LevelInfo
     {
         public string Name { get; set; }
         public int LevelID { get; set; }
