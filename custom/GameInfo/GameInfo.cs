@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Quad64.src
+namespace Quad64.custom.GameInfo
 {
-    class CustomGameInfo
+    class GameInfo
     {
-        public Dictionary<int, CustomLevelInfo> Levels { get; set; } = new Dictionary<int, CustomLevelInfo>();
+        public Dictionary<int, LevelInfo> Levels { get; set; } = new Dictionary<int, LevelInfo>();
 
         public string GetCoinReport()
         {
             var sb = new StringBuilder();
 
-            foreach (KeyValuePair<int, CustomLevelInfo> pair in Levels)
+            foreach (KeyValuePair<int, LevelInfo> pair in Levels)
             {
                 var level = pair.Value;
 
@@ -32,7 +32,7 @@ namespace Quad64.src
             var sb = new StringBuilder();
             sb.AppendLine(GetHeaderLine());
 
-            foreach (KeyValuePair<int, CustomLevelInfo> pair in Levels)
+            foreach (KeyValuePair<int, LevelInfo> pair in Levels)
             {
                 var level = pair.Value;
 
@@ -50,7 +50,7 @@ namespace Quad64.src
             var sb = new StringBuilder();
             sb.AppendLine(GetHeaderLine());
 
-            foreach (KeyValuePair<int, CustomLevelInfo> pair in Levels)
+            foreach (KeyValuePair<int, LevelInfo> pair in Levels)
             {
                 var level = pair.Value;
 
