@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Quad64.src
+namespace Quad64.custom.GameInfo
 {
-    class CustomAreaInfo
+    class AreaInfo
     {
         public string Name { get; set; }
         public int AreaIndex { get; set; }
         public int[] CoinCountByAct { get; set; } = new int[6];
-        public List<MyObjectInfo> Objects { get; set; } = new List<MyObjectInfo>();
+        public List<Object3D> Objects { get; set; } = new List<Object3D>();
 
         public string GetCoinCountPerAct()
         {
@@ -62,7 +62,7 @@ namespace Quad64.src
             {
                 var obj = Objects[i];
 
-                if (obj.CoinValue > 0) sb.AppendLine(obj.ToString());
+                if (obj.CompanionInfo.CoinValue > 0) sb.AppendLine(obj.ToString());
             }
 
             sb.AppendLine();
@@ -90,16 +90,16 @@ namespace Quad64.src
             {
                 var obj = Objects[i];
 
-                if (obj.CoinValue > 0)
+                if (obj.CompanionInfo != null && obj.CompanionInfo.CoinValue > 0)
                 {
-                    if (obj.Act1 || obj.AllActs) CoinCountByAct[0] += obj.CoinValue;
-                    if (obj.Act2 || obj.AllActs) CoinCountByAct[1] += obj.CoinValue;
-                    if (obj.Act3 || obj.AllActs) CoinCountByAct[2] += obj.CoinValue;
-                    if (obj.Act4 || obj.AllActs) CoinCountByAct[3] += obj.CoinValue;
-                    if (obj.Act5 || obj.AllActs) CoinCountByAct[4] += obj.CoinValue;
+                    if (obj.Act1 || obj.AllActs) CoinCountByAct[0] += obj.CompanionInfo.CoinValue;
+                    if (obj.Act2 || obj.AllActs) CoinCountByAct[1] += obj.CompanionInfo.CoinValue;
+                    if (obj.Act3 || obj.AllActs) CoinCountByAct[2] += obj.CompanionInfo.CoinValue;
+                    if (obj.Act4 || obj.AllActs) CoinCountByAct[3] += obj.CompanionInfo.CoinValue;
+                    if (obj.Act5 || obj.AllActs) CoinCountByAct[4] += obj.CompanionInfo.CoinValue;
 
                     bool first5Acts = obj.Act1 && obj.Act2 && obj.Act3 && obj.Act4 && obj.Act5;
-                    if (first5Acts || obj.Act6 || obj.AllActs) CoinCountByAct[5] += obj.CoinValue;
+                    if (first5Acts || obj.Act6 || obj.AllActs) CoinCountByAct[5] += obj.CompanionInfo.CoinValue;
                 }
             }
         }
