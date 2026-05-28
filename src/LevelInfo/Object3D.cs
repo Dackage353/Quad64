@@ -15,8 +15,10 @@ namespace Quad64
     class Object3D
     {
         private ObjectInfo _companionInfo = null;
-        public ObjectInfo CompanionInfo { 
-        get
+        [Browsable(false)]
+        public ObjectInfo CompanionInfo
+        { 
+            get
             {
                 if (_companionInfo == null)
                 {
@@ -38,8 +40,8 @@ namespace Quad64
             }
         }
 
-
-        public enum FLAGS {
+        public enum FLAGS
+        {
             POSITION_X = 0x1,
             POSITION_Y = 0x2,
             POSITION_Z = 0x4,
@@ -60,7 +62,8 @@ namespace Quad64
             ALLFLAGS = 0x1FFFF
         }
 
-        public enum FROM_LS_CMD {
+        public enum FROM_LS_CMD
+        {
             CMD_24, CMD_39, CMD_2E_8, CMD_2E_10, CMD_2E_12
         }
 
@@ -70,21 +73,19 @@ namespace Quad64
         bool isModelIDReadOnly = false;
         bool isTempHidden = false;
 
-        public Object3D(){
+        public Object3D()
+        {
             m_data = new ObjectData();
         }
 
-        public Object3D(
-            string address,
-            ObjectData objectData
-        )
+        public Object3D(string address, ObjectData objectData)
         {
             m_data = objectData;
             Address = address;
             UpdateProperties();
         }
 
-        public void ReplaceData( ObjectData newData )
+        public void ReplaceData(ObjectData newData)
         {
             m_data = newData;
             UpdateProperties();
@@ -414,8 +415,6 @@ namespace Quad64
 
         private void HideShowProperty(string property, bool show)
         {
-            Debug.WriteLine(property);
-
             PropertyDescriptor descriptor =
                 TypeDescriptor.GetProperties(this.GetType())[property];
             BrowsableAttribute attrib =
