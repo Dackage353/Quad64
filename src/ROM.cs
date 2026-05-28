@@ -163,26 +163,23 @@ namespace Quad64
 
         private void swapLittleBig()
         {
-            byte[] temp = new byte[4];
             for (int i = 0; i < bytes.Length; i += 4)
             {
-                temp[0] = bytes[i + 0];
-                temp[1] = bytes[i + 1];
-                temp[2] = bytes[i + 2];
-                temp[3] = bytes[i + 3];
-                bytes[i + 0] = temp[3];
-                bytes[i + 1] = temp[2];
-                bytes[i + 2] = temp[1];
-                bytes[i + 3] = temp[0];
+                byte b0 = bytes[i];
+                byte b1 = bytes[i + 1];
 
-                temp[0] = writeMask[i + 0];
-                temp[1] = writeMask[i + 1];
-                temp[2] = writeMask[i + 2];
-                temp[3] = writeMask[i + 3];
-                writeMask[i + 0] = temp[3];
-                writeMask[i + 1] = temp[2];
-                writeMask[i + 2] = temp[1];
-                writeMask[i + 3] = temp[0];
+                bytes[i] = bytes[i + 3];
+                bytes[i + 1] = bytes[i + 2];
+                bytes[i + 2] = b1;
+                bytes[i + 3] = b0;
+
+                byte w0 = writeMask[i];
+                byte w1 = writeMask[i + 1];
+
+                writeMask[i] = writeMask[i + 3];
+                writeMask[i + 1] = writeMask[i + 2];
+                writeMask[i + 2] = w1;
+                writeMask[i + 3] = w0;
             }
         }
 
@@ -190,7 +187,7 @@ namespace Quad64
         {
             foreach (KeyValuePair <byte, SegBank> kvp in segData.ToArray())
             {
-                if ((new[] { 0x15, 2 }).Contains(kvp.Key))
+                if (kvp.Key == 0x15 || kvp.Key == 2)
                     continue;
                 segData.Remove(kvp.Key);
             }
@@ -340,8 +337,7 @@ namespace Quad64
                 seg.IsMIO0 = false;
                 uint size = segmentEnd - segmentStart;
                 seg.Data = new byte[size];
-                for (uint i = 0; i < size; i++)
-                    seg.Data[i] = bytes[segmentStart + i];
+                Array.Copy(bytes, segmentStart, seg.Data, 0, size);
             }
             else
             {
@@ -377,11 +373,7 @@ namespace Quad64
             }
             else
             {
-                if (segData.ContainsKey((byte)index))
-                {
-                    segData.Remove((byte)index);
-                }
-                segData.Add((byte)index, seg);
+                segData[(byte)index] = seg;
             }
         }
 
@@ -504,13 +496,6 @@ namespace Quad64
             return newArr;
         }
 
-        //public byte[] getSubArray_safe(byte[] arr, uint offset, uint size)
-        //{
-        //    byte[] newArr = new byte[size];
-        //    Array.Copy(arr, offset, newArr, 0, size);
-        //    return newArr;
-        //}
-
         public void printArray(byte[] arr)
         {
             Console.WriteLine(BitConverter.ToString(arr.Take(arr.Length).ToArray()).Replace("-", " "));
@@ -550,23 +535,6 @@ namespace Quad64
                 return extra_levelIDs[index - levelIDs.Count];
             }
             return levelIDs.Values.ElementAt<ushort>(index);
-        }
-
-        // From: https://stackoverflow.com/a/26880541
-        private int SearchBytes(byte[] haystack, byte[] needle)
-        {
-            var len = needle.Length;
-            var limit = haystack.Length - len;
-            for (var i = 0; i <= limit; i++)
-            {
-                var k = 0;
-                for (; k < len; k++)
-                {
-                    if (needle[k] != haystack[i + k]) break;
-                }
-                if (k == len) return i;
-            }
-            return -1;
         }
 
         private void addToWriteMask(uint start, int length)
