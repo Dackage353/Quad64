@@ -23,7 +23,7 @@ namespace Quad64
             //comboBox1.Item
             foreach (KeyValuePair<string, ushort> entry in rom.levelIDs)
             {
-                level_list.Items.Add(entry.Key + " (0x" + entry.Value.ToString("X2") + ")");
+                level_list.Items.Add(entry.Key);
             }
 
             foreach (ushort entry in rom.extra_levelIDs)

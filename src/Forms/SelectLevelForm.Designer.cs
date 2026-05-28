@@ -39,7 +39,10 @@
             this.level_list.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.level_list.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.level_list.FormattingEnabled = true;
+            this.level_list.IntegralHeight = false;
+            this.level_list.ItemHeight = 13;
             this.level_list.Location = new System.Drawing.Point(69, 16);
+            this.level_list.MaxDropDownItems = 35;
             this.level_list.Name = "level_list";
             this.level_list.Size = new System.Drawing.Size(214, 21);
             this.level_list.TabIndex = 0;
