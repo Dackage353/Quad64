@@ -2,155 +2,155 @@
   // stars
   {
     "Name": "star 1 (open)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003E3C",
     "Param1": 0,
     "StarNumber": 1
   },
   {
     "Name": "star 2 (open)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003E3C",
     "Param1": 1,
     "StarNumber": 2
   },
   {
     "Name": "star 3 (open)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003E3C",
     "Param1": 2,
     "StarNumber": 3
   },
   {
     "Name": "star 4 (open)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003E3C",
     "Param1": 3,
     "StarNumber": 4
   },
   {
     "Name": "star 5 (open)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003E3C",
     "Param1": 4,
     "StarNumber": 5
   },
   {
     "Name": "star 6 (open)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003E3C",
     "Param1": 5,
     "StarNumber": 6
   },
   {
     "Name": "star 1 (secrets)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003EFC",
     "Param1": 0,
     "StarNumber": 1
   },
   {
     "Name": "star 2 (secrets)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003EFC",
     "Param1": 1,
     "StarNumber": 2
   },
   {
     "Name": "star 3 (secrets)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003EFC",
     "Param1": 2,
     "StarNumber": 3
   },
   {
     "Name": "star 4 (secrets)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003EFC",
     "Param1": 3,
     "StarNumber": 4
   },
   {
     "Name": "star 5 (secrets)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003EFC",
     "Param1": 4,
     "StarNumber": 5
   },
   {
     "Name": "star 6 (secrets)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003EFC",
     "Param1": 5,
     "StarNumber": 6
   },
   {
     "Name": "star 1 (red coins)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003E8C",
     "Param1": 0,
     "StarNumber": 1
   },
   {
     "Name": "star 2 (red coins)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003E8C",
     "Param1": 1,
     "StarNumber": 2
   },
   {
     "Name": "star 3 (red coins)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003E8C",
     "Param1": 2,
     "StarNumber": 3
   },
   {
     "Name": "star 4 (red coins)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003E8C",
     "Param1": 3,
     "StarNumber": 4
   },
   {
     "Name": "star 5 (red coins)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003E8C",
     "Param1": 4,
     "StarNumber": 5
   },
   {
     "Name": "star 6 (red coins)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003E8C",
     "Param1": 5,
     "StarNumber": 6
   },
   {
     "Name": "star (reds for bowser or overworld)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003EE4"
   },
   {
     "Name": "troll star (open)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003E3C"
   },
   {
     "Name": "troll star (secrets)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003EFC"
   },
   {
     "Name": "troll star (reds coins)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13003E8C"
   },
 
   // boss
   {
     "Name": "big boo (open, star 1)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -160,7 +160,7 @@
   },
   {
     "Name": "big boo (open, star 2)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -170,7 +170,7 @@
   },
   {
     "Name": "big boo (open, star 3)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -180,7 +180,7 @@
   },
   {
     "Name": "big boo (open, star 4)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -190,7 +190,7 @@
   },
   {
     "Name": "big boo (open, star 5)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -200,7 +200,7 @@
   },
   {
     "Name": "big boo (open, star 6)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -210,7 +210,7 @@
   },
   {
     "Name": "big bully (open, star 1)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -220,7 +220,7 @@
   },
   {
     "Name": "big bully (open, star 2)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -230,7 +230,7 @@
   },
   {
     "Name": "big bully (open, star 3)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -240,7 +240,7 @@
   },
   {
     "Name": "big bully (open, star 4)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -250,7 +250,7 @@
   },
   {
     "Name": "big bully (open, star 5)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -260,7 +260,7 @@
   },
   {
     "Name": "big bully (open, star 6)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -270,7 +270,7 @@
   },
   {
     "Name": "boo spawner (merry-go-round, star 1)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -281,7 +281,7 @@
   },
   {
     "Name": "boo spawner (merry-go-round, star 2)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -292,7 +292,7 @@
   },
   {
     "Name": "boo spawner (merry-go-round, star 3)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -303,7 +303,7 @@
   },
   {
     "Name": "boo spawner (merry-go-round, star 4)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -314,7 +314,7 @@
   },
   {
     "Name": "boo spawner (merry-go-round, star 5)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -325,7 +325,7 @@
   },
   {
     "Name": "boo spawner (merry-go-round, star 6)",
-    "Types": [
+    "Tags": [
       "Enemy",
       "Star"
     ],
@@ -336,7 +336,7 @@
   },
   {
     "Name": "bully spawner",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -345,7 +345,7 @@
   },
   {
     "Name": "eyerok (star 1)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -355,7 +355,7 @@
   },
   {
     "Name": "eyerok (star 2)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -365,7 +365,7 @@
   },
   {
     "Name": "eyerok (star 3)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -375,7 +375,7 @@
   },
   {
     "Name": "eyerok (star 4)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -385,7 +385,7 @@
   },
   {
     "Name": "eyerok (star 5)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -395,7 +395,7 @@
   },
   {
     "Name": "eyerok (star 6)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -405,7 +405,7 @@
   },
   {
     "Name": "king bob-omb (star 1)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -415,7 +415,7 @@
   },
   {
     "Name": "king bob-omb (star 2)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -425,7 +425,7 @@
   },
   {
     "Name": "king bob-omb (star 3)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -435,7 +435,7 @@
   },
   {
     "Name": "king bob-omb (star 4)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -445,7 +445,7 @@
   },
   {
     "Name": "king bob-omb (star 5)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -455,7 +455,7 @@
   },
   {
     "Name": "king bob-omb (star 6)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -465,7 +465,7 @@
   },
   {
     "Name": "koopa the quick 1 (star 1)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -476,7 +476,7 @@
   },
   {
     "Name": "koopa the quick 1 (star 2)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -487,7 +487,7 @@
   },
   {
     "Name": "koopa the quick 1 (star 3)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -498,7 +498,7 @@
   },
   {
     "Name": "koopa the quick 1 (star 4)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -509,7 +509,7 @@
   },
   {
     "Name": "koopa the quick 1 (star 5)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -520,7 +520,7 @@
   },
   {
     "Name": "koopa the quick 1 (star 6)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -531,7 +531,7 @@
   },
   {
     "Name": "koopa the quick 2 (star 1)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -542,7 +542,7 @@
   },
   {
     "Name": "koopa the quick 2 (star 2)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -553,7 +553,7 @@
   },
   {
     "Name": "koopa the quick 2 (star 3)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -564,7 +564,7 @@
   },
   {
     "Name": "koopa the quick 2 (star 4)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -575,7 +575,7 @@
   },
   {
     "Name": "koopa the quick 2 (star 5)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -586,7 +586,7 @@
   },
   {
     "Name": "koopa the quick 2 (star 6)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -597,7 +597,7 @@
   },
   {
     "Name": "whomp king (star 1)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -607,7 +607,7 @@
   },
   {
     "Name": "whomp king (star 2)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -617,7 +617,7 @@
   },
   {
     "Name": "whomp king (star 3)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -627,7 +627,7 @@
   },
   {
     "Name": "whomp king (star 4)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -637,7 +637,7 @@
   },
   {
     "Name": "whomp king (star 5)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -647,7 +647,7 @@
   },
   {
     "Name": "whomp king (star 6)",
-    "Types": [
+    "Tags": [
       "Boss",
       "Star"
     ],
@@ -655,117 +655,177 @@
     "Param1": 5,
     "StarNumber": 6
   },
+  {
+    "Name": "wiggler (star 1)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004898",
+    "Param1": 0,
+    "StarNumber": 1
+  },
+  {
+    "Name": "wiggler (star 2)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004898",
+    "Param1": 1,
+    "StarNumber": 2
+  },
+  {
+    "Name": "wiggler (star 3)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004898",
+    "Param1": 2,
+    "StarNumber": 3
+  },
+  {
+    "Name": "wiggler (star 4)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004898",
+    "Param1": 3,
+    "StarNumber": 4
+  },
+  {
+    "Name": "wiggler (star 5)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004898",
+    "Param1": 4,
+    "StarNumber": 5
+  },
+  {
+    "Name": "wiggler (star 6)",
+    "Tags": [
+      "Boss",
+      "Star"
+    ],
+    "BehaviorAddress": "0x13004898",
+    "Param1": 5,
+    "StarNumber": 6
+  },
 
   // [!] box
   {
     "Name": "[!] box (wing cap)",
-    "Types": [ "CapOrShellBox" ],
+    "Tags": [ "CapOrShellBox" ],
     "BehaviorAddress": "0x13002250",
     "Param2": 0
   },
   {
     "Name": "[!] box (metal cap)",
-    "Types": [ "CapOrShellBox" ],
+    "Tags": [ "CapOrShellBox" ],
     "BehaviorAddress": "0x13002250",
     "Param2": 1
   },
   {
     "Name": "[!] box (vanish cap)",
-    "Types": [ "CapOrShellBox" ],
+    "Tags": [ "CapOrShellBox" ],
     "BehaviorAddress": "0x13002250",
     "Param2": 2
   },
   {
     "Name": "[!] box (shell)",
-    "Types": [ "CapOrShellBox" ],
+    "Tags": [ "CapOrShellBox" ],
     "BehaviorAddress": "0x13002250",
     "Param2": 3
   },
   {
     "Name": "[!] box (1 coin)",
-    "Types": [ "CoinContainer" ],
+    "Tags": [ "CoinContainer" ],
     "BehaviorAddress": "0x13002250",
     "Param2": 4,
     "CoinValue": 1
   },
   {
     "Name": "[!] box (3 coins)",
-    "Types": [ "CoinContainer" ],
+    "Tags": [ "CoinContainer" ],
     "BehaviorAddress": "0x13002250",
     "Param2": 5,
     "CoinValue": 3
   },
   {
     "Name": "[!] box (10 coins)",
-    "Types": [ "CoinContainer" ],
+    "Tags": [ "CoinContainer" ],
     "BehaviorAddress": "0x13002250",
     "Param2": 6,
     "CoinValue": 10
   },
   {
     "Name": "[!] box (1-up, slow)",
-    "Types": [ "Container" ],
+    "Tags": [ "Container" ],
     "BehaviorAddress": "0x13002250",
     "Param2": 7
   },
   {
     "Name": "[!] box (star 1)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13002250",
     "Param2": 8,
     "StarNumber": 1
   },
   {
     "Name": "[!] box (1-up, running away)",
-    "Types": [ "Container" ],
+    "Tags": [ "Container" ],
     "BehaviorAddress": "0x13002250",
     "Param1": 0,
     "Param2": 9
   },
   {
     "Name": "[!] box (star 2)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13002250",
     "Param2": 10,
     "StarNumber": 2
   },
   {
     "Name": "[!] box (star 3)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13002250",
     "Param2": 11,
     "StarNumber": 3
   },
   {
     "Name": "[!] box (star 4)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13002250",
     "Param2": 12,
     "StarNumber": 4
   },
   {
     "Name": "[!] box (star 5)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13002250",
     "Param2": 13,
     "StarNumber": 5
   },
   {
     "Name": "[!] box (star 6)",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x13002250",
     "Param2": 14,
     "StarNumber": 6
   },
   {
     "Name": "[!] box (empty)",
-    "Types": [ "Container" ],
+    "Tags": [ "Container" ],
     "BehaviorAddress": "0x13002250",
     "Param2": 15
   },
   {
     "Name": "[!] box (unknown content)",
-    "Types": [ "Container" ],
+    "Tags": [ "Container" ],
     "BehaviorAddress": "0x13002250"
   },
 
@@ -773,101 +833,96 @@
   // WarpStart
   {
     "Name": "warp (mario start 1)",
-    "Types": [ "WarpStart" ],
+    "Tags": [ "WarpStart" ],
     "BehaviorAddress": "0x13002F74"
   },
   {
     "Name": "warp (mario start 2)",
-    "Types": [ "WarpStart" ],
+    "Tags": [ "WarpStart" ],
     "BehaviorAddress": "0x13002F64"
   },
   {
     "Name": "warp (mario start 3)",
-    "Types": [ "WarpStart" ],
+    "Tags": [ "WarpStart" ],
     "BehaviorAddress": "0x13002F6C"
   },
   {
     "Name": "warp (mario start 4)",
-    "Types": [ "WarpStart" ],
+    "Tags": [ "WarpStart" ],
     "BehaviorAddress": "0x130056A4"
   },
   {
     "Name": "warp (mario start 5)",
-    "Types": [ "WarpStart" ],
+    "Tags": [ "WarpStart" ],
     "BehaviorAddress": "0x13002F78"
   },
   {
     "Name": "warp (mario start in water)",
-    "Types": [ "WarpStart" ],
+    "Tags": [ "WarpStart" ],
     "BehaviorAddress": "0x13002F94"
   },
 
   // WarpRegular
   {
     "Name": "warp",
-    "Types": [ "WarpRegular" ],
+    "Tags": [ "WarpRegular" ],
     "BehaviorAddress": "0x13002F60"
   },
   {
     "Name": "warp",
-    "Types": [ "WarpRegular" ],
+    "Tags": [ "WarpRegular" ],
     "BehaviorAddress": "0x13002F68"
   },
   {
     "Name": "warp (fading)",
-    "Types": [ "WarpRegular" ],
+    "Tags": [ "WarpRegular" ],
     "BehaviorAddress": "0x1300075C"
   },
   {
     "Name": "warp pipe",
-    "Types": [ "WarpRegular" ],
+    "Tags": [ "WarpRegular" ],
     "BehaviorAddress": "0x130007A0"
   },
   {
     "Name": "warp hole",
-    "Types": [ "WarpRegular" ],
+    "Tags": [ "WarpRegular" ],
     "BehaviorAddress": "0x13000780"
-  },
-  {
-    "Name": "warp cone",
-    "Types": [ "WarpRegular" ],
-    "BehaviorAddress": "0x13002A48"
   },
 
   // WarpExit
   {
     "Name": "warp (for level exit)",
-    "Types": [ "WarpExit" ],
+    "Tags": [ "WarpExit" ],
     "BehaviorAddress": "0x13002F84"
   },
   {
     "Name": "warp (level exit)",
-    "Types": [ "WarpExit" ],
+    "Tags": [ "WarpExit" ],
     "BehaviorAddress": "0x13002F8C"
   },
   {
     "Name": "warp (level exit, ceiling)",
-    "Types": [ "WarpExit" ],
+    "Tags": [ "WarpExit" ],
     "BehaviorAddress": "0x13002F88"
   },
   {
     "Name": "warp (level exit, from hole)",
-    "Types": [ "WarpExit" ],
+    "Tags": [ "WarpExit" ],
     "BehaviorAddress": "0x13002F90"
   },
   {
     "Name": "warp (level exit, restore life)",
-    "Types": [ "WarpExit" ],
+    "Tags": [ "WarpExit" ],
     "BehaviorAddress": "0x13002F70"
   },
   {
     "Name": "warp painting exit (failure)",
-    "Types": [ "WarpExit" ],
+    "Tags": [ "WarpExit" ],
     "BehaviorAddress": "0x13002F80"
   },
   {
     "Name": "warp painting exit (success)",
-    "Types": [ "WarpExit" ],
+    "Tags": [ "WarpExit" ],
     "BehaviorAddress": "0x13002F7C"
   },
 
@@ -875,7 +930,7 @@
   // basic coins
   {
     "Name": "blue coin (moving)",
-    "Types": [
+    "Tags": [
       "BlueCoin"
     ],
     "BehaviorAddress": "0x130030A4",
@@ -883,7 +938,7 @@
   },
   {
     "Name": "blue coin (still)",
-    "Types": [
+    "Tags": [
       "BlueCoin"
     ],
     "BehaviorAddress": "0x13002588",
@@ -891,7 +946,7 @@
   },
   {
     "Name": "red coin",
-    "Types": [
+    "Tags": [
       "Coin",
       "StarTrigger"
     ],
@@ -900,7 +955,7 @@
   },
   {
     "Name": "yellow coin (type 1)",
-    "Types": [
+    "Tags": [
       "Coin"
     ],
     "BehaviorAddress": "0x1300090C",
@@ -908,7 +963,7 @@
   },
   {
     "Name": "yellow coin (type 2)",
-    "Types": [
+    "Tags": [
       "Coin"
     ],
     "BehaviorAddress": "0x1300091C",
@@ -918,49 +973,49 @@
   // coin formation
   {
     "Name": "5 coin line (grounded, horizontal)",
-    "Types": [ "CoinFormation" ],
+    "Tags": [ "CoinFormation" ],
     "BehaviorAddress": "0x130008EC",
     "Param2": 0,
     "CoinValue": 5
   },
   {
     "Name": "coin ring (grounded, flat)",
-    "Types": [ "CoinFormation" ],
+    "Tags": [ "CoinFormation" ],
     "BehaviorAddress": "0x130008EC",
     "Param2": 2,
     "CoinValue": 8
   },
   {
     "Name": "coin arrow (grounded, flat)",
-    "Types": [ "CoinFormation" ],
+    "Tags": [ "CoinFormation" ],
     "BehaviorAddress": "0x130008EC",
     "Param2": 4,
     "CoinValue": 8
   },
   {
     "Name": "5 coin line (flying, horizontal)",
-    "Types": [ "CoinFormation" ],
+    "Tags": [ "CoinFormation" ],
     "BehaviorAddress": "0x130008EC",
     "Param2": 16,
     "CoinValue": 5
   },
   {
     "Name": "5 coin line (flying, vertical)",
-    "Types": [ "CoinFormation" ],
+    "Tags": [ "CoinFormation" ],
     "BehaviorAddress": "0x130008EC",
     "Param2": 17,
     "CoinValue": 5
   },
   {
     "Name": "coin ring (flying, flat)",
-    "Types": [ "CoinFormation" ],
+    "Tags": [ "CoinFormation" ],
     "BehaviorAddress": "0x130008EC",
     "Param2": 18,
     "CoinValue": 8
   },
   {
     "Name": "coin ring (flying, vertical)",
-    "Types": [ "CoinFormation" ],
+    "Tags": [ "CoinFormation" ],
     "BehaviorAddress": "0x130008EC",
     "Param2": 19,
     "CoinValue": 8
@@ -970,39 +1025,45 @@
   // containers
   {
     "Name": "bowser puzzle (lethal lava land)",
-    "Types": [ "Container", "CoinContainer" ],
+    "Tags": [ "Container", "CoinContainer" ],
     "BehaviorAddress": "0x13002068",
     "CoinValue": 5
   },
   {
+    "Name": "breakable box (large, empty)",
+    "Tags": [ "Container", "CoinContainer" ],
+    "BehaviorAddress": "0x130014E0",
+    "Param2": 0
+  },
+  {
     "Name": "breakable box (medium, 3 coins)",
-    "Types": [ "Container", "CoinContainer" ],
+    "Tags": [ "Container", "CoinContainer" ],
     "BehaviorAddress": "0x130014E0",
     "Param2": 1,
     "CoinValue": 3
   },
   {
     "Name": "breakable box (medium, 5 coins)",
-    "Types": [ "Container", "CoinContainer" ],
+    "Tags": [ "Container", "CoinContainer" ],
     "BehaviorAddress": "0x130014E0",
     "Param2": 2,
     "CoinValue": 5
   },
   {
     "Name": "breakable box (small/throwable)",
-    "Types": [ "Container", "CoinContainer" ],
+    "Tags": [ "Container", "CoinContainer" ],
     "BehaviorAddress": "0x13004218",
     "CoinValue": 3
   },
   {
     "Name": "crazy box",
-    "Types": [ "Container", "CoinContainer" ],
+    "Tags": [ "Container", "CoinContainer" ],
     "BehaviorAddress": "0x13001650",
     "CoinValue": 5
   },
   {
     "Name": "wooden post",
-    "Types": [ "Container", "CoinContainer" ],
+    "Tags": [ "Container", "CoinContainer" ],
     "BehaviorAddress": "0x1300481C",
     "CoinValue": 5
   },
@@ -1010,232 +1071,232 @@
   // enemies
   {
     "Name": "haunted book (big)",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x1300506C",
     "CoinValue": 5
   },
   {
     "Name": "bob-omb",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13003174",
     "CoinValue": 1
   },
   {
     "Name": "boo (regular, no message)",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x130027E4",
     "CoinValue": 5
   },
   {
     "Name": "boo (regular, with message)",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13002804",
     "CoinValue": 5
   },
   {
     "Name": "boo spawner (courtyard)",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x130027D0",
     "CoinValue": 3
   },
   {
     "Name": "bullet bill spawner",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x1300179C"
   },
   {
     "Name": "bully (regular)",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x1300362C",
     "CoinValue": 1
   },
   {
     "Name": "chain chomp",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x1300478C",
     "CoinValue": 5
   },
   {
     "Name": "chuckya",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13000528",
     "CoinValue": 5
   },
   {
     "Name": "fly guy (no fire)",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x130046DC",
     "Param2": 0,
     "CoinValue": 2
   },
   {
     "Name": "fly guy (shoots fire)",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x130046DC",
     "Param2": 1,
     "CoinValue": 2
   },
   {
     "Name": "goomba (huge)",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x1300472C",
     "Param2": 1,
     "CoinValue": 5
   },
   {
     "Name": "goomba (regular)",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x1300472C",
     "Param2": 0,
     "CoinValue": 1
   },
   {
     "Name": "goomba (tiny)",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x1300472C",
     "Param2": 2,
     "CoinValue": 1
   },
   {
     "Name": "goomba spawner (3 regular)",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13004770",
     "Param2": 0,
     "CoinValue": 3
   },
   {
     "Name": "goomba spawner (3 huge)",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13004770",
     "Param2": 1,
     "CoinValue": 15
   },
   {
     "Name": "goomba spawner (3 tiny)",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13004770",
     "Param2": 2,
     "CoinValue": 3
   },
   {
     "Name": "koopa (regular, has shell)",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13004580",
     "Param2": 1,
     "CoinValue": 5
   },
   {
     "Name": "koopa (regular, no shell)",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13004580",
     "Param2": 0,
     "CoinValue": 5
   },
   {
     "Name": "koopa (tiny)",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13004580",
     "Param2": 4,
     "CoinValue": 5
   },
   {
     "Name": "lakitu",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13004918",
     "CoinValue": 5
   },
   {
     "Name": "moneybag",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x130039D4",
     "CoinValue": 5
   },
   {
     "Name": "mr. blizzard (hidden, no cap)",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13004DBC",
     "Param2": 0,
     "CoinValue": 3
   },
   {
     "Name": "mr. blizzard (hidden, can have cap)",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13004DBC",
     "Param2": 2,
     "CoinValue": 3
   },
   {
     "Name": "mr. i",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13000054",
     "Param2": 0,
     "CoinValue": 5
   },
   {
     "Name": "piranha plant (huge)",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13005120",
     "Param2": 1,
     "CoinValue": 2
   },
   {
     "Name": "piranha plant (regular)",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13001FBC",
     "CoinValue": 5
   },
   {
     "Name": "piranha plant (tiny)",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13005120",
     "Param2": 0,
     "CoinValue": 1
   },
   {
     "Name": "pokey",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13004634",
     "CoinValue": 5
   },
   {
     "Name": "scuttlebug",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13002B5C",
     "CoinValue": 3
   },
   {
     "Name": "scuttlebug spawner",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13002BA0",
     "CoinValue": 3
   },
   {
     "Name": "skeeter",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13005468",
     "CoinValue": 3
   },
   {
     "Name": "swoop",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13004698",
     "CoinValue": 1
   },
   {
     "Name": "snufit",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x130051E0",
     "CoinValue": 2
   },
   {
     "Name": "spindrift",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x130012B4",
     "CoinValue": 3
   },
   {
     "Name": "whomp",
-    "Types": [ "Enemy" ],
+    "Tags": [ "Enemy" ],
     "BehaviorAddress": "0x13002BCC",
     "CoinValue": 10
   },
@@ -1243,28 +1304,28 @@
   // obstacle
   {
     "Name": "amp (chasing)",
-    "Types": [
+    "Tags": [
       "Obstacle"
     ],
     "BehaviorAddress": "0x13003354"
   },
   {
     "Name": "amp (orbiting)",
-    "Types": [
+    "Tags": [
       "Obstacle"
     ],
     "BehaviorAddress": "0x13003388"
   },
   {
     "Name": "fire spitter",
-    "Types": [
+    "Tags": [
       "Obstacle"
     ],
     "BehaviorAddress": "0x1300518C"
   },
   {
     "Name": "flame (blue)",
-    "Types": [
+    "Tags": [
       "Obstacle"
     ],
     "BehaviorAddress": "0x13000C84",
@@ -1272,7 +1333,7 @@
   },
   {
     "Name": "flame (red)",
-    "Types": [
+    "Tags": [
       "Obstacle"
     ],
     "BehaviorAddress": "0x13000C84",
@@ -1280,49 +1341,49 @@
   },
   {
     "Name": "flamethrower",
-    "Types": [
+    "Tags": [
       "Obstacle"
     ],
     "BehaviorAddress": "0x13001108"
   },
   {
     "Name": "haunted chair",
-    "Types": [
+    "Tags": [
       "Obstacle"
     ],
     "BehaviorAddress": "0x13004FD4"
   },
   {
     "Name": "haunted piano",
-    "Types": [
+    "Tags": [
       "Obstacle"
     ],
     "BehaviorAddress": "0x13005024"
   },
   {
     "Name": "heave-ho",
-    "Types": [
+    "Tags": [
       "Obstacle"
     ],
     "BehaviorAddress": "0x13001548"
   },
   {
     "Name": "thwomp 1",
-    "Types": [
+    "Tags": [
       "Obstacle"
     ],
     "BehaviorAddress": "0x13000BC8"
   },
   {
     "Name": "thwomp 2",
-    "Types": [
+    "Tags": [
       "Obstacle"
     ],
     "BehaviorAddress": "0x13000B8C"
   },
   {
     "Name": "water bomb spawner",
-    "Types": [
+    "Tags": [
       "Obstacle"
     ],
     "BehaviorAddress": "0x13004B8C"
@@ -1331,40 +1392,40 @@
   // dialog
   {
     "Name": "mips",
-    "Types": [ "Star" ],
+    "Tags": [ "Star" ],
     "BehaviorAddress": "0x130044FC"
   },
   {
     "Name": "pink bob-omb (with message)",
-    "Types": [ "Dialog" ],
+    "Tags": [ "Dialog" ],
     "BehaviorAddress": "0x130031DC"
   },
   {
     "Name": "pink bob-omb (opens cannon)",
-    "Types": [ "Dialog" ],
+    "Tags": [ "Dialog" ],
     "BehaviorAddress": "0x13003228"
   },
   {
     "Name": "toad (with star 1)",
-    "Types": [ "Dialog", "Star" ],
+    "Tags": [ "Dialog", "Star" ],
     "BehaviorAddress": "0x13002EF8",
     "Param1": 82
   },
   {
     "Name": "toad (with star 2)",
-    "Types": [ "Dialog", "Star" ],
+    "Tags": [ "Dialog", "Star" ],
     "BehaviorAddress": "0x13002EF8",
     "Param1": 76
   },
   {
     "Name": "toad (with star 3)",
-    "Types": [ "Dialog", "Star" ],
+    "Tags": [ "Dialog", "Star" ],
     "BehaviorAddress": "0x13002EF8",
     "Param1": 83
   },
   {
     "Name": "toad (with dialog)",
-    "Types": [ "Dialog" ],
+    "Tags": [ "Dialog" ],
     "BehaviorAddress": "0x13002EF8"
   },
 
@@ -1372,62 +1433,62 @@
 
   {
     "Name": "blue coin switch",
-    "Types": [ "BlueCoin" ],
+    "Tags": [ "BlueCoin" ],
     "BehaviorAddress": "0x13002568"
   },
   {
     "Name": "cap switch (wing cap)",
-    "Types": [ "Switch" ],
+    "Tags": [ "Switch" ],
     "BehaviorAddress": "0x130001CC",
     "Param2": 0
   },
   {
     "Name": "cap switch (metal cap)",
-    "Types": [ "Switch" ],
+    "Tags": [ "Switch" ],
     "BehaviorAddress": "0x130001CC",
     "Param2": 1
   },
   {
     "Name": "cap switch (vanish cap)",
-    "Types": [ "Switch" ],
+    "Tags": [ "Switch" ],
     "BehaviorAddress": "0x130001CC",
     "Param2": 2
   },
   {
     "Name": "purple switch (spawns boxes)",
-    "Types": [ "HiddenBox" ],
+    "Tags": [ "HiddenBox" ],
     "BehaviorAddress": "0x130014AC"
   },
   {
     "Name": "purple switch (opens gate)",
-    "Types": [ "Switch" ],
+    "Tags": [ "Switch" ],
     "BehaviorAddress": "0x13001478"
   },
 
   // Platform
   {
     "Name": "breakable box (hidden)",
-    "Types": [ "HiddenBox" ],
+    "Tags": [ "HiddenBox" ],
     "BehaviorAddress": "0x130014BC"
   },
   {
     "Name": "gate",
-    "Types": [ "Platform" ],
+    "Tags": [ "Platform" ],
     "BehaviorAddress": "0x130025E0"
   },
   {
     "Name": "koopa flag",
-    "Types": [ "Platform" ],
+    "Tags": [ "Platform" ],
     "BehaviorAddress": "0x130045D0"
   },
   {
     "Name": "metal box",
-    "Types": [ "Platform" ],
+    "Tags": [ "Platform" ],
     "BehaviorAddress": "0x13001518"
   },
   {
     "Name": "pole",
-    "Types": [ "Platform" ],
+    "Tags": [ "Platform" ],
     "BehaviorAddress": "0x13000144"
   },
 
@@ -1435,107 +1496,165 @@
   // other
   {
     "Name": "1-up mushroom (open, stationary)",
-    "Types": [ "1-Up" ],
+    "Tags": [ "1-Up", "Help" ],
     "BehaviorAddress": "0x1300407C"
   },
   {
     "Name": "heart",
-    "Types": [],
+    "Tags": [ "Help" ],
     "BehaviorAddress": "0x13004EF8"
   },
   {
     "Name": "sign (wooden)",
-    "Types": [ "Dialog" ],
+    "Tags": [ "Dialog" ],
     "BehaviorAddress": "0x130032E0"
   },
   {
     "Name": "secret",
-    "Types": [ "StarTrigger" ],
+    "Tags": [ "StarTrigger" ],
     "BehaviorAddress": "0x13003F1C"
   },
   {
     "Name": "door (dark wood)",
-    "Types": [],
+    "Tags": [],
     "BehaviorAddress": "0x13000B0C",
     "ModelID": "29"
   },
   {
     "Name": "door (metal)",
-    "Types": [],
+    "Tags": [],
     "BehaviorAddress": "0x13000B0C",
     "ModelID": "31"
   },
   {
     "Name": "door (temple)",
-    "Types": [],
+    "Tags": [],
     "BehaviorAddress": "0x13000B0C",
     "ModelID": "32"
   },
   {
     "Name": "door (blank star)",
-    "Types": [],
+    "Tags": [],
     "BehaviorAddress": "0x13000B0C",
     "ModelID": "34"
   },
   {
     "Name": "door (1 star)",
-    "Types": [],
+    "Tags": [],
     "BehaviorAddress": "0x13000B0C",
     "ModelID": "35"
   },
   {
     "Name": "door (3 stars)",
-    "Types": [],
+    "Tags": [],
     "BehaviorAddress": "0x13000B0C",
     "ModelID": "36"
   },
   {
     "Name": "door (warp, key door)",
-    "Types": [ "WarpRegular" ],
+    "Tags": [ "WarpRegular" ],
     "BehaviorAddress": "0x13000AFC",
     "ModelID": "37"
   },
   {
     "Name": "door (warp, brown)",
-    "Types": [ "WarpRegular" ],
+    "Tags": [ "WarpRegular" ],
     "BehaviorAddress": "0x13000AFC",
     "ModelID": "38"
   },
   {
     "Name": "door (warp, metal)",
-    "Types": [ "WarpRegular" ],
+    "Tags": [ "WarpRegular" ],
     "BehaviorAddress": "0x13000AFC",
     "ModelID": "41"
   },
 
   // environment
   {
+    "Name": "butterfly",
+    "Tags": [ "Environment" ],
+    "BehaviorAddress": "0x130033BC"
+  },
+  {
+    "Name": "birds",
+    "Tags": [ "Environment" ],
+    "BehaviorAddress": "0x13005354"
+  },
+  {
     "Name": "tree (bubbly)",
-    "Types": [ "Environment" ],
+    "Tags": [ "Environment" ],
     "BehaviorAddress": "0x13002AA4",
     "ModelID": "23"
   },
   {
     "Name": "tree (spiky)",
-    "Types": [ "Environment" ],
+    "Tags": [ "Environment" ],
     "BehaviorAddress": "0x13002AA4",
     "ModelID": "24"
   },
   {
     "Name": "tree (snow)",
-    "Types": [ "Environment" ],
+    "Tags": [ "Environment" ],
     "BehaviorAddress": "0x13002AA4",
     "ModelID": "25"
   },
   {
     "Name": "tree (palm)",
-    "Types": [ "Environment" ],
+    "Tags": [ "Environment" ],
     "BehaviorAddress": "0x13002AA4",
     "ModelID": "27"
   },
   {
+    "Name": "tree (unknown model)",
+    "Tags": [ "Environment" ],
+    "BehaviorAddress": "0x13002AA4"
+  },
+  {
     "Name": "fish",
-    "Types": [ "Environment" ],
+    "Tags": [ "Environment" ],
     "BehaviorAddress": "0x1300215C"
+  },
+
+  // cba
+  {
+    "Name": "yellow orb (bowser fights)",
+    "Tags": [ "Environment" ],
+    "BehaviorAddress": "0x13002A48",
+    "ModelID": 3
+  },
+  {
+    "Name": "spiky bomb (bowser fights)",
+    "Tags": [ "Obstacle" ],
+    "BehaviorAddress": "0x130037EC"
+  },
+  {
+    "Name": "bowser",
+    "Tags": [ "Boss" ],
+    "BehaviorAddress": "0x13001850"
+  },
+  {
+    "Name": "tilting platform (bowser 2 fight)",
+    "Tags": [ "Platform" ],
+    "BehaviorAddress": "0x13001850"
+  },
+  {
+    "Name": "falling green triangle (bowser 3 fight)",
+    "Tags": [ "Platform" ],
+    "BehaviorAddress": "0x13001850"
+  },
+  {
+    "Name": "cannon (shoots water bombs)",
+    "Tags": [ "Platform" ],
+    "BehaviorAddress": "0x13004F10"
+  },
+  {
+    "Name": "cannon (closed)",
+    "Tags": [ "Platform" ],
+    "BehaviorAddress": "0x13003274"
+  },
+  {
+    "Name": "tilting bridge (bob)",
+    "Tags": [ "Platform" ],
+    "BehaviorAddress": "0x13004B1C"
   }
 ]

@@ -21,6 +21,7 @@ namespace Quad64.custom.Sorter
                 "StarTrigger",
                 "CapOrShellBox",
                 "Container",
+                "Helper",
                 "Switch",
                 "BlueCoin",
                 "HiddenBox",
@@ -63,7 +64,7 @@ namespace Quad64.custom.Sorter
 
                 foreach (var obj in remaining)
                 {
-                    if (obj.CompanionInfo != null && obj.CompanionInfo.Types.Contains(type))
+                    if (obj.CompanionInfo != null && obj.CompanionInfo.Tags.Contains(type))
                     {
                         group.Items.Add(obj);
                     }
@@ -80,7 +81,7 @@ namespace Quad64.custom.Sorter
             var uncategorized = new TagGroup("Uncategorized");
             foreach (var info in remaining)
             {
-                if (info.getObjectComboName() != "ZZ Empty Object")
+                if (info.getObjectComboName() != "Empty Object")
                 {
                     uncategorized.Items.Add(info);
                 }
