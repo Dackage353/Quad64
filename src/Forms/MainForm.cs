@@ -2470,7 +2470,7 @@ namespace Quad64
         {
             var focusedControl = GetFocusedControl(this);
 
-            if (Globals.list_selected != -1 && (focusedControl == null || focusedControl.Name == "treeView1"))
+            if (Globals.list_selected != -1 && Globals.list_selected <= 2 && (focusedControl == null || focusedControl.Name == "treeView1"))
             {
                 var objects = GetListObjects(Globals.list_selected);
                 myIndex = IncrementWithLooping(myIndex, up, 0, objects.Count - 1);
