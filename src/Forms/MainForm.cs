@@ -3,6 +3,8 @@ using NaturalSort.Extension;
 using Newtonsoft.Json;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
+using Quad64.custom.GameInfo;
+using Quad64.custom.Sorter;
 using Quad64.Scripts;
 using Quad64.src;
 using Quad64.src.Forms;
@@ -33,7 +35,7 @@ namespace Quad64
         bool isMouseDown = false, isShiftDown = false, isControlDown = false, moveState = false;
         bool gridEnabled = false;
         static Level level;
-        private CustomGameInfo gameInfo = null;
+        private GameInfo gameInfo = null;
         private int myIndex = 0;
 
         public static GameInfoBuilder Builder;
@@ -256,18 +258,10 @@ namespace Quad64
             forceGC(); // Force garbage collection.
         }
 
-        private string GetObjectName(Object3D obj)
-        {
-            var builder = GameInfoBuilder.GetBuilder();
-            var custom = builder.Object3DToCustom(obj);
-            return custom.Name;
-        }
-
         private void refreshObjectsInList()
         {
-            
-
             BeginUpdate(treeView1);
+
             Globals.list_selected = -1;
             Globals.item_selected = -1;
             Globals.multi_selected_nodes[0].Clear();
@@ -277,9 +271,9 @@ namespace Quad64
             propertyGrid1.SelectedObject = null;
 
 
-            level.getCurrentArea().Objects = new TypeObjectSorter().SortByType(level.getCurrentArea().Objects);
-            level.getCurrentArea().MacroObjects = new DistanceObjectSorter().SortByNameAndDistance(level.getCurrentArea().MacroObjects);
-            level.getCurrentArea().SpecialObjects = new DistanceObjectSorter().SortByNameAndDistance(level.getCurrentArea().SpecialObjects);
+            level.getCurrentArea().Objects = new Sorter().SortByTypeThenNameThenDistance(level.getCurrentArea().Objects);
+            //level.getCurrentArea().MacroObjects = new DistanceObjectSorter().SortByNameAndDistance(level.getCurrentArea().MacroObjects);
+            //level.getCurrentArea().SpecialObjects = new DistanceObjectSorter().SortByNameAndDistance(level.getCurrentArea().SpecialObjects);
             
 
 
@@ -288,7 +282,7 @@ namespace Quad64
 
             foreach (Object3D obj in level.getCurrentArea().Objects)
             {
-                obj.Title = GetObjectName(obj);
+                obj.Title = obj.GetCustomName();
                 objects.Nodes.Add(obj.Title);
                 // objects.Nodes.Add("0x" + obj.Behavior.ToString("X8"));
             }
@@ -298,7 +292,7 @@ namespace Quad64
 
             foreach (Object3D obj in level.getCurrentArea().MacroObjects)
             {
-                obj.Title = GetObjectName(obj);
+                obj.Title = obj.GetCustomName();
                 macro_objects.Nodes.Add(obj.Title);
                 //macro_objects.Nodes.Add("0x" + obj.Behavior.ToString("X8"));
             }
@@ -308,7 +302,7 @@ namespace Quad64
 
             foreach (Object3D obj in level.getCurrentArea().SpecialObjects)
             {
-                obj.Title = GetObjectName(obj);
+                obj.Title = obj.GetCustomName();
                 special_objects.Nodes.Add(obj.Title);
                 //special_objects.Nodes.Add("0x" + obj.Behavior.ToString("X8"));
             }
@@ -327,6 +321,7 @@ namespace Quad64
             {
                 warps.Nodes.Add(warp.ToString());
             }
+
             EndUpdate(treeView1);
         }
 
